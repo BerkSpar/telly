@@ -21,6 +21,7 @@
 		F7895EB72A97D11E00E8B286 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7895EB62A97D11E00E8B286 /* StorageService.swift */; };
 		F7895EB92A97D2D000E8B286 /* WhisperService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7895EB82A97D2D000E8B286 /* WhisperService.swift */; };
 		F7895EBC2A97D3C900E8B286 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = F7895EBB2A97D3C900E8B286 /* Alamofire */; };
+		F7895EBE2A97D70100E8B286 /* SpeechRegonizerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7895EBD2A97D70100E8B286 /* SpeechRegonizerService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		F7895EB42A97CF9400E8B286 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		F7895EB62A97D11E00E8B286 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		F7895EB82A97D2D000E8B286 /* WhisperService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhisperService.swift; sourceTree = "<group>"; };
+		F7895EBD2A97D70100E8B286 /* SpeechRegonizerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRegonizerService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				F7895EB02A97CD4200E8B286 /* RouterService.swift */,
 				F7895EB62A97D11E00E8B286 /* StorageService.swift */,
 				F7895EB82A97D2D000E8B286 /* WhisperService.swift */,
+				F7895EBD2A97D70100E8B286 /* SpeechRegonizerService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 				F7895EB72A97D11E00E8B286 /* StorageService.swift in Sources */,
 				F7895EAD2A97CBCD00E8B286 /* Array+Ext.swift in Sources */,
 				F7895E972A97C96800E8B286 /* ContentView.swift in Sources */,
+				F7895EBE2A97D70100E8B286 /* SpeechRegonizerService.swift in Sources */,
 				F7895E952A97C96800E8B286 /* duckApp.swift in Sources */,
 				F7895EAF2A97CBED00E8B286 /* Color+Ext.swift in Sources */,
 			);
