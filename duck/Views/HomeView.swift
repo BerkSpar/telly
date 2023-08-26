@@ -9,10 +9,11 @@ import SwiftUI
 
 struct HomeView: View {
     @State private var text = "Home View"
-    
+    @StateObject private var service = SpeechRecognizerService()
+
     var body: some View {
         VStack {
-            Text(text)
+            Text(service.text)
             
             Button("Say Hi") {
                 let alert = Alert(title: Text("Hi!"))
@@ -21,19 +22,10 @@ struct HomeView: View {
             }
             
             Button("Go Pikachu!") {
-                fetchPokemon()
-            }
-        }
-    }
-    
-    func fetchPokemon() {
-        Task {
-            await WhisperService().listen { result in
-                switch result {
-                case .success(let text):
-                    self.text = text
-                case .failure(let error):
-                    self.text = error.localizedDescription
+                do {
+                    try service.recognize()
+                } catch {
+                    print("Deu ruim, pae")
                 }
             }
         }

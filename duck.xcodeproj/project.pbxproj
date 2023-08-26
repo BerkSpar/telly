@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F715E7B12A9911E400452CF2 /* AudioRecognizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F715E7B02A9911E400452CF2 /* AudioRecognizable.swift */; };
+		F715E7B32A99132E00452CF2 /* SFSpeechRecognizer+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F715E7B22A99132E00452CF2 /* SFSpeechRecognizer+Ext.swift */; };
+		F715E7B52A99134500452CF2 /* AVAudioSession+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F715E7B42A99134500452CF2 /* AVAudioSession+Ext.swift */; };
 		F7895E952A97C96800E8B286 /* duckApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7895E942A97C96800E8B286 /* duckApp.swift */; };
 		F7895E972A97C96800E8B286 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7895E962A97C96800E8B286 /* ContentView.swift */; };
 		F7895E992A97C96900E8B286 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7895E982A97C96900E8B286 /* Assets.xcassets */; };
@@ -20,11 +23,13 @@
 		F7895EB52A97CF9400E8B286 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7895EB42A97CF9400E8B286 /* HomeView.swift */; };
 		F7895EB72A97D11E00E8B286 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7895EB62A97D11E00E8B286 /* StorageService.swift */; };
 		F7895EB92A97D2D000E8B286 /* WhisperService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7895EB82A97D2D000E8B286 /* WhisperService.swift */; };
-		F7895EBC2A97D3C900E8B286 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = F7895EBB2A97D3C900E8B286 /* Alamofire */; };
 		F7895EBE2A97D70100E8B286 /* SpeechRegonizerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7895EBD2A97D70100E8B286 /* SpeechRegonizerService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F715E7B02A9911E400452CF2 /* AudioRecognizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecognizable.swift; sourceTree = "<group>"; };
+		F715E7B22A99132E00452CF2 /* SFSpeechRecognizer+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SFSpeechRecognizer+Ext.swift"; sourceTree = "<group>"; };
+		F715E7B42A99134500452CF2 /* AVAudioSession+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVAudioSession+Ext.swift"; sourceTree = "<group>"; };
 		F7895E912A97C96800E8B286 /* duck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = duck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7895E942A97C96800E8B286 /* duckApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = duckApp.swift; sourceTree = "<group>"; };
 		F7895E962A97C96800E8B286 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -47,13 +52,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F7895EBC2A97D3C900E8B286 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F715E7AF2A9911D300452CF2 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				F715E7B02A9911E400452CF2 /* AudioRecognizable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		F7895E882A97C96800E8B286 = {
 			isa = PBXGroup;
 			children = (
@@ -73,6 +85,7 @@
 		F7895E932A97C96800E8B286 /* duck */ = {
 			isa = PBXGroup;
 			children = (
+				F715E7AF2A9911D300452CF2 /* Protocols */,
 				F7895EA82A97CB4400E8B286 /* Utils */,
 				F7895EA52A97CAD900E8B286 /* Components */,
 				F7895EA42A97CAD000E8B286 /* Services */,
@@ -143,6 +156,8 @@
 				F7895EAC2A97CBCD00E8B286 /* Array+Ext.swift */,
 				F7895EAE2A97CBED00E8B286 /* Color+Ext.swift */,
 				F7895EB22A97CED300E8B286 /* View+Ext.swift */,
+				F715E7B22A99132E00452CF2 /* SFSpeechRecognizer+Ext.swift */,
+				F715E7B42A99134500452CF2 /* AVAudioSession+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -164,7 +179,6 @@
 			);
 			name = duck;
 			packageProductDependencies = (
-				F7895EBB2A97D3C900E8B286 /* Alamofire */,
 			);
 			productName = duck;
 			productReference = F7895E912A97C96800E8B286 /* duck.app */;
@@ -195,7 +209,6 @@
 			);
 			mainGroup = F7895E882A97C96800E8B286;
 			packageReferences = (
-				F7895EBA2A97D3C900E8B286 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = F7895E922A97C96800E8B286 /* Products */;
 			projectDirPath = "";
@@ -225,14 +238,17 @@
 			files = (
 				F7895EB52A97CF9400E8B286 /* HomeView.swift in Sources */,
 				F7895EB32A97CED300E8B286 /* View+Ext.swift in Sources */,
+				F715E7B32A99132E00452CF2 /* SFSpeechRecognizer+Ext.swift in Sources */,
 				F7895EB92A97D2D000E8B286 /* WhisperService.swift in Sources */,
 				F7895EB12A97CD4200E8B286 /* RouterService.swift in Sources */,
 				F7895EAA2A97CB8300E8B286 /* HapticService.swift in Sources */,
 				F7895EA72A97CAF900E8B286 /* OnboardingView.swift in Sources */,
 				F7895EB72A97D11E00E8B286 /* StorageService.swift in Sources */,
+				F715E7B12A9911E400452CF2 /* AudioRecognizable.swift in Sources */,
 				F7895EAD2A97CBCD00E8B286 /* Array+Ext.swift in Sources */,
 				F7895E972A97C96800E8B286 /* ContentView.swift in Sources */,
 				F7895EBE2A97D70100E8B286 /* SpeechRegonizerService.swift in Sources */,
+				F715E7B52A99134500452CF2 /* AVAudioSession+Ext.swift in Sources */,
 				F7895E952A97C96800E8B286 /* duckApp.swift in Sources */,
 				F7895EAF2A97CBED00E8B286 /* Color+Ext.swift in Sources */,
 			);
@@ -366,6 +382,8 @@
 				DEVELOPMENT_TEAM = R9V648Y475;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "We need access to the microphone to capture audio.";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "We need access to speech recognition to transcribe your voice into text.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -395,6 +413,8 @@
 				DEVELOPMENT_TEAM = R9V648Y475;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "We need access to the microphone to capture audio.";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "We need access to speech recognition to transcribe your voice into text.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -435,25 +455,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		F7895EBA2A97D3C900E8B286 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		F7895EBB2A97D3C900E8B286 /* Alamofire */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F7895EBA2A97D3C900E8B286 /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F7895E892A97C96800E8B286 /* Project object */;
 }

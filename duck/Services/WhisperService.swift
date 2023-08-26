@@ -6,19 +6,24 @@
 //
 
 import Foundation
-import Alamofire
 
 class WhisperService {
-    func listen(completion: @escaping (Result<String, Error>) -> Void) async {
-        let url = "https://pokeapi.co/api/v2/pokemon/pikachu"
-                
-        AF.request(url).validate().responseString { response in
-            switch response.result {
-            case .success(let dataString):
-                completion(.success(dataString))
-            case .failure(let error):
-                completion(.failure(error))
-            }
+    func recognize() async throws -> String {
+        let urlString = "https://pokeapi.co/api/v2/pokemon/pikachu"
+        guard let url = URL(string: urlString) else {
+            throw URLError(.badURL)
         }
+
+        let (data, response) = try await URLSession.shared.data(from: url)
+
+        guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+            throw URLError(.badServerResponse)
+        }
+
+        guard let dataString = String(data: data, encoding: .utf8) else {
+            throw URLError(.cannotDecodeContentData)
+        }
+
+        return dataString
     }
 }

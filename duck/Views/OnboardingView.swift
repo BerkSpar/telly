@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import AVFoundation
+import Speech
 
 struct OnboardingView: View {
     var body: some View {
@@ -14,6 +16,16 @@ struct OnboardingView: View {
             
             Button("Go Home") {
                 RouterService.shared.navigate(.home)
+            }
+        }
+        .onAppear {
+            Task {
+                guard await SFSpeechRecognizer.hasAuthorizationToRecognize() else {
+                    return
+                }
+                guard await AVAudioSession.sharedInstance().hasPermissionToRecord() else {
+                    return
+                }
             }
         }
     }

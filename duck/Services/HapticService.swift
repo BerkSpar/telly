@@ -10,7 +10,7 @@ import UIKit
 class HapticsService {
     static let shared = HapticsService()
     
-    private init() { }
+    private init() {}
 
     func play(_ feedbackStyle: UIImpactFeedbackGenerator.FeedbackStyle) {
         UIImpactFeedbackGenerator(style: feedbackStyle).impactOccurred()
