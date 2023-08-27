@@ -24,6 +24,7 @@
 		F7895EB72A97D11E00E8B286 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7895EB62A97D11E00E8B286 /* StorageService.swift */; };
 		F7895EB92A97D2D000E8B286 /* WhisperService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7895EB82A97D2D000E8B286 /* WhisperService.swift */; };
 		F7895EBE2A97D70100E8B286 /* SpeechRegonizerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7895EBD2A97D70100E8B286 /* SpeechRegonizerService.swift */; };
+		F7C4F9102A9B110500691AC2 /* GameService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C4F90F2A9B110500691AC2 /* GameService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,8 @@
 		F7895EB62A97D11E00E8B286 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		F7895EB82A97D2D000E8B286 /* WhisperService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhisperService.swift; sourceTree = "<group>"; };
 		F7895EBD2A97D70100E8B286 /* SpeechRegonizerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRegonizerService.swift; sourceTree = "<group>"; };
+		F7C4F90E2A9B07D600691AC2 /* duck.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = duck.entitlements; sourceTree = "<group>"; };
+		F7C4F90F2A9B110500691AC2 /* GameService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +88,7 @@
 		F7895E932A97C96800E8B286 /* duck */ = {
 			isa = PBXGroup;
 			children = (
+				F7C4F90E2A9B07D600691AC2 /* duck.entitlements */,
 				F715E7AF2A9911D300452CF2 /* Protocols */,
 				F7895EA82A97CB4400E8B286 /* Utils */,
 				F7895EA52A97CAD900E8B286 /* Components */,
@@ -131,6 +135,7 @@
 				F7895EB62A97D11E00E8B286 /* StorageService.swift */,
 				F7895EB82A97D2D000E8B286 /* WhisperService.swift */,
 				F7895EBD2A97D70100E8B286 /* SpeechRegonizerService.swift */,
+				F7C4F90F2A9B110500691AC2 /* GameService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -243,6 +248,7 @@
 				F7895EB12A97CD4200E8B286 /* RouterService.swift in Sources */,
 				F7895EAA2A97CB8300E8B286 /* HapticService.swift in Sources */,
 				F7895EA72A97CAF900E8B286 /* OnboardingView.swift in Sources */,
+				F7C4F9102A9B110500691AC2 /* GameService.swift in Sources */,
 				F7895EB72A97D11E00E8B286 /* StorageService.swift in Sources */,
 				F715E7B12A9911E400452CF2 /* AudioRecognizable.swift in Sources */,
 				F7895EAD2A97CBCD00E8B286 /* Array+Ext.swift in Sources */,
@@ -376,6 +382,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = duck/duck.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"duck/Preview Content\"";
@@ -407,6 +414,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = duck/duck.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"duck/Preview Content\"";
