@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F715E7B12A9911E400452CF2 /* AudioRecognizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F715E7B02A9911E400452CF2 /* AudioRecognizable.swift */; };
 		F715E7B32A99132E00452CF2 /* SFSpeechRecognizer+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F715E7B22A99132E00452CF2 /* SFSpeechRecognizer+Ext.swift */; };
 		F715E7B52A99134500452CF2 /* AVAudioSession+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F715E7B42A99134500452CF2 /* AVAudioSession+Ext.swift */; };
 		F7895E952A97C96800E8B286 /* duckApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7895E942A97C96800E8B286 /* duckApp.swift */; };
@@ -28,7 +27,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F715E7B02A9911E400452CF2 /* AudioRecognizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecognizable.swift; sourceTree = "<group>"; };
 		F715E7B22A99132E00452CF2 /* SFSpeechRecognizer+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SFSpeechRecognizer+Ext.swift"; sourceTree = "<group>"; };
 		F715E7B42A99134500452CF2 /* AVAudioSession+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVAudioSession+Ext.swift"; sourceTree = "<group>"; };
 		F7895E912A97C96800E8B286 /* duck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = duck.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,14 +59,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		F715E7AF2A9911D300452CF2 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				F715E7B02A9911E400452CF2 /* AudioRecognizable.swift */,
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
 		F7895E882A97C96800E8B286 = {
 			isa = PBXGroup;
 			children = (
@@ -89,7 +79,6 @@
 			isa = PBXGroup;
 			children = (
 				F7C4F90E2A9B07D600691AC2 /* duck.entitlements */,
-				F715E7AF2A9911D300452CF2 /* Protocols */,
 				F7895EA82A97CB4400E8B286 /* Utils */,
 				F7895EA52A97CAD900E8B286 /* Components */,
 				F7895EA42A97CAD000E8B286 /* Services */,
@@ -250,7 +239,6 @@
 				F7895EA72A97CAF900E8B286 /* OnboardingView.swift in Sources */,
 				F7C4F9102A9B110500691AC2 /* GameService.swift in Sources */,
 				F7895EB72A97D11E00E8B286 /* StorageService.swift in Sources */,
-				F715E7B12A9911E400452CF2 /* AudioRecognizable.swift in Sources */,
 				F7895EAD2A97CBCD00E8B286 /* Array+Ext.swift in Sources */,
 				F7895E972A97C96800E8B286 /* ContentView.swift in Sources */,
 				F7895EBE2A97D70100E8B286 /* SpeechRegonizerService.swift in Sources */,

@@ -25,6 +25,18 @@ class GameService {
         }
     }
     
+    func rewardAchievement(_ identifier: String) {
+        let achievement = GKAchievement(identifier: identifier)
+        achievement.percentComplete = 100
+        achievement.showsCompletionBanner = true
+        
+        GKAchievement.report([achievement])
+    }
+    
+    func resetAchievements() {
+        GKAchievement.resetAchievements()
+    }
+    
     func hideAccessPoint() {
         GKAccessPoint.shared.isActive = false
     }

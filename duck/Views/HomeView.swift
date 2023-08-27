@@ -28,6 +28,14 @@ struct HomeView: View {
                     print("Deu ruim, pae")
                 }
             }
+            
+            Button("Ganha Conquista") {
+                GameService.shared.rewardAchievement("first_login")
+            }
+            
+            Button("Apaga Conquistas") {
+                GameService.shared.resetAchievements()
+            }
         }
     }
 }
