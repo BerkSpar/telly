@@ -10,8 +10,8 @@ import SwiftUI
 struct WordsView: View {
     var body: some View {
         VStack {
-        Text("Selecione as palavras")
-        
+            Text("Selecione as palavras")
+            
             Button("Pronto") {
                 RouterService.shared.navigate(.game)
             }

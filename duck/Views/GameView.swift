@@ -11,9 +11,13 @@ struct GameView: View {
     @StateObject private var service = SpeechRecognizerService()
     
     var body: some View {
+        VStack {
             Text("Crie sua história")
             
-        
+            Button("Cabei") {
+                RouterService.shared.navigate(.done)
+            }
+        }
     }
 }
 
