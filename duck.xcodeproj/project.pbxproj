@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		8CA51D4F2A9D27DB007061B2 /* WordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA51D4E2A9D27DB007061B2 /* WordsView.swift */; };
+		8CA51D512A9D2A20007061B2 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA51D502A9D2A20007061B2 /* GameView.swift */; };
+		8CA51D532A9D2C17007061B2 /* DoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA51D522A9D2C17007061B2 /* DoneView.swift */; };
 		F715E7B32A99132E00452CF2 /* SFSpeechRecognizer+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F715E7B22A99132E00452CF2 /* SFSpeechRecognizer+Ext.swift */; };
 		F715E7B52A99134500452CF2 /* AVAudioSession+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F715E7B42A99134500452CF2 /* AVAudioSession+Ext.swift */; };
 		F7895E952A97C96800E8B286 /* duckApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7895E942A97C96800E8B286 /* duckApp.swift */; };
@@ -29,6 +31,8 @@
 
 /* Begin PBXFileReference section */
 		8CA51D4E2A9D27DB007061B2 /* WordsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsView.swift; sourceTree = "<group>"; };
+		8CA51D502A9D2A20007061B2 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		8CA51D522A9D2C17007061B2 /* DoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneView.swift; sourceTree = "<group>"; };
 		F715E7B22A99132E00452CF2 /* SFSpeechRecognizer+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SFSpeechRecognizer+Ext.swift"; sourceTree = "<group>"; };
 		F715E7B42A99134500452CF2 /* AVAudioSession+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVAudioSession+Ext.swift"; sourceTree = "<group>"; };
 		F7895E912A97C96800E8B286 /* duck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = duck.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,6 +112,8 @@
 				F7895EA62A97CAF900E8B286 /* OnboardingView.swift */,
 				F7895EB42A97CF9400E8B286 /* HomeView.swift */,
 				8CA51D4E2A9D27DB007061B2 /* WordsView.swift */,
+				8CA51D502A9D2A20007061B2 /* GameView.swift */,
+				8CA51D522A9D2C17007061B2 /* DoneView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -238,6 +244,7 @@
 				F715E7B32A99132E00452CF2 /* SFSpeechRecognizer+Ext.swift in Sources */,
 				F7895EB92A97D2D000E8B286 /* WhisperService.swift in Sources */,
 				8CA51D4F2A9D27DB007061B2 /* WordsView.swift in Sources */,
+				8CA51D512A9D2A20007061B2 /* GameView.swift in Sources */,
 				F7895EB12A97CD4200E8B286 /* RouterService.swift in Sources */,
 				F7895EAA2A97CB8300E8B286 /* HapticService.swift in Sources */,
 				F7895EA72A97CAF900E8B286 /* OnboardingView.swift in Sources */,
@@ -246,6 +253,7 @@
 				F7895EAD2A97CBCD00E8B286 /* Array+Ext.swift in Sources */,
 				F7895E972A97C96800E8B286 /* ContentView.swift in Sources */,
 				F7895EBE2A97D70100E8B286 /* SpeechRegonizerService.swift in Sources */,
+				8CA51D532A9D2C17007061B2 /* DoneView.swift in Sources */,
 				F715E7B52A99134500452CF2 /* AVAudioSession+Ext.swift in Sources */,
 				F7895E952A97C96800E8B286 /* duckApp.swift in Sources */,
 				F7895EAF2A97CBED00E8B286 /* Color+Ext.swift in Sources */,

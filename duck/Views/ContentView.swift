@@ -11,6 +11,8 @@ enum Screen {
     case onboarding
     case home
     case words
+    case game
+    case done
 }
 
 struct ContentView: View {
@@ -22,6 +24,8 @@ struct ContentView: View {
             case .onboarding: OnboardingView()
             case .home: HomeView()
             case .words: WordsView()
+            case .game: GameView()
+            case .done: DoneView()
             }
         }
         .alert(isPresented: $router.isAlertPresented) {
