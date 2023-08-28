@@ -23,6 +23,7 @@
 		F7895EB52A97CF9400E8B286 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7895EB42A97CF9400E8B286 /* HomeView.swift */; };
 		F7895EB72A97D11E00E8B286 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7895EB62A97D11E00E8B286 /* StorageService.swift */; };
 		F7895EBE2A97D70100E8B286 /* SpeechRegonizerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7895EBD2A97D70100E8B286 /* SpeechRegonizerService.swift */; };
+		F795FB092A9D2C7F009C6DEF /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F795FB082A9D2C7F009C6DEF /* AuthenticationView.swift */; };
 		F7C4F9102A9B110500691AC2 /* GameService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C4F90F2A9B110500691AC2 /* GameService.swift */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +45,7 @@
 		F7895EB42A97CF9400E8B286 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		F7895EB62A97D11E00E8B286 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		F7895EBD2A97D70100E8B286 /* SpeechRegonizerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRegonizerService.swift; sourceTree = "<group>"; };
+		F795FB082A9D2C7F009C6DEF /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
 		F7C4F90E2A9B07D600691AC2 /* duck.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = duck.entitlements; sourceTree = "<group>"; };
 		F7C4F90F2A9B110500691AC2 /* GameService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -106,6 +108,7 @@
 				F7895EA62A97CAF900E8B286 /* OnboardingView.swift */,
 				F7895EB42A97CF9400E8B286 /* HomeView.swift */,
 				8CA51D4E2A9D27DB007061B2 /* WordsView.swift */,
+				F795FB082A9D2C7F009C6DEF /* AuthenticationView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 				F715E7B52A99134500452CF2 /* AVAudioSession+Ext.swift in Sources */,
 				F7895E952A97C96800E8B286 /* duckApp.swift in Sources */,
 				F7895EAF2A97CBED00E8B286 /* Color+Ext.swift in Sources */,
+				F795FB092A9D2C7F009C6DEF /* AuthenticationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
