@@ -36,6 +36,9 @@ struct HomeView: View {
             Button("Apaga Conquistas") {
                 GameService.shared.resetAchievements()
             }
+            Button("Seleção palavras") {
+                RouterService.shared.navigate(.words)
+            }
         }
     }
 }

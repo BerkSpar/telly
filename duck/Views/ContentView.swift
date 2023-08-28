@@ -10,6 +10,7 @@ import SwiftUI
 enum Screen {
     case onboarding
     case home
+    case words
 }
 
 struct ContentView: View {
@@ -18,8 +19,9 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             switch(router.screen) {
-                case .onboarding: OnboardingView()
-                case .home: HomeView()
+            case .onboarding: OnboardingView()
+            case .home: HomeView()
+            case .words: WordsView()
             }
         }
         .alert(isPresented: $router.isAlertPresented) {
