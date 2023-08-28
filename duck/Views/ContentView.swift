@@ -11,6 +11,7 @@ enum Screen {
     case onboarding
     case home
     case words
+    case authentication
     case game
     case done
 }
@@ -24,6 +25,7 @@ struct ContentView: View {
             case .onboarding: OnboardingView()
             case .home: HomeView()
             case .words: WordsView()
+            case .authentication: AuthenticationView()
             case .game: GameView()
             case .done: DoneView()
             }
