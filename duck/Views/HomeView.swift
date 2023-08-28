@@ -13,20 +13,11 @@ struct HomeView: View {
 
     var body: some View {
         VStack {
-            Text(service.text)
             
             Button("Say Hi") {
                 let alert = Alert(title: Text("Hi!"))
                 
                 RouterService.shared.showAlert(alert)
-            }
-            
-            Button("Go Pikachu!") {
-                do {
-                    try service.recognize()
-                } catch {
-                    print("Deu ruim, pae")
-                }
             }
             
             Button("Ganha Conquista") {
