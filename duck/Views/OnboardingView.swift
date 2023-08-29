@@ -10,24 +10,21 @@ import AVFoundation
 import Speech
 
 struct OnboardingView: View {
+    let start = Date()
+    let end = Date().addingTimeInterval(1)
+    
     var body: some View {
         VStack {
             Text("Onboarding View")
             
-            Button("Go Home") {
-                RouterService.shared.navigate(.home)
-                GameService.shared.hideAccessPoint()
-            }
+            ProgressView(timerInterval: start...end, countsDown: true)
         }
         .onAppear {
-            GameService.shared.authenticate()
-            
             Task {
-                guard await SFSpeechRecognizer.hasAuthorizationToRecognize() else {
-                    return
-                }
-                guard await AVAudioSession.sharedInstance().hasPermissionToRecord() else {
-                    return
+                try await Task.sleep(nanoseconds: Duration(seconds: 1).inNanoseconds())
+                
+                GameService.shared.authenticate { error in
+                    RouterService.shared.navigate(.home)
                 }
             }
         }
