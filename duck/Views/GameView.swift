@@ -14,6 +14,16 @@ struct GameView: View {
         VStack {
             Text("Crie sua história")
             
+            Text(service.text)
+            
+            Button("Falar") {
+                do {
+                    try service.recognize()
+                } catch {
+                    print("Deu ruim, pae")
+                }
+            }
+            
             Button("Cabei") {
                 RouterService.shared.navigate(.done)
             }
