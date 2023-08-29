@@ -21,19 +21,28 @@ class GameService {
     /// Represents the local player instance from GameKit, which will be used for authentication.
     let player = GKLocalPlayer.local
     
-    /// Authenticates the local player with Game Center.
+    /// Authenticates the local player using Game Center.
     ///
-    /// This function checks if the player is authenticated and updates the location and activity status of the
-    /// Game Center's access point. If there's an error during the authentication process, it's printed.
-    func authenticate() {
+    /// This function attempts to authenticate the local player with the Game Center. Upon completion, the provided
+    /// completion handler will be called with an optional error string.
+    ///
+    /// If the authentication is successful, the completion handler is called with `nil`. If there's an error, the
+    /// localized description of the error is passed to the completion handler.
+    ///
+    /// - Parameter completion: The callback to execute once authentication is completed. It takes an optional string
+    ///                         as its parameter, representing a potential error.
+    func authenticate(_ completion: @escaping (_ error: String?) -> Void?) {
         player.authenticateHandler = { vc, error in
+            if (vc != nil) {
+                return;
+            }
+            
             guard error == nil else {
-                print(error?.localizedDescription ?? "")
+                completion(error?.localizedDescription)
                 return
             }
             
-            GKAccessPoint.shared.location = .bottomLeading
-            GKAccessPoint.shared.isActive = self.player.isAuthenticated
+            completion(nil)
         }
     }
     

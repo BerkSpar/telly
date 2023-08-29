@@ -6,14 +6,26 @@
 //
 
 import SwiftUI
+import Speech
 
 struct WordsView: View {
+    func verifyAuthentication(_ completion: @escaping () -> Void) {
+        if (SFSpeechRecognizer.authorizationStatus() != .authorized || AVAudioSession.sharedInstance().recordPermission != .granted) {
+            RouterService.shared.navigate(.authorization(completion: completion))
+            return;
+        }
+        
+        completion()
+    }
+    
     var body: some View {
         VStack {
             Text("Selecione as palavras")
             
             Button("Pronto") {
-                RouterService.shared.navigate(.game)
+                verifyAuthentication {
+                    RouterService.shared.navigate(.game)
+                }
             }
         }
     }
