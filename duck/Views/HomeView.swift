@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     @State private var text = "Home View"
-    @StateObject private var service = SpeechRecognizerService()
+//    @StateObject private var service = SpeechRecognizerService()
 
     var body: some View {
         VStack {

@@ -20,6 +20,7 @@ class SpeechRecognizerService: ObservableObject {
     /// The recognized text from the user's speech.
     @Published var text = ""
     
+    
     private let speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: "en_US"))!
 
     private var speechRecognitionRequest:
@@ -27,33 +28,18 @@ class SpeechRecognizerService: ObservableObject {
     private var speechRecognitionTask: SFSpeechRecognitionTask?
     private let audioEngine = AVAudioEngine()
     
+  
+    
+
     /// Converts specific words in the provided text into related emojis.
     ///
     /// - Parameter text: The input text to be parsed and converted.
     /// - Returns: The modified text where specific words are replaced with emojis.
     func parseText(_ text: String) -> String {
-        let datasource = [
-            "🍎": ["apple", "apples"],
-            "🚶‍♂️": ["walk", "walking", "walked"],
-            "🌲": ["tree", "trees", "forest"],
-            "🐶": ["dog", "dogs", "puppy", "puppies"],
-            "📚": ["book", "books", "read", "reading"],
-            "🚗": ["car", "cars", "drive", "driving"],
-            "🖋": ["pen", "pens", "write", "writing"],
-            "🎵": ["music", "song", "songs", "melody"],
-            "🖥": ["computer", "computers", "desktop", "laptop"],
-            "🏠": ["house", "houses", "home", "homes"],
-            "🏖": ["beach", "beaches", "coast", "shore"],
-            "🎂": ["cake", "cakes", "birthday cake"],
-            "🎉": ["party", "celebration", "festive"],
-            "🌦": ["weather", "rain", "cloudy", "showers"],
-            "🚀": ["rocket", "rockets", "spacecraft", "launch"]
-        ]
 
-        
         var modifiedText = text
         
-        for (emoji, words) in datasource {
+        for (emoji, words) in Datasource.words {
             let sortedWords = words.sorted(by: { $0.count > $1.count })
             for word in sortedWords {
                 modifiedText = modifiedText.replacingOccurrences(of: word, with: emoji, options: .caseInsensitive, range: nil)

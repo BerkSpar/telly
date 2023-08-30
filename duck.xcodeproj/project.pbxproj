@@ -10,6 +10,8 @@
 		8CA51D4F2A9D27DB007061B2 /* WordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA51D4E2A9D27DB007061B2 /* WordsView.swift */; };
 		8CA51D512A9D2A20007061B2 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA51D502A9D2A20007061B2 /* GameView.swift */; };
 		8CA51D532A9D2C17007061B2 /* DoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA51D522A9D2C17007061B2 /* DoneView.swift */; };
+		8CA51D562A9E623E007061B2 /* Datasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA51D552A9E623E007061B2 /* Datasource.swift */; };
+		8CA51D582A9E6927007061B2 /* EmojiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA51D572A9E6927007061B2 /* EmojiManager.swift */; };
 		F715E7B32A99132E00452CF2 /* SFSpeechRecognizer+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F715E7B22A99132E00452CF2 /* SFSpeechRecognizer+Ext.swift */; };
 		F715E7B52A99134500452CF2 /* AVAudioSession+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F715E7B42A99134500452CF2 /* AVAudioSession+Ext.swift */; };
 		F7895E952A97C96800E8B286 /* duckApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7895E942A97C96800E8B286 /* duckApp.swift */; };
@@ -33,6 +35,8 @@
 		8CA51D4E2A9D27DB007061B2 /* WordsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsView.swift; sourceTree = "<group>"; };
 		8CA51D502A9D2A20007061B2 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		8CA51D522A9D2C17007061B2 /* DoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneView.swift; sourceTree = "<group>"; };
+		8CA51D552A9E623E007061B2 /* Datasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Datasource.swift; path = duck/Views/Datasource.swift; sourceTree = SOURCE_ROOT; };
+		8CA51D572A9E6927007061B2 /* EmojiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EmojiManager.swift; path = duck/Views/EmojiManager.swift; sourceTree = SOURCE_ROOT; };
 		F715E7B22A99132E00452CF2 /* SFSpeechRecognizer+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SFSpeechRecognizer+Ext.swift"; sourceTree = "<group>"; };
 		F715E7B42A99134500452CF2 /* AVAudioSession+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVAudioSession+Ext.swift"; sourceTree = "<group>"; };
 		F7895E912A97C96800E8B286 /* duck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = duck.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,6 +69,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8CA51D542A9E6217007061B2 /* Datasource */ = {
+			isa = PBXGroup;
+			children = (
+				8CA51D552A9E623E007061B2 /* Datasource.swift */,
+				8CA51D572A9E6927007061B2 /* EmojiManager.swift */,
+			);
+			name = Datasource;
+			path = Controllers/duck/Controllers/Datasource;
+			sourceTree = "<group>";
+		};
 		F7895E882A97C96800E8B286 = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +105,7 @@
 				F7895EA32A97CAB900E8B286 /* Controllers */,
 				F7895EA22A97CAAD00E8B286 /* Views */,
 				F7895E942A97C96800E8B286 /* duckApp.swift */,
+				8CA51D542A9E6217007061B2 /* Datasource */,
 				F7895E982A97C96900E8B286 /* Assets.xcassets */,
 				F7895E9A2A97C96900E8B286 /* Preview Content */,
 			);
@@ -239,6 +254,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CA51D562A9E623E007061B2 /* Datasource.swift in Sources */,
 				F7895EB52A97CF9400E8B286 /* HomeView.swift in Sources */,
 				F7895EB32A97CED300E8B286 /* View+Ext.swift in Sources */,
 				F715E7B32A99132E00452CF2 /* SFSpeechRecognizer+Ext.swift in Sources */,
@@ -246,6 +262,7 @@
 				8CA51D512A9D2A20007061B2 /* GameView.swift in Sources */,
 				F7895EB12A97CD4200E8B286 /* RouterService.swift in Sources */,
 				F7895EAA2A97CB8300E8B286 /* HapticService.swift in Sources */,
+				8CA51D582A9E6927007061B2 /* EmojiManager.swift in Sources */,
 				F7895EA72A97CAF900E8B286 /* OnboardingView.swift in Sources */,
 				F7C4F9102A9B110500691AC2 /* GameService.swift in Sources */,
 				F7895EB72A97D11E00E8B286 /* StorageService.swift in Sources */,
