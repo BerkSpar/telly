@@ -1,6 +1,6 @@
 //
-//  duckApp.swift
-//  duck
+//  tellyApp.swift
+//  telly
 //
 //  Created by Felipe Passos on 24/08/23.
 //
@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct duckApp: App {
+struct tellyApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()

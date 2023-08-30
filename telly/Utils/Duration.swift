@@ -1,6 +1,6 @@
 //
 //  Duration.swift
-//  duck
+//  telly
 //
 //  Created by Felipe Passos on 29/08/23.
 //

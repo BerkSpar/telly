@@ -1,6 +1,6 @@
 //
 //  GameService.swift
-//  duck
+//  telly
 //
 //  Created by Felipe Passos on 27/08/23.
 //

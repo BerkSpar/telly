@@ -1,6 +1,6 @@
 //
 //  HomeView.swift
-//  duck
+//  telly
 //
 //  Created by Felipe Passos on 24/08/23.
 //

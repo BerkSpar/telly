@@ -1,6 +1,6 @@
 //
 //  OnboardingView.swift
-//  duck
+//  telly
 //
 //  Created by Felipe Passos on 24/08/23.
 //
@@ -17,7 +17,7 @@ struct OnboardingView: View {
         VStack {
             Text("Onboarding View")
             
-            ProgressView(timerInterval: start...end, countsDown: true)
+            Text("Carregando...")
         }
         .onAppear {
             Task {
