@@ -12,7 +12,7 @@
 		8CA51D532A9D2C17007061B2 /* DoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA51D522A9D2C17007061B2 /* DoneView.swift */; };
 		F715E7B32A99132E00452CF2 /* SFSpeechRecognizer+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F715E7B22A99132E00452CF2 /* SFSpeechRecognizer+Ext.swift */; };
 		F715E7B52A99134500452CF2 /* AVAudioSession+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F715E7B42A99134500452CF2 /* AVAudioSession+Ext.swift */; };
-		F7895E952A97C96800E8B286 /* duckApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7895E942A97C96800E8B286 /* duckApp.swift */; };
+		F7895E952A97C96800E8B286 /* tellyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7895E942A97C96800E8B286 /* tellyApp.swift */; };
 		F7895E972A97C96800E8B286 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7895E962A97C96800E8B286 /* ContentView.swift */; };
 		F7895E992A97C96900E8B286 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7895E982A97C96900E8B286 /* Assets.xcassets */; };
 		F7895E9C2A97C96900E8B286 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7895E9B2A97C96900E8B286 /* Preview Assets.xcassets */; };
@@ -36,8 +36,8 @@
 		8CA51D522A9D2C17007061B2 /* DoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneView.swift; sourceTree = "<group>"; };
 		F715E7B22A99132E00452CF2 /* SFSpeechRecognizer+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SFSpeechRecognizer+Ext.swift"; sourceTree = "<group>"; };
 		F715E7B42A99134500452CF2 /* AVAudioSession+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVAudioSession+Ext.swift"; sourceTree = "<group>"; };
-		F7895E912A97C96800E8B286 /* duck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = duck.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F7895E942A97C96800E8B286 /* duckApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = duckApp.swift; sourceTree = "<group>"; };
+		F7895E912A97C96800E8B286 /* telly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = telly.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7895E942A97C96800E8B286 /* tellyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tellyApp.swift; sourceTree = "<group>"; };
 		F7895E962A97C96800E8B286 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F7895E982A97C96900E8B286 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F7895E9B2A97C96900E8B286 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -52,7 +52,7 @@
 		F7895EBD2A97D70100E8B286 /* SpeechRegonizerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRegonizerService.swift; sourceTree = "<group>"; };
 		F795FB0A2A9E6932009C6DEF /* Duration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Duration.swift; sourceTree = "<group>"; };
 		F795FB0C2A9E6EBD009C6DEF /* AuthorizationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationView.swift; sourceTree = "<group>"; };
-		F7C4F90E2A9B07D600691AC2 /* duck.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = duck.entitlements; sourceTree = "<group>"; };
+		F7C4F90E2A9B07D600691AC2 /* telly.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = telly.entitlements; sourceTree = "<group>"; };
 		F7C4F90F2A9B110500691AC2 /* GameService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -70,7 +70,7 @@
 		F7895E882A97C96800E8B286 = {
 			isa = PBXGroup;
 			children = (
-				F7895E932A97C96800E8B286 /* duck */,
+				F7895E932A97C96800E8B286 /* telly */,
 				F7895E922A97C96800E8B286 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -78,25 +78,25 @@
 		F7895E922A97C96800E8B286 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F7895E912A97C96800E8B286 /* duck.app */,
+				F7895E912A97C96800E8B286 /* telly.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F7895E932A97C96800E8B286 /* duck */ = {
+		F7895E932A97C96800E8B286 /* telly */ = {
 			isa = PBXGroup;
 			children = (
-				F7C4F90E2A9B07D600691AC2 /* duck.entitlements */,
 				F7895EA82A97CB4400E8B286 /* Utils */,
 				F7895EA52A97CAD900E8B286 /* Components */,
 				F7895EA42A97CAD000E8B286 /* Services */,
 				F7895EA32A97CAB900E8B286 /* Controllers */,
 				F7895EA22A97CAAD00E8B286 /* Views */,
-				F7895E942A97C96800E8B286 /* duckApp.swift */,
+				F7895E942A97C96800E8B286 /* tellyApp.swift */,
 				F7895E982A97C96900E8B286 /* Assets.xcassets */,
+				F7C4F90E2A9B07D600691AC2 /* telly.entitlements */,
 				F7895E9A2A97C96900E8B286 /* Preview Content */,
 			);
-			path = duck;
+			path = telly;
 			sourceTree = "<group>";
 		};
 		F7895E9A2A97C96900E8B286 /* Preview Content */ = {
@@ -171,9 +171,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F7895E902A97C96800E8B286 /* duck */ = {
+		F7895E902A97C96800E8B286 /* telly */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F7895E9F2A97C96900E8B286 /* Build configuration list for PBXNativeTarget "duck" */;
+			buildConfigurationList = F7895E9F2A97C96900E8B286 /* Build configuration list for PBXNativeTarget "telly" */;
 			buildPhases = (
 				F7895E8D2A97C96800E8B286 /* Sources */,
 				F7895E8E2A97C96800E8B286 /* Frameworks */,
@@ -183,11 +183,11 @@
 			);
 			dependencies = (
 			);
-			name = duck;
+			name = telly;
 			packageProductDependencies = (
 			);
 			productName = duck;
-			productReference = F7895E912A97C96800E8B286 /* duck.app */;
+			productReference = F7895E912A97C96800E8B286 /* telly.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -205,7 +205,7 @@
 					};
 				};
 			};
-			buildConfigurationList = F7895E8C2A97C96800E8B286 /* Build configuration list for PBXProject "duck" */;
+			buildConfigurationList = F7895E8C2A97C96800E8B286 /* Build configuration list for PBXProject "telly" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -220,7 +220,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F7895E902A97C96800E8B286 /* duck */,
+				F7895E902A97C96800E8B286 /* telly */,
 			);
 		};
 /* End PBXProject section */
@@ -258,7 +258,7 @@
 				F7895EBE2A97D70100E8B286 /* SpeechRegonizerService.swift in Sources */,
 				8CA51D532A9D2C17007061B2 /* DoneView.swift in Sources */,
 				F715E7B52A99134500452CF2 /* AVAudioSession+Ext.swift in Sources */,
-				F7895E952A97C96800E8B286 /* duckApp.swift in Sources */,
+				F7895E952A97C96800E8B286 /* tellyApp.swift in Sources */,
 				F7895EAF2A97CBED00E8B286 /* Color+Ext.swift in Sources */,
 				F795FB0B2A9E6932009C6DEF /* Duration.swift in Sources */,
 			);
@@ -317,7 +317,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -371,7 +371,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -386,13 +386,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = duck/duck.entitlements;
+				CODE_SIGN_ENTITLEMENTS = telly/telly.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"duck/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"telly/Preview Content\"";
 				DEVELOPMENT_TEAM = R9V648Y475;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Telly;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "We need access to the microphone to capture audio.";
 				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "We need access to speech recognition to transcribe your voice into text.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -405,8 +408,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.berkspar.duck;
+				PRODUCT_BUNDLE_IDENTIFIER = com.berkspar.telly;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -418,13 +422,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = duck/duck.entitlements;
+				CODE_SIGN_ENTITLEMENTS = telly/telly.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"duck/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"telly/Preview Content\"";
 				DEVELOPMENT_TEAM = R9V648Y475;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Telly;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "We need access to the microphone to capture audio.";
 				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "We need access to speech recognition to transcribe your voice into text.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -437,8 +444,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.berkspar.duck;
+				PRODUCT_BUNDLE_IDENTIFIER = com.berkspar.telly;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -448,7 +456,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F7895E8C2A97C96800E8B286 /* Build configuration list for PBXProject "duck" */ = {
+		F7895E8C2A97C96800E8B286 /* Build configuration list for PBXProject "telly" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F7895E9D2A97C96900E8B286 /* Debug */,
@@ -457,7 +465,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F7895E9F2A97C96900E8B286 /* Build configuration list for PBXNativeTarget "duck" */ = {
+		F7895E9F2A97C96900E8B286 /* Build configuration list for PBXNativeTarget "telly" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F7895EA02A97C96900E8B286 /* Debug */,

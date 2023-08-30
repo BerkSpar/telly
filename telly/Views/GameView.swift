@@ -1,6 +1,6 @@
 //
 //  GameView.swift
-//  duck
+//  telly
 //
 //  Created by Heloisa Pereira Machado on 28/08/23.
 //
