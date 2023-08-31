@@ -30,6 +30,24 @@
 		F7C4F9102A9B110500691AC2 /* GameService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C4F90F2A9B110500691AC2 /* GameService.swift */; };
 		F7CBC9302A9FCCA700073AA3 /* Datasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CBC92F2A9FCCA700073AA3 /* Datasource.swift */; };
 		F7CBC9322A9FCCC300073AA3 /* EmojiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CBC9312A9FCCC300073AA3 /* EmojiManager.swift */; };
+		F7CBC9342A9FCECD00073AA3 /* ElementModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CBC9332A9FCECD00073AA3 /* ElementModel.swift */; };
+		F7CBC93A2AA10D7C00073AA3 /* Font+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CBC9392AA10D7C00073AA3 /* Font+Ext.swift */; };
+		F7CBC94B2AA1116100073AA3 /* K2D-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F7CBC93B2AA1116000073AA3 /* K2D-LightItalic.ttf */; };
+		F7CBC94C2AA1116100073AA3 /* K2D-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F7CBC93C2AA1116000073AA3 /* K2D-ExtraBold.ttf */; };
+		F7CBC94D2AA1116100073AA3 /* K2D-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F7CBC93D2AA1116000073AA3 /* K2D-ThinItalic.ttf */; };
+		F7CBC94E2AA1116100073AA3 /* K2D-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F7CBC93E2AA1116000073AA3 /* K2D-Regular.ttf */; };
+		F7CBC94F2AA1116100073AA3 /* K2D-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F7CBC93F2AA1116000073AA3 /* K2D-SemiBold.ttf */; };
+		F7CBC9502AA1116100073AA3 /* K2D-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F7CBC9402AA1116000073AA3 /* K2D-ExtraBoldItalic.ttf */; };
+		F7CBC9512AA1116100073AA3 /* K2D-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F7CBC9412AA1116000073AA3 /* K2D-Thin.ttf */; };
+		F7CBC9522AA1116100073AA3 /* K2D-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F7CBC9422AA1116000073AA3 /* K2D-Bold.ttf */; };
+		F7CBC9532AA1116100073AA3 /* K2D-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F7CBC9432AA1116100073AA3 /* K2D-BoldItalic.ttf */; };
+		F7CBC9542AA1116100073AA3 /* K2D-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F7CBC9442AA1116100073AA3 /* K2D-Medium.ttf */; };
+		F7CBC9552AA1116100073AA3 /* K2D-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F7CBC9452AA1116100073AA3 /* K2D-ExtraLight.ttf */; };
+		F7CBC9562AA1116100073AA3 /* K2D-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F7CBC9462AA1116100073AA3 /* K2D-Light.ttf */; };
+		F7CBC9572AA1116100073AA3 /* K2D-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F7CBC9472AA1116100073AA3 /* K2D-ExtraLightItalic.ttf */; };
+		F7CBC9582AA1116100073AA3 /* K2D-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F7CBC9482AA1116100073AA3 /* K2D-Italic.ttf */; };
+		F7CBC9592AA1116100073AA3 /* K2D-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F7CBC9492AA1116100073AA3 /* K2D-MediumItalic.ttf */; };
+		F7CBC95A2AA1116100073AA3 /* K2D-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F7CBC94A2AA1116100073AA3 /* K2D-SemiBoldItalic.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +76,25 @@
 		F7C4F90F2A9B110500691AC2 /* GameService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameService.swift; sourceTree = "<group>"; };
 		F7CBC92F2A9FCCA700073AA3 /* Datasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Datasource.swift; sourceTree = "<group>"; };
 		F7CBC9312A9FCCC300073AA3 /* EmojiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiManager.swift; sourceTree = "<group>"; };
+		F7CBC9332A9FCECD00073AA3 /* ElementModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementModel.swift; sourceTree = "<group>"; };
+		F7CBC9372AA10AC300073AA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		F7CBC9392AA10D7C00073AA3 /* Font+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Ext.swift"; sourceTree = "<group>"; };
+		F7CBC93B2AA1116000073AA3 /* K2D-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "K2D-LightItalic.ttf"; sourceTree = "<group>"; };
+		F7CBC93C2AA1116000073AA3 /* K2D-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "K2D-ExtraBold.ttf"; sourceTree = "<group>"; };
+		F7CBC93D2AA1116000073AA3 /* K2D-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "K2D-ThinItalic.ttf"; sourceTree = "<group>"; };
+		F7CBC93E2AA1116000073AA3 /* K2D-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "K2D-Regular.ttf"; sourceTree = "<group>"; };
+		F7CBC93F2AA1116000073AA3 /* K2D-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "K2D-SemiBold.ttf"; sourceTree = "<group>"; };
+		F7CBC9402AA1116000073AA3 /* K2D-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "K2D-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		F7CBC9412AA1116000073AA3 /* K2D-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "K2D-Thin.ttf"; sourceTree = "<group>"; };
+		F7CBC9422AA1116000073AA3 /* K2D-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "K2D-Bold.ttf"; sourceTree = "<group>"; };
+		F7CBC9432AA1116100073AA3 /* K2D-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "K2D-BoldItalic.ttf"; sourceTree = "<group>"; };
+		F7CBC9442AA1116100073AA3 /* K2D-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "K2D-Medium.ttf"; sourceTree = "<group>"; };
+		F7CBC9452AA1116100073AA3 /* K2D-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "K2D-ExtraLight.ttf"; sourceTree = "<group>"; };
+		F7CBC9462AA1116100073AA3 /* K2D-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "K2D-Light.ttf"; sourceTree = "<group>"; };
+		F7CBC9472AA1116100073AA3 /* K2D-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "K2D-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		F7CBC9482AA1116100073AA3 /* K2D-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "K2D-Italic.ttf"; sourceTree = "<group>"; };
+		F7CBC9492AA1116100073AA3 /* K2D-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "K2D-MediumItalic.ttf"; sourceTree = "<group>"; };
+		F7CBC94A2AA1116100073AA3 /* K2D-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "K2D-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +127,8 @@
 		F7895E932A97C96800E8B286 /* telly */ = {
 			isa = PBXGroup;
 			children = (
+				F7CBC9372AA10AC300073AA3 /* Info.plist */,
+				F7CBC9352AA1091D00073AA3 /* Resources */,
 				F7CBC92E2A9FCC8A00073AA3 /* Datasource */,
 				F7895EA82A97CB4400E8B286 /* Utils */,
 				F7895EA52A97CAD900E8B286 /* Components */,
@@ -169,6 +208,7 @@
 				F7895EB22A97CED300E8B286 /* View+Ext.swift */,
 				F715E7B22A99132E00452CF2 /* SFSpeechRecognizer+Ext.swift */,
 				F715E7B42A99134500452CF2 /* AVAudioSession+Ext.swift */,
+				F7CBC9392AA10D7C00073AA3 /* Font+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -178,8 +218,32 @@
 			children = (
 				F7CBC92F2A9FCCA700073AA3 /* Datasource.swift */,
 				F7CBC9312A9FCCC300073AA3 /* EmojiManager.swift */,
+				F7CBC9332A9FCECD00073AA3 /* ElementModel.swift */,
 			);
 			path = Datasource;
+			sourceTree = "<group>";
+		};
+		F7CBC9352AA1091D00073AA3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F7CBC9422AA1116000073AA3 /* K2D-Bold.ttf */,
+				F7CBC9432AA1116100073AA3 /* K2D-BoldItalic.ttf */,
+				F7CBC93C2AA1116000073AA3 /* K2D-ExtraBold.ttf */,
+				F7CBC9402AA1116000073AA3 /* K2D-ExtraBoldItalic.ttf */,
+				F7CBC9452AA1116100073AA3 /* K2D-ExtraLight.ttf */,
+				F7CBC9472AA1116100073AA3 /* K2D-ExtraLightItalic.ttf */,
+				F7CBC9482AA1116100073AA3 /* K2D-Italic.ttf */,
+				F7CBC9462AA1116100073AA3 /* K2D-Light.ttf */,
+				F7CBC93B2AA1116000073AA3 /* K2D-LightItalic.ttf */,
+				F7CBC9442AA1116100073AA3 /* K2D-Medium.ttf */,
+				F7CBC9492AA1116100073AA3 /* K2D-MediumItalic.ttf */,
+				F7CBC93E2AA1116000073AA3 /* K2D-Regular.ttf */,
+				F7CBC93F2AA1116000073AA3 /* K2D-SemiBold.ttf */,
+				F7CBC94A2AA1116100073AA3 /* K2D-SemiBoldItalic.ttf */,
+				F7CBC9412AA1116000073AA3 /* K2D-Thin.ttf */,
+				F7CBC93D2AA1116000073AA3 /* K2D-ThinItalic.ttf */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,8 +308,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7CBC9592AA1116100073AA3 /* K2D-MediumItalic.ttf in Resources */,
+				F7CBC9532AA1116100073AA3 /* K2D-BoldItalic.ttf in Resources */,
+				F7CBC94C2AA1116100073AA3 /* K2D-ExtraBold.ttf in Resources */,
+				F7CBC95A2AA1116100073AA3 /* K2D-SemiBoldItalic.ttf in Resources */,
+				F7CBC9522AA1116100073AA3 /* K2D-Bold.ttf in Resources */,
+				F7CBC9512AA1116100073AA3 /* K2D-Thin.ttf in Resources */,
 				F7895E9C2A97C96900E8B286 /* Preview Assets.xcassets in Resources */,
+				F7CBC9552AA1116100073AA3 /* K2D-ExtraLight.ttf in Resources */,
 				F7895E992A97C96900E8B286 /* Assets.xcassets in Resources */,
+				F7CBC94F2AA1116100073AA3 /* K2D-SemiBold.ttf in Resources */,
+				F7CBC9502AA1116100073AA3 /* K2D-ExtraBoldItalic.ttf in Resources */,
+				F7CBC94B2AA1116100073AA3 /* K2D-LightItalic.ttf in Resources */,
+				F7CBC9542AA1116100073AA3 /* K2D-Medium.ttf in Resources */,
+				F7CBC94D2AA1116100073AA3 /* K2D-ThinItalic.ttf in Resources */,
+				F7CBC9572AA1116100073AA3 /* K2D-ExtraLightItalic.ttf in Resources */,
+				F7CBC94E2AA1116100073AA3 /* K2D-Regular.ttf in Resources */,
+				F7CBC9582AA1116100073AA3 /* K2D-Italic.ttf in Resources */,
+				F7CBC9562AA1116100073AA3 /* K2D-Light.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,6 +345,7 @@
 				F7895EB12A97CD4200E8B286 /* RouterService.swift in Sources */,
 				F7895EAA2A97CB8300E8B286 /* HapticService.swift in Sources */,
 				F7895EA72A97CAF900E8B286 /* OnboardingView.swift in Sources */,
+				F7CBC9342A9FCECD00073AA3 /* ElementModel.swift in Sources */,
 				F7C4F9102A9B110500691AC2 /* GameService.swift in Sources */,
 				F795FB0D2A9E6EBD009C6DEF /* AuthorizationView.swift in Sources */,
 				F7895EB72A97D11E00E8B286 /* StorageService.swift in Sources */,
@@ -276,6 +357,7 @@
 				F715E7B52A99134500452CF2 /* AVAudioSession+Ext.swift in Sources */,
 				F7895E952A97C96800E8B286 /* tellyApp.swift in Sources */,
 				F7895EAF2A97CBED00E8B286 /* Color+Ext.swift in Sources */,
+				F7CBC93A2AA10D7C00073AA3 /* Font+Ext.swift in Sources */,
 				F795FB0B2A9E6932009C6DEF /* Duration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -410,6 +492,7 @@
 				DEVELOPMENT_TEAM = R9V648Y475;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = telly/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Telly;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "We need access to the microphone to capture audio.";
@@ -446,6 +529,7 @@
 				DEVELOPMENT_TEAM = R9V648Y475;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = telly/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Telly;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "We need access to the microphone to capture audio.";

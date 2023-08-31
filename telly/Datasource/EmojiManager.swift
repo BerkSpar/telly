@@ -10,27 +10,38 @@ import SwiftUI
 
 class EmojiManager: ObservableObject {
     
-    func check(text: String, emoji: String) -> String {
-        if text.contains(emoji) {
-            return "✅"
-        } else {
-            return ""
+    func check(text: String, element: ElementModel) -> String {
+        for word in element.words {
+            if text.contains(word) {
+                return "✅"
+            }
         }
-            
+        
+        return ""
     }
     
     // Função para pegar emojis aleatoriamente
-    static func getRandomEmojis(count: Int) -> [String] {
-        var randomEmojis: [String] = []
+    static func getRandomEmojis(count: Int) -> [ElementModel] {
+        var elements: [ElementModel] = []
+        
+        for element in Datasource.elements {
+            if (element.theme.contains("work")) {
+                elements.append(element)
+            }
+        }
+        
+        var randomEmojis: [ElementModel] = []
         
         for _ in 0..<count {
-            if let randomEmoji = emojis.randomElement() {
-                randomEmojis.append(randomEmoji)
-            }
+//            if  {
+//                randomEmojis.append(randomEmoji)
+//            }
+            
+            let randomEmoji = elements.remove(at: Int.random(in: 0..<elements.count))
+            
+            randomEmojis.append(randomEmoji)
         }
         
         return randomEmojis
     }
-    
-    static let emojis = Array(Datasource.words.keys) // Lista de emojis disponíveis
 }

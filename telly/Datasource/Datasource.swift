@@ -8,21 +8,93 @@
 import Foundation
 
 class Datasource {
-    static let words = [
-        "🍎": ["apple", "apples"],
-        "🚶‍♂️": ["walk", "walking", "walked"],
-        "🌲": ["tree", "trees", "forest"],
-        "🐶": ["dog", "dogs", "puppy", "puppies"],
-        "📚": ["book", "books", "read", "reading"],
-        "🚗": ["car", "cars", "drive", "driving"],
-        "🖋": ["pen", "pens", "write", "writing"],
-        "🎵": ["music", "song", "songs", "melody"],
-        "🖥": ["computer", "computers", "desktop", "laptop"],
-        "🏠": ["house", "houses", "home", "homes"],
-        "🏖": ["beach", "beaches", "coast", "shore"],
-        "🎂": ["cake", "cakes", "birthday cake"],
-        "🎉": ["party", "celebration", "festive"],
-        "🌦": ["weather", "rain", "cloudy", "showers"],
-        "🚀": ["rocket", "rockets", "spacecraft", "launch"]
+    static let allThemes = ["sports", "traveling", "workspace"]
+
+    static let elements: [ElementModel] = [
+        ElementModel(
+            icon: "🍎",
+            words: ["apple", "apples"],
+            type: .nouns,
+            theme: allThemes
+        ),
+        ElementModel(
+            icon: "🚶‍♂️",
+            words: ["walk", "walking", "walked"],
+            type: .verbs,
+            theme: allThemes
+        ),
+        ElementModel(
+            icon: "👥",
+            words: ["friend", "friends"],
+            type: .people,
+            theme: ["work"]
+        ),
+        ElementModel(
+            icon: "👔",
+            words: ["boss"],
+            type: .people,
+            theme: ["work"]
+        ),
+        ElementModel(
+            icon: "📋",
+            words: ["manager", "managers"],
+            type: .people,
+            theme: ["work"]
+        ),
+        ElementModel(
+            icon: "👩‍💼",
+            words: ["coworker", "coworkers"],
+            type: .people,
+            theme: ["work"]
+        ),
+        ElementModel(
+            icon: "💬",
+            words: ["talk", "talking", "talked"],
+            type: .verbs,
+            theme: ["work"]
+        ),
+        ElementModel(
+            icon: "🗣",
+            words: ["speak", "speaking", "spoke"],
+            type: .verbs,
+            theme: ["work"]
+        ),
+        ElementModel(
+            icon: "🤲",
+            words: ["put", "putting"],
+            type: .verbs,
+            theme: ["work"]
+        ),
+        ElementModel(
+            icon: "➕",
+            words: ["add", "adding", "added"],
+            type: .verbs,
+            theme: ["work"]
+        ),
+        ElementModel(
+            icon: "📈",
+            words: ["promotion", "promotions"],
+            type: .nouns,
+            theme: ["work"]
+        ),
+        ElementModel(
+            icon: "🏢",
+            words: ["office", "offices"],
+            type: .nouns,
+            theme: ["work"]
+        ),
+        ElementModel(
+            icon: "☕️",
+            words: ["coffee", "coffees"],
+            type: .nouns,
+            theme: ["work"]
+        ),
+        ElementModel(
+            icon: "📎",
+            words: ["stapler", "staplers"],
+            type: .nouns,
+            theme: ["work"]
+        ),
     ]
+
 }

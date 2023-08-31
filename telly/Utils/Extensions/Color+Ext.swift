@@ -8,11 +8,10 @@
 import SwiftUI
 
 extension Color {
-    static let myYellow = Color("yellow")
-    static let myRed = Color("red")
-    static let myBlue = Color("blue")
     static let myPurple = Color("purple")
     static let myGreen = Color("green")
+    static let myDarkBlue = Color("dark_blue")
+    static let myReddish = Color("reddish")
     
     init(hex: Int, opacity: Double = 1.0) {
         let red = Double((hex & 0xff0000) >> 16) / 255.0

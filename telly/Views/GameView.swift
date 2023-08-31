@@ -10,11 +10,14 @@ import SwiftUI
 struct GameView: View {
     @StateObject private var emojiManager = EmojiManager()
     @StateObject private var service = SpeechRecognizerService()
-    @State private var currentIcons: [String] = []
-    @State private var selectedIconCount: Int = 3
+    
+    @State private var currentElements: [ElementModel] = []
+    
+    @State private var selectedIconCount: Int = 10
+    @State private var theme: String = "work"
     
     func updateIcons() {
-        currentIcons = EmojiManager.getRandomEmojis(count: selectedIconCount)
+        currentElements = EmojiManager.getRandomEmojis(count: selectedIconCount)
     }
     
     var body: some View {
@@ -23,8 +26,8 @@ struct GameView: View {
             
             Text(service.text)
             
-            ForEach(currentIcons, id: \.self) { icon in
-                Text("\(icon)\(emojiManager.check(text: service.text, emoji: icon))")
+            ForEach(currentElements, id: \.icon) { element in
+                Text("\(element.icon)\(emojiManager.check(text: service.text, element: element))")
                     .font(.largeTitle)
             }
             

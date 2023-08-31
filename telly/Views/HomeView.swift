@@ -13,7 +13,11 @@ struct HomeView: View {
     var body: some View {
         VStack {
             
-            Button("Say Hi") {
+            Text("gGBs")
+                .font(.myTitle)
+                
+            
+            Button("Say His") {
                 let alert = Alert(title: Text("Hi!"))
                 
                 RouterService.shared.showAlert(alert)

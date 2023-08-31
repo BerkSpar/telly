@@ -32,17 +32,17 @@ class SpeechRecognizerService: ObservableObject {
     /// - Parameter text: The input text to be parsed and converted.
     /// - Returns: The modified text where specific words are replaced with emojis.
     func parseText(_ text: String) -> String {
-
-        var modifiedText = text
-        
-        for (emoji, words) in Datasource.words {
-            let sortedWords = words.sorted(by: { $0.count > $1.count })
-            for word in sortedWords {
-                modifiedText = modifiedText.replacingOccurrences(of: word, with: emoji, options: .caseInsensitive, range: nil)
-            }
-        }
-        
-        return modifiedText
+        return text
+//        var modifiedText = text
+//
+//        for (emoji, words) in Datasource.words {
+//            let sortedWords = words.sorted(by: { $0.count > $1.count })
+//            for word in sortedWords {
+//                modifiedText = modifiedText.replacingOccurrences(of: word, with: emoji, options: .caseInsensitive, range: nil)
+//            }
+//        }
+//
+//        return modifiedText
     }
 
     /// Starts the speech recognition process.
