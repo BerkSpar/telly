@@ -9,31 +9,26 @@ import SwiftUI
 
 struct HomeView: View {
     @State private var text = "Home View"
-
+    @State var storyViewIsSelected = true
+    @State var storybookViewIsSelected = false
+    
     var body: some View {
-        VStack {
+        VStack(spacing: 0) {
+            Header()
             
-            Text("gGBs")
-                .font(.myTitle)
-                
+            Tab(storyIsSelected: $storyViewIsSelected, storybookIsSelected: $storybookViewIsSelected)
             
-            Button("Say His") {
-                let alert = Alert(title: Text("Hi!"))
-                
-                RouterService.shared.showAlert(alert)
-            }
-            
-            Button("Ganha Conquista") {
-                GameService.shared.rewardAchievement("first_login")
-            }
-            
-            Button("Apaga Conquistas") {
-                GameService.shared.resetAchievements()
-            }
-            Button("Seleção palavras") {
-                RouterService.shared.navigate(.words)
+            if storyViewIsSelected {
+                StoryView()
+            } else if storybookViewIsSelected {
+                StorybookView()
             }
         }
+        
+        .background(Color.myDarkBlue)
+        .padding(.top, 32)
+        .ignoresSafeArea()
+        
     }
 }
 

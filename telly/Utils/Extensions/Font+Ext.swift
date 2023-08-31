@@ -8,5 +8,7 @@
 import SwiftUI
 
 extension Font {
-    static let myTitle = Font.custom("K2D-Bold", size: 20)
+    static let myTitle = Font.custom("K2D-bold", size: 24)
+    static let myBody = Font.custom("K2D-regular", size: 18)
+    static let myBodyBold = Font.custom("K2D-bold", size: 18)
 }
