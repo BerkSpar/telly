@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct StoryCard: View {
+struct ImageCard: View {
     var title: String
     var image: String
     var color: Color
@@ -17,7 +17,7 @@ struct StoryCard: View {
             Image(image)
                 .frame(maxWidth: .infinity)
                 .padding(16)
-                .background(.white)
+                .background(Color.myBackground)
                 .cornerRadius(8)
                 
             
@@ -25,7 +25,7 @@ struct StoryCard: View {
                 .font(.system(size: 20))
                 .fontWidth(.condensed)
                 .bold()
-                .foregroundColor(.white)
+                .foregroundColor(Color.myBackground)
         }
         .padding(16)
         .background(color)
@@ -33,9 +33,9 @@ struct StoryCard: View {
     }
 }
 
-struct StoryCard_Previews: PreviewProvider {
+struct ImageCard_Previews: PreviewProvider {
     static var previews: some View {
-        StoryCard(
+        ImageCard(
             title: "WORKSPACE",
             image: "category_workspace",
             color: Color.myDarkBlue

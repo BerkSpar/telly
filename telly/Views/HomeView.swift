@@ -23,6 +23,9 @@ struct HomeView: View {
                 RouterService.shared.showAlert(alert)
             }
             
+
+
+            
             Button("Ganha Conquista") {
                 GameService.shared.rewardAchievement("first_login")
             }
