@@ -9,15 +9,6 @@ import SwiftUI
 
 @main
 struct tellyApp: App {
-    init() {
-            for family in UIFont.familyNames {
-                print("\(family)")
-                for font in UIFont.fontNames(forFamilyName: family) {
-                    print(" \(font)")
-                }
-            }
-        }
-    
     var body: some Scene {
         WindowGroup {
             ContentView()
