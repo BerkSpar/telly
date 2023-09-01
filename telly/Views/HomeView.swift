@@ -15,7 +15,7 @@ struct HomeView: View {
     var body: some View {
         VStack(spacing: 0) {
             Header()
-            
+          
             Tab(storyIsSelected: $storyViewIsSelected, storybookIsSelected: $storybookViewIsSelected)
             
             if storyViewIsSelected {
@@ -24,7 +24,6 @@ struct HomeView: View {
                 StorybookView()
             }
         }
-        
         .background(Color.myDarkBlue)
         .padding(.top, 32)
         .ignoresSafeArea()
