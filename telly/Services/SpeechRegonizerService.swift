@@ -35,7 +35,7 @@ class SpeechRecognizerService {
         }
 
         let audioSession = AVAudioSession.sharedInstance()
-        try audioSession.setCategory(.record, mode: .voicePrompt)
+//        try audioSession.setCategory(.soloAmbient, mode: .voicePrompt)
 
         speechRecognitionRequest = SFSpeechAudioBufferRecognitionRequest()
 

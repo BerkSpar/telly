@@ -8,7 +8,7 @@
 import Foundation
 
 class Datasource {
-    static let allThemes = ["sports", "traveling", "workspace"]
+    static let allThemes = ["shopping", "traveling", "work"]
 
     static let elements: [ElementModel] = [
         ElementModel(

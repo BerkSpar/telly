@@ -113,6 +113,8 @@ struct GameView: View {
                     ) {
                         controller.stop()
                         RouterService.shared.navigate(.done)
+                        
+                        HapticsService.shared.notify(.success)
                     }
                     .frame(maxWidth: .infinity)
                 }
