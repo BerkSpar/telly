@@ -11,7 +11,7 @@ enum Screen {
     case onboarding
     case home
     case words
-    case game
+    case game(theme: String, nouns: Int, verbs: Int, characters: Int)
     case done
     case authorization(completion: () -> Void)
 }
@@ -25,10 +25,21 @@ struct ContentView: View {
             case .onboarding: OnboardingView()
             case .home: HomeView()
             case .words: WordsView()
-            case .game: GameView()
             case .done: DoneView()
             case .authorization(completion: let completion):
                 AuthorizationView(completion: completion)
+            case .game(
+                theme: let theme,
+                nouns: let nouns,
+                verbs: let verbs,
+                characters: let characters
+            ):
+                GameView(
+                    theme: theme,
+                    nounsCount: nouns,
+                    verbsCount: verbs,
+                    charactersCount: characters
+                )
             }
         }
         .alert(isPresented: $router.isAlertPresented) {

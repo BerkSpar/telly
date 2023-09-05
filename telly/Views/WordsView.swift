@@ -24,7 +24,12 @@ struct WordsView: View {
             
             Button("Pronto") {
                 verifyAuthentication {
-                    RouterService.shared.navigate(.game)
+                    RouterService.shared.navigate(.game(
+                        theme: "work",
+                        nouns: 2,
+                        verbs: 2,
+                        characters: 1
+                    ))
                 }
             }
         }
