@@ -63,7 +63,7 @@ struct Tab: View {
     
     func hasBackground(view: Bool) -> Color {
         if !view {
-            return .white
+            return .myBackground
         } else {
             return .clear
         }
