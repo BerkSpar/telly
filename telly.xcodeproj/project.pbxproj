@@ -14,6 +14,8 @@
 		8CA51D5E2AA12FEE007061B2 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA51D5D2AA12FEE007061B2 /* Tab.swift */; };
 		8CA51D602AA13EC6007061B2 /* StoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA51D5F2AA13EC6007061B2 /* StoryView.swift */; };
 		8CA51D632AA13EE9007061B2 /* StorybookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA51D622AA13EE9007061B2 /* StorybookView.swift */; };
+		8CA51D652AA257B2007061B2 /* TabLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA51D642AA257B2007061B2 /* TabLabel.swift */; };
+		8CA51D672AA6C760007061B2 /* Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA51D662AA6C760007061B2 /* Authorization.swift */; };
 		F715E7B32A99132E00452CF2 /* SFSpeechRecognizer+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F715E7B22A99132E00452CF2 /* SFSpeechRecognizer+Ext.swift */; };
 		F715E7B52A99134500452CF2 /* AVAudioSession+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F715E7B42A99134500452CF2 /* AVAudioSession+Ext.swift */; };
 		F75343D72AA173F10006E2F6 /* ElevatedTextCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75343D62AA173F10006E2F6 /* ElevatedTextCard.swift */; };
@@ -56,7 +58,7 @@
 		F7CBC9582AA1116100073AA3 /* K2D-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F7CBC9482AA1116100073AA3 /* K2D-Italic.ttf */; };
 		F7CBC9592AA1116100073AA3 /* K2D-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F7CBC9492AA1116100073AA3 /* K2D-MediumItalic.ttf */; };
 		F7CBC95A2AA1116100073AA3 /* K2D-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F7CBC94A2AA1116100073AA3 /* K2D-SemiBoldItalic.ttf */; };
-		F7CBC95C2AA11BB700073AA3 /* StoryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CBC95B2AA11BB700073AA3 /* StoryCard.swift */; };
+		F7CBC95C2AA11BB700073AA3 /* ImageCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CBC95B2AA11BB700073AA3 /* ImageCard.swift */; };
 		F7CBC95E2AA1283700073AA3 /* ElevatedCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CBC95D2AA1283700073AA3 /* ElevatedCard.swift */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +70,8 @@
 		8CA51D5D2AA12FEE007061B2 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		8CA51D5F2AA13EC6007061B2 /* StoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryView.swift; sourceTree = "<group>"; };
 		8CA51D622AA13EE9007061B2 /* StorybookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorybookView.swift; sourceTree = "<group>"; };
+		8CA51D642AA257B2007061B2 /* TabLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabLabel.swift; sourceTree = "<group>"; };
+		8CA51D662AA6C760007061B2 /* Authorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authorization.swift; sourceTree = "<group>"; };
 		F715E7B22A99132E00452CF2 /* SFSpeechRecognizer+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SFSpeechRecognizer+Ext.swift"; sourceTree = "<group>"; };
 		F715E7B42A99134500452CF2 /* AVAudioSession+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVAudioSession+Ext.swift"; sourceTree = "<group>"; };
 		F75343D62AA173F10006E2F6 /* ElevatedTextCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ElevatedTextCard.swift; path = telly/Views/ElevatedTextCard.swift; sourceTree = SOURCE_ROOT; };
@@ -113,7 +117,7 @@
 		F7CBC9482AA1116100073AA3 /* K2D-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "K2D-Italic.ttf"; sourceTree = "<group>"; };
 		F7CBC9492AA1116100073AA3 /* K2D-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "K2D-MediumItalic.ttf"; sourceTree = "<group>"; };
 		F7CBC94A2AA1116100073AA3 /* K2D-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "K2D-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
-		F7CBC95B2AA11BB700073AA3 /* StoryCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StoryCard.swift; path = telly/Utils/Extensions/StoryCard.swift; sourceTree = SOURCE_ROOT; };
+		F7CBC95B2AA11BB700073AA3 /* ImageCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageCard.swift; path = telly/Utils/Extensions/ImageCard.swift; sourceTree = SOURCE_ROOT; };
 		F7CBC95D2AA1283700073AA3 /* ElevatedCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ElevatedCard.swift; path = telly/Utils/Extensions/ElevatedCard.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -177,6 +181,8 @@
 				F7895E962A97C96800E8B286 /* ContentView.swift */,
 				F7895EA62A97CAF900E8B286 /* OnboardingView.swift */,
 				F7895EB42A97CF9400E8B286 /* HomeView.swift */,
+				8CA51D5F2AA13EC6007061B2 /* StoryView.swift */,
+				8CA51D622AA13EE9007061B2 /* StorybookView.swift */,
 				8CA51D502A9D2A20007061B2 /* GameView.swift */,
 				8CA51D522A9D2C17007061B2 /* DoneView.swift */,
 				8CA51D4E2A9D27DB007061B2 /* WordsView.swift */,
@@ -209,14 +215,14 @@
 			children = (
 				8CA51D5B2AA12F35007061B2 /* Header.swift */,
 				8CA51D5D2AA12FEE007061B2 /* Tab.swift */,
-				8CA51D5F2AA13EC6007061B2 /* StoryView.swift */,
-				8CA51D622AA13EE9007061B2 /* StorybookView.swift */,
-				F7CBC95B2AA11BB700073AA3 /* StoryCard.swift */,
+				8CA51D642AA257B2007061B2 /* TabLabel.swift */,
+				F7CBC95B2AA11BB700073AA3 /* ImageCard.swift */,
 				F7CBC95D2AA1283700073AA3 /* ElevatedCard.swift */,
 				F75343D62AA173F10006E2F6 /* ElevatedTextCard.swift */,
 				F75343D82AA178280006E2F6 /* RangeTile.swift */,
 				F75343DA2AA17C8A0006E2F6 /* IconCard.swift */,
 				F75343DC2AA182F90006E2F6 /* ElevatedButton.swift */,
+				8CA51D662AA6C760007061B2 /* Authorization.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -385,11 +391,13 @@
 				F795FB0D2A9E6EBD009C6DEF /* AuthorizationView.swift in Sources */,
 				F7895EB72A97D11E00E8B286 /* StorageService.swift in Sources */,
 				F7CBC95E2AA1283700073AA3 /* ElevatedCard.swift in Sources */,
-				F7CBC95C2AA11BB700073AA3 /* StoryCard.swift in Sources */,
+				8CA51D672AA6C760007061B2 /* Authorization.swift in Sources */,
+				F7CBC95C2AA11BB700073AA3 /* ImageCard.swift in Sources */,
 				F7895EAD2A97CBCD00E8B286 /* Array+Ext.swift in Sources */,
 				F75343DD2AA182F90006E2F6 /* ElevatedButton.swift in Sources */,
 				F7895E972A97C96800E8B286 /* ContentView.swift in Sources */,
 				F7895EBE2A97D70100E8B286 /* SpeechRegonizerService.swift in Sources */,
+				8CA51D652AA257B2007061B2 /* TabLabel.swift in Sources */,
 				8CA51D5C2AA12F35007061B2 /* Header.swift in Sources */,
 				8CA51D532A9D2C17007061B2 /* DoneView.swift in Sources */,
 				F7CBC9322A9FCCC300073AA3 /* EmojiManager.swift in Sources */,

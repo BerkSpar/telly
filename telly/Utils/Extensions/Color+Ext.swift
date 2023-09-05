@@ -14,6 +14,7 @@ extension Color {
     static let myReddish = Color("reddish")
     static let myBackground = Color("background")
     static let myGrey = Color("grey")
+    static let myDarkGrey = Color("darkGrey")
     
     init(hex: Int, opacity: Double = 1.0) {
         let red = Double((hex & 0xff0000) >> 16) / 255.0

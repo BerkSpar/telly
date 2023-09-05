@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct ElevatedButton: View {
-    var backgroundColor: Color = .myDarkBlue
-    var textColor: Color = .myGreen
+    var backgroundColor: Color
+    var textColor: Color
     
     let text: String
     let action: () -> Void
@@ -33,7 +33,12 @@ struct ElevatedButton: View {
 
 struct ElevatedButton_Previews: PreviewProvider {
     static var previews: some View {
-        ElevatedButton(text: "START!") {
+        ElevatedButton(
+            backgroundColor: .myDarkBlue,
+            textColor: .myGreen,
+            text: "START!"
+        
+        ) {
             print("Ihu")
         }
     }
