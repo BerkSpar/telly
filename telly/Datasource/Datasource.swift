@@ -26,25 +26,25 @@ class Datasource {
         ElementModel(
             icon: "👥",
             words: ["friend", "friends"],
-            type: .people,
+            type: .characters,
             theme: ["work"]
         ),
         ElementModel(
             icon: "👔",
             words: ["boss"],
-            type: .people,
+            type: .characters,
             theme: ["work"]
         ),
         ElementModel(
             icon: "📋",
             words: ["manager", "managers"],
-            type: .people,
+            type: .characters,
             theme: ["work"]
         ),
         ElementModel(
             icon: "👩‍💼",
             words: ["coworker", "coworkers"],
-            type: .people,
+            type: .characters,
             theme: ["work"]
         ),
         ElementModel(

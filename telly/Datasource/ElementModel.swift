@@ -10,10 +10,12 @@ import Foundation
 enum ElementType {
     case nouns
     case verbs
-    case people
+    case characters
 }
 
-struct ElementModel {
+struct ElementModel: Identifiable {
+    var id = UUID()
+    
     var icon: String
     var words: [String]
     var type: ElementType

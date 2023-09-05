@@ -40,12 +40,12 @@ struct IconCard: View {
                     
                     Spacer()
                     
-                    Image(systemName: "speaker.wave.3.fill")
-                        .foregroundColor(getColor())
+//                    Image(systemName: "speaker.wave.3.fill")
+//                        .foregroundColor(getColor())
                 }
                 
                 if (icon != nil) {
-                    Text("✈️")
+                    Text(icon!)
                         .font(.system(size: 40))
                 }
             }

@@ -15,42 +15,20 @@ import SwiftUI
 ///
 /// This class leverages Apple's `Speech` framework to recognize speech and convert it to text.
 /// Additionally, it uses a predefined dictionary to replace recognized words with related emojis.
-class SpeechRecognizerService: ObservableObject {
-    
-    /// The recognized text from the user's speech.
-    @Published var text = ""
-    
+class SpeechRecognizerService {
     private let speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: "en_US"))!
 
     private var speechRecognitionRequest:
         SFSpeechAudioBufferRecognitionRequest?
     private var speechRecognitionTask: SFSpeechRecognitionTask?
     private let audioEngine = AVAudioEngine()
-    
-    /// Converts specific words in the provided text into related emojis.
-    ///
-    /// - Parameter text: The input text to be parsed and converted.
-    /// - Returns: The modified text where specific words are replaced with emojis.
-    func parseText(_ text: String) -> String {
-        return text
-//        var modifiedText = text
-//
-//        for (emoji, words) in Datasource.words {
-//            let sortedWords = words.sorted(by: { $0.count > $1.count })
-//            for word in sortedWords {
-//                modifiedText = modifiedText.replacingOccurrences(of: word, with: emoji, options: .caseInsensitive, range: nil)
-//            }
-//        }
-//
-//        return modifiedText
-    }
 
     /// Starts the speech recognition process.
     ///
     /// This method initializes and starts the speech recognition process, listens for the user's speech,
     /// and converts it to text. It also updates the recognized text with the emoji conversion.
     /// Throws an error if there are issues starting the `audioEngine`.
-    func recognize() throws {
+    func recognize(callback: @escaping (_ text: String) -> Void) throws {
         if let recognitionTask = speechRecognitionTask {
             recognitionTask.cancel()
             self.speechRecognitionTask = nil
@@ -75,8 +53,7 @@ class SpeechRecognizerService: ObservableObject {
             var finished = false
 
             if let result = result {
-                 self.text = result.bestTranscription.formattedString
-                self.text = self.parseText(self.text)
+                callback(result.bestTranscription.formattedString)
                 finished = result.isFinal
             }
 
