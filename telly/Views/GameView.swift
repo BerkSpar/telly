@@ -17,9 +17,22 @@ struct GameView: View {
     
     var body: some View {
         VStack {
-            Text("Theme: \(controller.theme)")
-                .bold()
-                .font(.system(size: 22))
+            if (controller.isSpeaking) {
+                Text("Theme: \(controller.theme)")
+                    .bold()
+                    .font(.system(size: 22))
+            } else {
+                Text("Time to listen to the pronunciation!")
+                    .font(.system(size: 22))
+                    .bold()
+                    .multilineTextAlignment(.center)
+                    .frame(maxWidth: .infinity)
+                
+                Text("Listen to them carefully so you can tell your story more smoothly! You won't be able to listen to them again once you start the game")
+                    .font(.system(size: 14))
+                    .multilineTextAlignment(.center)
+                    .frame(maxWidth: .infinity)
+            }
             
             Text("Nouns")
                 .font(.myHeader)
@@ -82,9 +95,7 @@ struct GameView: View {
                 ) {
                     controller.play()
                 }
-            }
-            
-            if (controller.isSpeaking) {
+            } else {
                 HStack {
                     ElevatedButton(
                         backgroundColor: .myReddish,
