@@ -21,9 +21,9 @@ struct ElevatedButton: View {
                 backgroundColor: backgroundColor
             ) {
                 Text(text)
-                    .font(.system(size: 20))
+                    .font(.system(size: 24))
                     .fontWidth(.expanded)
-                    .bold()
+                    .fontWeight(.heavy)
                     .foregroundColor(textColor)
                     .padding(16)
             }

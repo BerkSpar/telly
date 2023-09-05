@@ -12,7 +12,7 @@ struct Header: View {
         HStack(spacing: 16) {
             ZStack {
                 Circle()
-                    .stroke(.white, lineWidth: 5)
+                    .stroke(Color.myBackground, lineWidth: 5)
                     .background(
                         Circle().fill(Color.myGreen)
                     )
@@ -26,7 +26,7 @@ struct Header: View {
             Text("Welcome, Storyteller!")
                 .frame(width: 140)
                 .font(.myTitle)
-                .foregroundColor(.white)
+                .foregroundColor(.myBackground)
             
             Spacer()
         }
