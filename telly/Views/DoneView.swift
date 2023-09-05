@@ -9,13 +9,26 @@ import SwiftUI
 
 struct DoneView: View {
     var body: some View {
-        VStack {
-            Text("Boa, tá falando inglês já")
-            
-            Button("Fazer outra história") {
-                RouterService.shared.navigate(.home)
+        ZStack {
+            Rectangle()
+                .foregroundColor(.myDarkBlue)
+            VStack {
+                Text("Well done!")
+                    .font(.myLargeTitle)
+                    .foregroundColor(.myBackground)
+                
+                Text("You made an awesome story!")
+                    .bold()
+                    .foregroundColor(.myBackground)
+                
+                ElevatedButton(backgroundColor: .myGreen, textColor: .myDarkBlue, text: "Go back to the Main Page", action: {
+                    RouterService.shared.navigate(.home)
+                    
+                })
             }
+            
         }
+        .ignoresSafeArea()
     }
 }
 

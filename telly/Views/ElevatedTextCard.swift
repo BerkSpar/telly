@@ -30,6 +30,6 @@ struct ElevatedTextCard: View {
 
 struct ElevatedTextCard_Previews: PreviewProvider {
     static var previews: some View {
-        ElevatedTextCard(text: "1", selected: false)
+        ElevatedTextCard(text: "1", selected: true)
     }
 }

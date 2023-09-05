@@ -16,11 +16,12 @@ struct Header: View {
                     .background(
                         Circle().fill(Color.myGreen)
                     )
-                    .frame(width: 94)
+                    .frame(width: 82)
                     .foregroundColor(.myGreen)
                 
                 Image("tellyIcon")
                     .foregroundColor(.myDarkBlue)
+                    
             }
             Text("Welcome, Storyteller!")
                 .frame(width: 140)
@@ -29,7 +30,9 @@ struct Header: View {
             
             Spacer()
         }
-        .padding(32)
+        .padding(.horizontal, 32)
+        .padding(.top, 40)
+        .padding(.bottom, 24)
     }
 }
 

@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import Speech
+import AVFAudio
 
 struct StoryView: View {
     @State var workSelection = false
@@ -25,9 +27,51 @@ struct StoryView: View {
     @State var people2Selection = false
     
     @State private var currentElements: [ElementModel] = []
+
+    func getThemeName() -> String {
+        if (workSelection) { return "work" }
+        if (travellingSelection) { return "traveling" }
+        if (shoppingSelection) { return "shopping" }
+        
+        return "work"
+    }
+    
+    func getNounsCount() -> Int {
+        if (noun2Selection) { return 2 }
+        if (noun3Selection) { return 3 }
+        if (noun4Selection) { return 4 }
+        
+        return 2
+    }
+    
+    func getVerbsCount() -> Int {
+        if (verb0Selection) { return 0 }
+        if (verb1Selection) { return 1 }
+        if (verb2Selection) { return 2 }
+        
+        return 0
+    }
+    
+    func getPeopleCount() -> Int {
+        if (people0Selection) { return 0 }
+        if (people1Selection) { return 1 }
+        if (people2Selection) { return 2 }
+        
+        return 0
+    }
+    
+    func verifyAuthentication(_ completion: @escaping () -> Void) {
+        if (SFSpeechRecognizer.authorizationStatus() != .authorized || AVAudioSession.sharedInstance().recordPermission != .granted) {
+            RouterService.shared.navigate(.authorization(completion: completion))
+            return;
+        }
+        
+        completion()
+    }
     
     var body: some View {
-        VStack(spacing: 32) {
+        VStack(spacing: 24) {
+
             VStack {
                 HStack {
                     Text("Choose the story theme")
@@ -191,13 +235,28 @@ struct StoryView: View {
                     }
                 } .padding(.horizontal, 32)
             }
-            ElevatedButton(backgroundColor: .myDarkBlue, textColor: .myGreen, text: "START", action: { RouterService.shared.navigate(.game)})
+
+            ElevatedButton(
+                backgroundColor: .myDarkBlue,
+                textColor: .myGreen,
+                text: "START",
+                action: {
+                    verifyAuthentication {
+                        RouterService.shared.navigate(.game(
+                            theme: getThemeName(),
+                            nouns: getNounsCount(),
+                            verbs: getVerbsCount(),
+                            characters: getPeopleCount()
+                        ))
+                    }
+                }
+            )
             
             Spacer()
         }
         .padding(.top, 16)
         .background(Color.myBackground)
-        
+
     }
 }
 
