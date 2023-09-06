@@ -25,6 +25,7 @@ struct DoneView: View {
                 }
                 
                 ElevatedButton(backgroundColor: .myDarkBlue, textColor: .myGreen, text: "RETURN TO\nMAIN PAGE", action: {
+                    HapticsService.shared.play(.heavy)
                     RouterService.shared.navigate(.home)
                     
                 })

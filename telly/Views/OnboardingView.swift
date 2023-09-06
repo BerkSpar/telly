@@ -10,16 +10,37 @@ import AVFoundation
 import Speech
 
 struct OnboardingView: View {
-    let start = Date()
-    let end = Date().addingTimeInterval(1)
-    
+    @State private var bounce = false
+
     var body: some View {
         VStack {
-            Text("Onboarding View")
+            Spacer()
             
-            Text("Carregando...")
+            HStack {
+                Spacer()
+                
+                Image("telly")
+                    .resizable()
+                    .scaledToFit()
+                    .foregroundColor(.myDarkBlue)
+                    .frame(height: 300)
+                    .scaleEffect(bounce ? 1.1 : 1.0)
+                    .animation(
+                        Animation.easeInOut(duration: 0.35)
+                            .repeatCount(3, autoreverses: true),
+                        value: bounce
+                    )
+                    
+                Spacer()
+            }
+            
+            Spacer()
+                
         }
+        .background(Color.myBackground)
         .onAppear {
+            bounce.toggle()  // Start the bounce animation
+            
             Task {
                 try await Task.sleep(nanoseconds: Duration(seconds: 1).inNanoseconds())
                 
@@ -36,3 +57,4 @@ struct OnboardingView_Previews: PreviewProvider {
         OnboardingView()
     }
 }
+

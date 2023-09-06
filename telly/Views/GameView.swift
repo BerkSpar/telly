@@ -34,54 +34,60 @@ struct GameView: View {
                     .frame(maxWidth: .infinity)
             }
             
-            Text("Nouns")
-                .font(.myHeader)
-                .foregroundColor(.myDarkBlue)
-                .frame(maxWidth: .infinity, alignment: .leading)
-            
-            LazyVGrid(columns: [GridItem(), GridItem()]) {
-                ForEach(controller.nouns) { element in
-                    let isChecked = controller.check(element: element)
-                    
-                    IconCard(
-                        text: element.words[0],
-                        icon: element.icon,
-                        type: isChecked ? .disabled : .none
-                    )
+            if (!controller.verbs.isEmpty) {
+                Text("NOUNS")
+                    .font(.myHeader)
+                    .foregroundColor(.myDarkBlue)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                
+                LazyVGrid(columns: [GridItem(), GridItem()]) {
+                    ForEach(controller.nouns) { element in
+                        let isChecked = controller.check(element: element)
+                        
+                        IconCard(
+                            text: element.words[0],
+                            icon: element.icon,
+                            type: isChecked ? .disabled : .none
+                        )
+                    }
                 }
             }
             
-            Text("VERBS")
-                .font(.myHeader)
-                .foregroundColor(.myPurple)
-                .frame(maxWidth: .infinity, alignment: .leading)
-            
-            LazyVGrid(columns: [GridItem(), GridItem()]) {
-                ForEach(controller.verbs) { element in
-                    let isChecked = controller.check(element: element)
-                    
-                    IconCard(
-                        text: element.words[0],
-                        color: Color.myPurple,
-                        type: isChecked ? .disabled : .none
-                    )
+            if (!controller.verbs.isEmpty) {
+                Text("VERBS")
+                    .font(.myHeader)
+                    .foregroundColor(.myPurple)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                
+                LazyVGrid(columns: [GridItem(), GridItem()]) {
+                    ForEach(controller.verbs) { element in
+                        let isChecked = controller.check(element: element)
+                        
+                        IconCard(
+                            text: element.words[0],
+                            color: Color.myPurple,
+                            type: isChecked ? .disabled : .none
+                        )
+                    }
                 }
             }
             
-            Text("CHARACTERS")
-                .font(.myHeader)
-                .foregroundColor(.myDarkBlue)
-                .frame(maxWidth: .infinity, alignment: .leading)
-            
-            LazyVGrid(columns: [GridItem(), GridItem()]) {
-                ForEach(controller.characters) { element in
-                    let isChecked = controller.check(element: element)
-                    
-                    IconCard(
-                        text: element.words[0],
-                        color: Color.myDarkBlue,
-                        type: isChecked ? .disabled : .none
-                    )
+            if (!controller.characters.isEmpty) {
+                Text("CHARACTERS")
+                    .font(.myHeader)
+                    .foregroundColor(.myDarkBlue)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                
+                LazyVGrid(columns: [GridItem(), GridItem()]) {
+                    ForEach(controller.characters) { element in
+                        let isChecked = controller.check(element: element)
+                        
+                        IconCard(
+                            text: element.words[0],
+                            color: Color.myDarkBlue,
+                            type: isChecked ? .disabled : .none
+                        )
+                    }
                 }
             }
             
@@ -93,6 +99,7 @@ struct GameView: View {
                     textColor: .myGreen,
                     text: "START SPEAKING"
                 ) {
+                    HapticsService.shared.play(.heavy)
                     controller.play()
                 }
             } else {
@@ -102,6 +109,7 @@ struct GameView: View {
                         textColor: .myBackground,
                         text: "STOP"
                     ) {
+                        HapticsService.shared.play(.heavy)
                         controller.stop()
                     }
                     .frame(maxWidth: .infinity)
@@ -111,10 +119,9 @@ struct GameView: View {
                         textColor: .myGreen,
                         text: "FINISH"
                     ) {
+                        HapticsService.shared.notify(.success)
                         controller.stop()
                         RouterService.shared.navigate(.done)
-                        
-                        HapticsService.shared.notify(.success)
                     }
                     .frame(maxWidth: .infinity)
                 }

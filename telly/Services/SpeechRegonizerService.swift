@@ -17,12 +17,12 @@ import SwiftUI
 /// Additionally, it uses a predefined dictionary to replace recognized words with related emojis.
 class SpeechRecognizerService {
     private let speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: "en_US"))!
-
+    
     private var speechRecognitionRequest:
-        SFSpeechAudioBufferRecognitionRequest?
+    SFSpeechAudioBufferRecognitionRequest?
     private var speechRecognitionTask: SFSpeechRecognitionTask?
     private let audioEngine = AVAudioEngine()
-
+    
     /// Starts the speech recognition process.
     ///
     /// This method initializes and starts the speech recognition process, listens for the user's speech,
@@ -33,46 +33,64 @@ class SpeechRecognizerService {
             recognitionTask.cancel()
             self.speechRecognitionTask = nil
         }
-
-        let audioSession = AVAudioSession.sharedInstance()
-//        try audioSession.setCategory(.soloAmbient, mode: .voicePrompt)
-
+        
+        //        let audioSession = AVAudioSession.sharedInstance()
+        //        try audioSession.setCategory(.soloAmbient, mode: .voicePrompt)
+        
         speechRecognitionRequest = SFSpeechAudioBufferRecognitionRequest()
-
+        
         guard let recognitionRequest = speechRecognitionRequest else {
-          fatalError(
-        "SFSpeechAudioBufferRecognitionRequest object creation failed") }
-
+            fatalError(
+                "SFSpeechAudioBufferRecognitionRequest object creation failed") }
+        
         let inputNode = audioEngine.inputNode
-
+        
         recognitionRequest.shouldReportPartialResults = true
-
+        
         speechRecognitionTask = speechRecognizer.recognitionTask(
             with: recognitionRequest) { result, error in
-
-            var finished = false
-
-            if let result = result {
-                callback(result.bestTranscription.formattedString)
-                finished = result.isFinal
+                
+                var finished = false
+                
+                if let result = result {
+                    callback(result.bestTranscription.formattedString)
+                    finished = result.isFinal
+                }
+                
+                if error != nil || finished {
+                    self.audioEngine.stop()
+                    inputNode.removeTap(onBus: 0)
+                    
+                    self.speechRecognitionRequest = nil
+                    self.speechRecognitionTask = nil
+                }
             }
-
-            if error != nil || finished {
-                self.audioEngine.stop()
-                inputNode.removeTap(onBus: 0)
-
-                self.speechRecognitionRequest = nil
-                self.speechRecognitionTask = nil
-            }
-        }
-
+        
         let recordingFormat = inputNode.outputFormat(forBus: 0)
         inputNode.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) {
-         (buffer: AVAudioPCMBuffer, when: AVAudioTime) in
+            (buffer: AVAudioPCMBuffer, when: AVAudioTime) in
             self.speechRecognitionRequest?.append(buffer)
         }
-
+        
         audioEngine.prepare()
         try audioEngine.start()
+    }
+    
+    /// Stops the ongoing speech recognition process.
+    func stop() {
+        if audioEngine.isRunning {
+            audioEngine.stop()
+            speechRecognitionRequest?.endAudio()
+        }
+        
+        if let recognitionTask = speechRecognitionTask {
+            recognitionTask.cancel()
+            self.speechRecognitionTask = nil
+        }
+        
+        let inputNode = audioEngine.inputNode
+        inputNode.removeTap(onBus: 0)
+        
+        self.speechRecognitionRequest = nil
     }
 }

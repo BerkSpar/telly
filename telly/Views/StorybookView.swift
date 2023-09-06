@@ -29,6 +29,7 @@ struct StorybookView: View {
             }
             
             Image("telly")
+                .foregroundColor(.myDarkBlue)
             
             Spacer()
         }

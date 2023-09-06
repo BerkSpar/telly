@@ -87,7 +87,7 @@ struct StoryView: View {
                             travellingSelection = false
                             shoppingSelection = false
                             
-                            
+                            HapticsService.shared.play(.medium)
                         } label: {
                             ImageCard(title: "WORKSPACE", image: "category_workspace", isSelected: $workSelection)
                         }
@@ -97,6 +97,7 @@ struct StoryView: View {
                             workSelection = false
                             shoppingSelection = false
                             
+                            HapticsService.shared.play(.medium)
                         } label: {
                             ImageCard(title: "TRAVELLING", image: "category_travelling", isSelected: $travellingSelection)
                         }
@@ -106,6 +107,7 @@ struct StoryView: View {
                             travellingSelection = false
                             workSelection = false
                             
+                            HapticsService.shared.play(.medium)
                         } label: {
                             ImageCard(title: "SHOPPING", image: "category_shopping", isSelected: $shoppingSelection)
                         }
@@ -137,6 +139,7 @@ struct StoryView: View {
                             noun3Selection = false
                             noun4Selection = false
                             
+                            HapticsService.shared.play(.medium)
                         } label: {
                             ElevatedTextCard(text: "2", color: .myDarkBlue, selected: noun2Selection)
                         }
@@ -146,6 +149,7 @@ struct StoryView: View {
                             noun3Selection.toggle()
                             noun4Selection = false
                             
+                            HapticsService.shared.play(.medium)
                         } label: {
                             ElevatedTextCard(text: "3", color: .myDarkBlue, selected: noun3Selection)
                         }
@@ -155,6 +159,7 @@ struct StoryView: View {
                             noun3Selection = false
                             noun4Selection.toggle()
                             
+                            HapticsService.shared.play(.medium)
                         } label: {
                             ElevatedTextCard(text: "4", color: .myDarkBlue, selected: noun4Selection)
                         }
@@ -174,6 +179,7 @@ struct StoryView: View {
                             verb1Selection = false
                             verb2Selection = false
                             
+                            HapticsService.shared.play(.medium)
                         } label: {
                             ElevatedTextCard(text: "0", color: .myPurple, selected: verb0Selection)
                         }
@@ -183,6 +189,7 @@ struct StoryView: View {
                             verb1Selection.toggle()
                             verb2Selection = false
                             
+                            HapticsService.shared.play(.medium)
                         } label: {
                             ElevatedTextCard(text: "1", color: .myPurple, selected: verb1Selection)
                         }
@@ -192,6 +199,7 @@ struct StoryView: View {
                             verb1Selection = false
                             verb2Selection.toggle()
                             
+                            HapticsService.shared.play(.medium)
                         } label: {
                             ElevatedTextCard(text: "2", color: .myPurple, selected: verb2Selection)
                         }
@@ -211,6 +219,7 @@ struct StoryView: View {
                             people1Selection = false
                             people2Selection = false
                             
+                            HapticsService.shared.play(.medium)
                         } label: {
                             ElevatedTextCard(text: "0", color: .myReddish, selected: people0Selection)
                         }
@@ -220,6 +229,7 @@ struct StoryView: View {
                             people1Selection.toggle()
                             people2Selection = false
                             
+                            HapticsService.shared.play(.medium)
                         } label: {
                             ElevatedTextCard(text: "1", color: .myReddish, selected: people1Selection)
                         }
@@ -229,6 +239,7 @@ struct StoryView: View {
                             people1Selection = false
                             people2Selection.toggle()
                             
+                            HapticsService.shared.play(.medium)
                         } label: {
                             ElevatedTextCard(text: "2", color: .myReddish, selected: people2Selection)
                         }
@@ -241,6 +252,8 @@ struct StoryView: View {
                 textColor: .myGreen,
                 text: "START",
                 action: {
+                    HapticsService.shared.play(.medium)
+                    
                     verifyAuthentication {
                         RouterService.shared.navigate(.game(
                             theme: getThemeName(),

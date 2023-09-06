@@ -30,18 +30,27 @@ struct AuthorizationView: View {
             
             Authorization(titleVoice: title, titleSound: "", icon: icon, bodyText: bodyText)
             
-            ElevatedButton(backgroundColor: .myDarkBlue, textColor: .myBackground, text: buttonText, action: {Task {
-                guard await SFSpeechRecognizer.hasAuthorizationToRecognize() else {
-                    return
+            ElevatedButton(
+                backgroundColor: .myDarkBlue,
+                textColor: .myBackground,
+                text: buttonText,
+                action: {
+                    HapticsService.shared.play(.heavy)
+                    
+                    Task {
+                        guard await SFSpeechRecognizer.hasAuthorizationToRecognize() else {
+                            return
+                        }
+                        
+                        guard await AVAudioSession.sharedInstance().hasPermissionToRecord() else {
+                            return
+                        }
+                        
+                        HapticsService.shared.notify(.success)
+                        
+                        completion()
+                    }
                 }
-                
-                guard await AVAudioSession.sharedInstance().hasPermissionToRecord() else {
-                    return
-                }
-                
-                completion()
-            }
-            }
             )
             
             if isSpeechDenied() {

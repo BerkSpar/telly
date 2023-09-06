@@ -63,5 +63,7 @@ class GameController: ObservableObject {
     
     func stop() {
         isSpeaking = false
+        
+        service.stop()
     }
 }
