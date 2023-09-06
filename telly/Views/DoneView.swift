@@ -11,17 +11,20 @@ struct DoneView: View {
     var body: some View {
         ZStack {
             Rectangle()
-                .foregroundColor(.myDarkBlue)
-            VStack {
-                Text("Well done!")
-                    .font(.myLargeTitle)
-                    .foregroundColor(.myBackground)
+                .foregroundColor(.myGreen)
+            VStack(spacing: 32) {
+                VStack {
+                    Text("Well done!")
+                        .font(.myLargeTitle)
+                        .foregroundColor(.myDarkGrey)
+                    
+                    Text("You made an awesome story!")
+                        .font(.title3)
+                        .bold()
+                        .foregroundColor(.myDarkGrey)
+                }
                 
-                Text("You made an awesome story!")
-                    .bold()
-                    .foregroundColor(.myBackground)
-                
-                ElevatedButton(backgroundColor: .myGreen, textColor: .myDarkBlue, text: "Go back to the Main Page", action: {
+                ElevatedButton(backgroundColor: .myDarkBlue, textColor: .myGreen, text: "RETURN TO\nMAIN PAGE", action: {
                     RouterService.shared.navigate(.home)
                     
                 })

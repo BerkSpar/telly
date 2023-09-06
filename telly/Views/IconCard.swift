@@ -45,8 +45,13 @@ struct IconCard: View {
                 }
                 
                 if (icon != nil) {
-                    Text(icon!)
+                    Image(systemName: icon!)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: 40)
                         .font(.system(size: 40))
+                        .foregroundColor(type != .enabled ? color : .myBackground)
+                    
                 }
             }
             .padding(16)
@@ -59,14 +64,14 @@ struct IconCard_Previews: PreviewProvider {
         VStack(spacing: 16) {
             HStack(spacing: 16) {
                 IconCard(
-                    text: "Airplane",
-                    icon: "🛩️",
+                    text: "Schedule",
+                    icon: "book",
                     type: .none
                 )
                 
                 IconCard(
-                    text: "Airplane",
-                    icon: "🛩️",
+                    text: "Schedule",
+                    icon: "book",
                     type: .enabled
                 )
             }

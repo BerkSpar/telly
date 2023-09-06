@@ -89,8 +89,8 @@ struct GameView: View {
             
             if (!controller.isSpeaking) {
                 ElevatedButton(
-                    backgroundColor: .myGreen,
-                    textColor: .black,
+                    backgroundColor: .myDarkBlue,
+                    textColor: .myGreen,
                     text: "START SPEAKING"
                 ) {
                     controller.play()
@@ -99,7 +99,7 @@ struct GameView: View {
                 HStack {
                     ElevatedButton(
                         backgroundColor: .myReddish,
-                        textColor: .black,
+                        textColor: .myBackground,
                         text: "STOP"
                     ) {
                         controller.stop()
@@ -107,8 +107,8 @@ struct GameView: View {
                     .frame(maxWidth: .infinity)
                     
                     ElevatedButton(
-                        backgroundColor: .myGreen,
-                        textColor: .black,
+                        backgroundColor: .myDarkBlue,
+                        textColor: .myGreen,
                         text: "FINISH"
                     ) {
                         controller.stop()
@@ -120,12 +120,10 @@ struct GameView: View {
                 }
             }
             
-            
-//            Button("Cabei") {
-//                RouterService.shared.navigate(.done)
-//            }
+
         }
         .padding(24)
+        .background(Color.myBackground)
         .onAppear {
             controller.initialize(
                 theme: theme,
@@ -143,7 +141,7 @@ struct GameView: View {
             GameView(
                 theme: "work",
                 nounsCount: 2,
-                verbsCount: 2,
+                verbsCount: 1,
                 charactersCount: 1
             )
         }
