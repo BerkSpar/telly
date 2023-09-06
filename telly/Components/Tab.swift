@@ -41,27 +41,19 @@ struct Tab: View {
     
     var body: some View {
         HStack(spacing: 0) {
-            Button {
-                storyIsSelected.toggle()
-                storybookIsSelected.toggle()
-                
-            } label: {
-                TabLabel(isSelected: $storyIsSelected, text: firstButtonText, corner: storyCorner(view: storyIsSelected))
-                
-            }
-            .background(hasBackground(view: storyIsSelected))
-            .buttonStyle(PlainButtonStyle())
+            TabLabel(isSelected: $storyIsSelected, text: firstButtonText, corner: storyCorner(view: storyIsSelected))
+                .onTapGesture {
+                    storyIsSelected = true
+                    storybookIsSelected = false
+                }
+                .background(hasBackground(view: storyIsSelected))
             
-            Button {
-                storyIsSelected.toggle()
-                storybookIsSelected.toggle()
-                
-            } label: {
-                TabLabel(isSelected: $storybookIsSelected, text: secondButtonText, corner: storybookCorner(view: storybookIsSelected))
-                
-            }
-            .background(hasBackground(view: storybookIsSelected))
-            .buttonStyle(PlainButtonStyle())
+            TabLabel(isSelected: $storybookIsSelected, text: secondButtonText, corner: storybookCorner(view: storybookIsSelected))
+                .onTapGesture {
+                    storyIsSelected = false
+                    storybookIsSelected = true
+                }
+                .background(hasBackground(view: storybookIsSelected))
             
         }
     }

@@ -16,22 +16,24 @@ struct GameView: View {
     @StateObject private var controller = GameController()
     
     var body: some View {
-        VStack {
+        VStack(spacing: 0) {
             if (controller.isSpeaking) {
                 Text("Theme: \(controller.theme)")
                     .bold()
                     .font(.system(size: 22))
+                    .padding(.bottom, 24)
             } else {
-                Text("Time to listen to the pronunciation!")
+                Text("Time to read the words!")
                     .font(.system(size: 22))
                     .bold()
                     .multilineTextAlignment(.center)
                     .frame(maxWidth: .infinity)
                 
-                Text("Listen to them carefully so you can tell your story more smoothly! You won't be able to listen to them again once you start the game")
+                Text("When you are ready, click the button below and start to telling your story")
                     .font(.system(size: 14))
                     .multilineTextAlignment(.center)
                     .frame(maxWidth: .infinity)
+                    .padding(.bottom, 24)
             }
             
             if (!controller.verbs.isEmpty) {
@@ -39,6 +41,7 @@ struct GameView: View {
                     .font(.myHeader)
                     .foregroundColor(.myDarkBlue)
                     .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.bottom, 8)
                 
                 LazyVGrid(columns: [GridItem(), GridItem()]) {
                     ForEach(controller.nouns) { element in
@@ -47,10 +50,12 @@ struct GameView: View {
                         IconCard(
                             text: element.words[0],
                             icon: element.icon,
+                            color: .myDarkBlue,
                             type: isChecked ? .disabled : .none
                         )
                     }
                 }
+                .padding(.bottom, 24)
             }
             
             if (!controller.verbs.isEmpty) {
@@ -58,6 +63,7 @@ struct GameView: View {
                     .font(.myHeader)
                     .foregroundColor(.myPurple)
                     .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.bottom, 8)
                 
                 LazyVGrid(columns: [GridItem(), GridItem()]) {
                     ForEach(controller.verbs) { element in
@@ -65,18 +71,20 @@ struct GameView: View {
                         
                         IconCard(
                             text: element.words[0],
-                            color: Color.myPurple,
+                            color: .myPurple,
                             type: isChecked ? .disabled : .none
                         )
                     }
                 }
+                .padding(.bottom, 24)
             }
             
             if (!controller.characters.isEmpty) {
                 Text("CHARACTERS")
                     .font(.myHeader)
-                    .foregroundColor(.myDarkBlue)
+                    .foregroundColor(.myReddish)
                     .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.bottom, 8)
                 
                 LazyVGrid(columns: [GridItem(), GridItem()]) {
                     ForEach(controller.characters) { element in
@@ -84,11 +92,12 @@ struct GameView: View {
                         
                         IconCard(
                             text: element.words[0],
-                            color: Color.myDarkBlue,
+                            color: .myReddish,
                             type: isChecked ? .disabled : .none
                         )
                     }
                 }
+                .padding(.bottom, 24)
             }
             
             Spacer()

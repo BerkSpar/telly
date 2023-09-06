@@ -21,9 +21,17 @@ struct IconCard: View {
     
     func getColor() -> Color {
         switch(type) {
-            case .none: return color
-            case .enabled: return .myBackground
-            case .disabled: return .myGrey
+        case .none: return color
+        case .enabled: return .myBackground
+        case .disabled: return .myGrey
+        }
+    }
+    
+    func getIconColor() -> Color {
+        switch(type) {
+        case .none: return color
+        case .enabled: return .myBackground
+        case .disabled: return .myGrey
         }
     }
     
@@ -50,7 +58,8 @@ struct IconCard: View {
                         .scaledToFit()
                         .frame(height: 40)
                         .font(.system(size: 40))
-                        .foregroundColor(type != .enabled ? color : .myBackground)
+                        .foregroundColor(getIconColor())
+                        
                     
                 }
             }
@@ -66,7 +75,7 @@ struct IconCard_Previews: PreviewProvider {
                 IconCard(
                     text: "Schedule",
                     icon: "book",
-                    type: .none
+                    type: .disabled
                 )
                 
                 IconCard(
@@ -79,13 +88,15 @@ struct IconCard_Previews: PreviewProvider {
             
             HStack(spacing: 16) {
                 IconCard(
-                    text: "Airplane",
-                    type: .disabled
+                    text: "Schedule",
+                    icon: "book",
+                    type: .none
                 )
                 
                 IconCard(
-                    text: "To eat",
-                    type: .disabled
+                    text: "Schedule",
+                    icon: "book",
+                    type: .enabled
                 )
             }
             .padding([.leading, .trailing], 16)

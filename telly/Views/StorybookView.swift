@@ -15,7 +15,7 @@ struct StorybookView: View {
                 Text("UNDER MAINTENACE")
                     .font(.myTitle)
                     .foregroundColor(.myDarkBlue)
-                    .background(.white)
+                    .background(Color.myBackground)
                 
                 Spacer()
             }
@@ -34,7 +34,7 @@ struct StorybookView: View {
             Spacer()
         }
         .padding(32)
-        .background(.white)
+        .background(Color.myBackground)
     }
 }
 

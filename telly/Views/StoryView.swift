@@ -33,7 +33,7 @@ struct StoryView: View {
         if (travellingSelection) { return "traveling" }
         if (shoppingSelection) { return "shopping" }
         
-        return "work"
+        return ""
     }
     
     func getNounsCount() -> Int {
@@ -41,7 +41,7 @@ struct StoryView: View {
         if (noun3Selection) { return 3 }
         if (noun4Selection) { return 4 }
         
-        return 2
+        return 0
     }
     
     func getVerbsCount() -> Int {
@@ -80,7 +80,7 @@ struct StoryView: View {
                 }
                 .padding(.horizontal, 32)
                 
-                ScrollView(.horizontal) {
+                ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 16) {
                         Button {
                             workSelection.toggle()
@@ -253,6 +253,16 @@ struct StoryView: View {
                 text: "START",
                 action: {
                     HapticsService.shared.play(.medium)
+                    
+                    if (getThemeName() == "") {
+                        RouterService.shared.showAlert(Alert(title: Text("You need to select one theme")))
+                        return
+                    }
+                    
+                    if (getNounsCount() == 0) {
+                        RouterService.shared.showAlert(Alert(title: Text("You need to select the nouns")))
+                        return
+                    }
                     
                     verifyAuthentication {
                         RouterService.shared.navigate(.game(
