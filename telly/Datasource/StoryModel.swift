@@ -12,5 +12,4 @@ struct StoryModel: Identifiable, Hashable {
     
     var title: String
     var date: String
-    
 }

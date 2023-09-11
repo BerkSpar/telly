@@ -10,10 +10,8 @@ import SwiftUI
 struct Story: View {
     @State var storyModel: StoryModel
     
-    
     var body: some View {
         VStack{
-            
             HStack {
                 Text(storyModel.date)
                     .font(.myCallout)

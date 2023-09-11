@@ -79,5 +79,11 @@ class GameService {
     func showAccessPoint() {
         GKAccessPoint.shared.isActive = true
     }
+    
+    func showAchievements() {
+        GKAccessPoint.shared.trigger(state: .achievements) {
+            print("Acessou os achievements")
+        }
+    }
 }
 

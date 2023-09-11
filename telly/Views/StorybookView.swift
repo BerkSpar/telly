@@ -12,8 +12,10 @@ struct StorybookView: View {
     var body: some View {
         ScrollView {
             VStack(spacing: 32) {
-                ElevatedButton(backgroundColor: .myDarkBlue, textColor: .myGreen, text: "ACHIEVEMENTS") {
-                    print("abrir conquistas")
+                if (GameService.shared.player.isAuthenticated) {
+                    ElevatedButton(backgroundColor: .myDarkBlue, textColor: .myGreen, text: "ACHIEVEMENTS") {
+                        GameService.shared.showAchievements()
+                    }
                 }
                 
                 VStack {
