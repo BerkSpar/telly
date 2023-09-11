@@ -8,32 +8,34 @@
 import SwiftUI
 
 struct StorybookView: View {
+    
     var body: some View {
-        VStack(spacing: 32) {
-            VStack {
-            HStack{
-                Text("UNDER MAINTENACE")
-                    .font(.myTitle)
-                    .foregroundColor(.myDarkBlue)
-                    .background(Color.myBackground)
+        ScrollView {
+            VStack(spacing: 32) {
+                ElevatedButton(backgroundColor: .myDarkBlue, textColor: .myGreen, text: "ACHIEVEMENTS") {
+                    print("abrir conquistas")
+                }
                 
-                Spacer()
-            }
-            
-                HStack {
-                    Text("Soon we will have a page where you can view your stories")
-                        .font(.myBody)
+                VStack {
+                    HStack {
+                        Text("MY STORIES")
+                            .font(.myTitle)
+                            .foregroundColor(.myDarkBlue)
+                        
+                        Spacer()
+                    }
+                        VStack(spacing: 16) {
+                            ForEach(StoryData.myStories, id: \.self) { story in
+                                Story(storyModel: story)
+                            
+                        }
+                    }
                     
-                    Spacer()
                 }
             }
-            
-            Image("telly")
-                .foregroundColor(.myDarkBlue)
-            
-            Spacer()
+            .padding(.vertical, 32)
+            .padding(.horizontal, 32)
         }
-        .padding(32)
         .background(Color.myBackground)
     }
 }
