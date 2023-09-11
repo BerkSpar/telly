@@ -15,6 +15,21 @@ struct GameView: View {
     
     @StateObject private var controller = GameController()
     
+    @State var spokenWords: [String] = []
+    @State var progress: Double = 0
+    
+    func updateProgress(_ word: String) {
+        let elementCount = nounsCount + verbsCount + charactersCount
+        
+        if !spokenWords.contains(where: { element in
+            return element == word
+        }) {
+            spokenWords.append(word)
+        }
+        
+        progress = Double(spokenWords.count) / Double(elementCount)
+    }
+    
     var body: some View {
         VStack(spacing: 0) {
             if (controller.isSpeaking) {
@@ -36,7 +51,7 @@ struct GameView: View {
                     .padding(.bottom, 24)
             }
             
-            if (!controller.verbs.isEmpty) {
+            if (!controller.nouns.isEmpty) {
                 Text("NOUNS")
                     .font(.myHeader)
                     .foregroundColor(.myDarkBlue)
@@ -102,6 +117,23 @@ struct GameView: View {
             
             Spacer()
             
+            if (controller.spokenWords.isEmpty) {
+                Text("NO WORDS SPOKEN")
+                    .font(.custom("SF Pro", size: 17)
+                        .weight(.semibold))
+                    .foregroundColor(.myDarkBlue)
+                    .padding(.bottom, 8)
+            } else {
+                Text("\(controller.spokenWords.count) WORDS SPOKEN")
+                    .font(.custom("SF Pro", size: 17)
+                        .weight(.semibold))
+                    .foregroundColor(.myDarkBlue)
+                    .padding(.bottom, 8)
+            }
+            
+            ProgressBar(progress: $controller.progress)
+                .padding(.bottom, 24)
+            
             if (!controller.isSpeaking) {
                 ElevatedButton(
                     backgroundColor: .myDarkBlue,
@@ -156,9 +188,9 @@ struct GameView: View {
         static var previews: some View {
             GameView(
                 theme: "work",
-                nounsCount: 2,
-                verbsCount: 1,
-                charactersCount: 1
+                nounsCount: 4,
+                verbsCount: 2,
+                charactersCount: 2
             )
         }
     }

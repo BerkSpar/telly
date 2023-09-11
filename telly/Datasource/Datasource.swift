@@ -132,20 +132,14 @@ class Datasource {
             theme: ["traveling"]
         ),
         ElementModel(
-            icon: "carrot.fill",
-            words: ["carrot"],
+            icon: "fork.knife",
+            words: ["food"],
             type: .nouns,
             theme: ["traveling"]
         ),
         ElementModel(
             icon: "wallet.pass.fill",
             words: ["wallet"],
-            type: .nouns,
-            theme: ["traveling"]
-        ),
-        ElementModel(
-            icon: "sailboat.fill",
-            words: ["boat"],
             type: .nouns,
             theme: ["traveling"]
         ),
