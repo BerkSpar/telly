@@ -196,9 +196,9 @@ struct GameView: View {
         static var previews: some View {
             GameView(
                 theme: "work",
-                nounsCount: 2,
-                verbsCount: 1,
-                charactersCount: 1
+                nounsCount: 4,
+                verbsCount: 2,
+                charactersCount: 2
             )
         }
     }
