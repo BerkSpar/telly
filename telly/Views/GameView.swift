@@ -51,7 +51,7 @@ struct GameView: View {
                         .padding(.bottom, 24)
                 }
                 
-                if (!controller.verbs.isEmpty) {
+                if (!controller.nouns.isEmpty) {
                     Text("NOUNS")
                         .font(.myHeader)
                         .foregroundColor(.myDarkBlue)
