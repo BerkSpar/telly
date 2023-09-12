@@ -5,7 +5,7 @@
 //  Created by Felipe Passos on 25/08/23.
 //
 
-import AVFoundation
+import AVFAudio
 
 extension AVAudioSession {
     func hasPermissionToRecord() async -> Bool {

@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import AVFoundation
+import AVFAudio
 import Speech
 
 struct OnboardingView: View {

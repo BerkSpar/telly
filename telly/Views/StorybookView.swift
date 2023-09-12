@@ -6,32 +6,9 @@
 //
 
 import SwiftUI
-import AVFoundation
+import AVFAudio
 
 struct StorybookView: View {
-    
-    private var audioPlayer: AVAudioPlayer?
-    
-    private func getDocumentsDirectory() -> URL {
-        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        return paths[0]
-    }
-    
-    func play() {
-        print("PLAY")
-        
-        let audioFilename = getDocumentsDirectory().appendingPathComponent("voiceRecording.m4a")
-        
-        if FileManager.default.fileExists(atPath: audioFilename.path) {
-            print("File exists!")
-        } else {
-            print("File not found!")
-        }
-        
-        let player = AudioService()
-        player.playAudio(withPath: audioFilename.path)
-    }
-    
     var body: some View {
         ScrollView {
             VStack(spacing: 32) {
@@ -46,17 +23,13 @@ struct StorybookView: View {
                         Text("MY STORIES")
                             .font(.myTitle)
                             .foregroundColor(.myDarkBlue)
-                            .onTapGesture {
-                                play()
-                            }
                         
                         Spacer()
                     }
-                        VStack(spacing: 16) {
-                            ForEach(StoryData.myStories, id: \.self) { story in
-                                Story(storyModel: story)
-                                    
-                            
+                    
+                    VStack(spacing: 16) {
+                        ForEach(StorageService.shared.listAll(), id: \.id) { story in
+                            Story(storyModel: story)
                         }
                     }
                     

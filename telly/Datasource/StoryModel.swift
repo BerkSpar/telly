@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct StoryModel: Identifiable, Hashable {
+struct StoryModel: Codable {
     var id = UUID()
     
     var title: String

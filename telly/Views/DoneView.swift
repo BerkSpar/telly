@@ -42,6 +42,8 @@ struct DoneView: View {
                     
                     reportAchievements()
                     
+                    StorageService.shared.add(story: StoryModel(title: "Teste", date: "Deu boa"))
+                    
                     RouterService.shared.navigate(.home)
                     
                 })

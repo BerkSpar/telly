@@ -24,7 +24,6 @@
 		F75343DB2AA17C8A0006E2F6 /* IconCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75343DA2AA17C8A0006E2F6 /* IconCard.swift */; };
 		F75343DD2AA182F90006E2F6 /* ElevatedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75343DC2AA182F90006E2F6 /* ElevatedButton.swift */; };
 		F7676D072AA90A1B00502627 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7676D062AA90A1B00502627 /* ProgressBar.swift */; };
-		F7676D092AAF290F00502627 /* StoryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7676D082AAF290F00502627 /* StoryData.swift */; };
 		F7676D0B2AAF293C00502627 /* StoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7676D0A2AAF293C00502627 /* StoryModel.swift */; };
 		F7676D0D2AAF297C00502627 /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7676D0C2AAF297C00502627 /* Story.swift */; };
 		F7895E952A97C96800E8B286 /* tellyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7895E942A97C96800E8B286 /* tellyApp.swift */; };
@@ -86,7 +85,6 @@
 		F75343DA2AA17C8A0006E2F6 /* IconCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = IconCard.swift; path = telly/Views/IconCard.swift; sourceTree = SOURCE_ROOT; };
 		F75343DC2AA182F90006E2F6 /* ElevatedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ElevatedButton.swift; path = telly/Views/ElevatedButton.swift; sourceTree = SOURCE_ROOT; };
 		F7676D062AA90A1B00502627 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
-		F7676D082AAF290F00502627 /* StoryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryData.swift; sourceTree = "<group>"; };
 		F7676D0A2AAF293C00502627 /* StoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryModel.swift; sourceTree = "<group>"; };
 		F7676D0C2AAF297C00502627 /* Story.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
 		F7895E912A97C96800E8B286 /* telly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = telly.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -271,7 +269,6 @@
 				F7CBC92F2A9FCCA700073AA3 /* Datasource.swift */,
 				F7CBC9312A9FCCC300073AA3 /* ElementManager.swift */,
 				F7CBC9332A9FCECD00073AA3 /* ElementModel.swift */,
-				F7676D082AAF290F00502627 /* StoryData.swift */,
 				F7676D0A2AAF293C00502627 /* StoryModel.swift */,
 			);
 			path = Datasource;
@@ -399,7 +396,6 @@
 				F715B4B72AA6CFAA0066548A /* GameController.swift in Sources */,
 				8CA51D4F2A9D27DB007061B2 /* WordsView.swift in Sources */,
 				F7676D072AA90A1B00502627 /* ProgressBar.swift in Sources */,
-				F7676D092AAF290F00502627 /* StoryData.swift in Sources */,
 				8CA51D512A9D2A20007061B2 /* GameView.swift in Sources */,
 				F7895EB12A97CD4200E8B286 /* RouterService.swift in Sources */,
 				8CA51D5E2AA12FEE007061B2 /* Tab.swift in Sources */,
@@ -559,7 +555,7 @@
 				CODE_SIGN_ENTITLEMENTS = telly/telly.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_ASSET_PATHS = "\"telly/Preview Content\"";
 				DEVELOPMENT_TEAM = R9V648Y475;
 				ENABLE_PREVIEWS = YES;
@@ -597,7 +593,7 @@
 				CODE_SIGN_ENTITLEMENTS = telly/telly.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_ASSET_PATHS = "\"telly/Preview Content\"";
 				DEVELOPMENT_TEAM = R9V648Y475;
 				ENABLE_PREVIEWS = YES;

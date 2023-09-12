@@ -253,17 +253,17 @@ struct StoryView: View {
                 text: "START",
                 action: {
                     HapticsService.shared.play(.medium)
-                    
+
                     if (getThemeName() == "") {
                         RouterService.shared.showAlert(Alert(title: Text("You need to select one theme")))
                         return
                     }
-                    
+
                     if (getNounsCount() == 0) {
                         RouterService.shared.showAlert(Alert(title: Text("You need to select the nouns")))
                         return
                     }
-                    
+
                     verifyAuthentication {
                         RouterService.shared.navigate(.game(
                             theme: getThemeName(),
