@@ -18,7 +18,8 @@ struct ElevatedButton: View {
         Button(action: action) {
             ElevatedCard(
                 color: backgroundColor,
-                backgroundColor: backgroundColor
+                backgroundColor: backgroundColor,
+                hasStroke: false
             ) {
                 Text(text)
                     .font(.system(size: 24))
