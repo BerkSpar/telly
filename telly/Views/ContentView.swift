@@ -12,7 +12,7 @@ enum Screen {
     case home
     case words
     case game(theme: String, nouns: Int, verbs: Int, characters: Int)
-    case done
+    case done(theme: String)
     case authorization(completion: () -> Void)
 }
 
@@ -25,7 +25,8 @@ struct ContentView: View {
             case .onboarding: OnboardingView()
             case .home: HomeView()
             case .words: WordsView()
-            case .done: DoneView()
+            case .done(theme: let theme):
+                DoneView(theme: theme)
             case .authorization(completion: let completion):
                 AuthorizationView(completion: completion)
             case .game(

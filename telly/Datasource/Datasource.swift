@@ -12,6 +12,12 @@ class Datasource {
 
     static var elements: [ElementModel] = [
             ElementModel(
+                icon: "apple.logo",
+                words: ["apple", "apples"],
+                type: .nouns,
+                theme: allThemes
+            ),
+            ElementModel(
                 icon: "medal.fill",
                 words: ["promotion", "promotions"],
                 type: .nouns,

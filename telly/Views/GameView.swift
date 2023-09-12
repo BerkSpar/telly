@@ -68,11 +68,6 @@ struct GameView: View {
                                 color: .myDarkBlue,
                                 type: isChecked ? .disabled : .none
                             )
-                            .onAppear {
-                                if isChecked {
-                                    HapticsService.shared.notify(.success)
-                                }
-                            }
                         }
                     }
                     .padding(.bottom, 24)
@@ -94,11 +89,6 @@ struct GameView: View {
                                 color: .myPurple,
                                 type: isChecked ? .disabled : .none
                             )
-                            .onAppear {
-                                if isChecked {
-                                    HapticsService.shared.notify(.success)
-                                }
-                            }
                         }
                     }
                     .padding(.bottom, 24)
@@ -120,11 +110,6 @@ struct GameView: View {
                                 color: .myReddish,
                                 type: isChecked ? .disabled : .none
                             )
-                            .onAppear {
-                                if isChecked {
-                                    HapticsService.shared.notify(.success)
-                                }
-                            }
                         }
                     }
                     .padding(.bottom, 24)
@@ -161,7 +146,7 @@ struct GameView: View {
                         ) {
                             HapticsService.shared.notify(.success)
                             controller.stop()
-                            RouterService.shared.navigate(.done)
+                            RouterService.shared.navigate(.done(theme: controller.theme))
                         }
                         .frame(maxWidth: .infinity)
                     }

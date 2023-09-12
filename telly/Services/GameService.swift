@@ -59,6 +59,39 @@ class GameService {
         GKAchievement.report([achievement])
     }
     
+    func reportAchievement(identifier: String, progress: Double) {
+        guard progress > 0 else { return }  // Evitar progresso negativo ou zero
+        
+        let achievement = GKAchievement(identifier: identifier)
+        
+        // Buscar o progresso atual
+        GKAchievement.loadAchievements { (achievements, error) in
+            guard error == nil else {
+                print("Erro ao carregar achievements:", error!)
+                return
+            }
+            
+            let currentAchievement = achievements?.first { $0.identifier == identifier }
+            let currentProgress = currentAchievement?.percentComplete ?? 0.0
+            
+            // Calcula o novo progresso
+            let newProgress = currentProgress + progress
+            achievement.percentComplete = newProgress
+            achievement.showsCompletionBanner = true
+            
+            // Tratamento para evitar que fique preso em 99%
+            if newProgress >= 99 && newProgress < 100.0 {
+                achievement.percentComplete = 100.0
+            }
+            
+            GKAchievement.report([achievement]) { error in
+                if let error = error {
+                    print("Erro ao reportar achievement:", error)
+                }
+            }
+        }
+    }
+    
     /// Resets all the achievements for the player.
     ///
     /// This function will reset all achievements back to their initial, unearned state.

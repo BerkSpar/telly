@@ -43,6 +43,12 @@ class GameController: ObservableObject {
     func check(element: ElementModel) -> Bool {
         for word in element.words {
             if text.contains(word) {
+                HapticsService.shared.notify(.success)
+                
+                if (word.lowercased() == "apple") {
+                    GameService.shared.reportAchievement(identifier: "apple_odyssey", progress: 1.0/26.0 * 100.0)
+                }
+                
                 return true
             }
         }
