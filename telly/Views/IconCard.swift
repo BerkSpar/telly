@@ -39,7 +39,7 @@ struct IconCard: View {
     var body: some View {
         ElevatedCard(
             color: getColor(),
-            backgroundColor: type == .enabled ? color : .myBackground
+            backgroundColor: type == .enabled ? color : .myBackground, hasStroke: true
         ) {
             VStack(spacing: 16) {
                 if (text != nil) {

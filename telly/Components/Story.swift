@@ -9,6 +9,7 @@ import SwiftUI
 
 struct Story: View {
     @State var storyModel: StoryModel
+    var onDelete: () -> Void
     
     var body: some View {
         VStack{
@@ -22,9 +23,10 @@ struct Story: View {
             
             Button {
                 RouterService.shared.showSheet(
-                    StorySheetView(story: $storyModel)
-                        .presentationDetents([.height(350)])
-                        .presentationCompactAdaptation(.none)
+                    StorySheetView(story: $storyModel) {
+                        onDelete()
+                    }
+                    .presentationDetents([.height(300)])
                 )
             } label: {
                 HStack {
@@ -49,6 +51,8 @@ struct Story: View {
 
 struct Story_Previews: PreviewProvider {
     static var previews: some View {
-        Story(storyModel: StoryModel(title: "My trip", date: "24/08 04:30p.m"))
+        Story(storyModel: StoryModel(title: "My trip", date: "24/08 04:30p.m")) {
+            print("deleted")
+        }
     }
 }

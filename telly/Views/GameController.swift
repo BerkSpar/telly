@@ -131,11 +131,11 @@ class GameController: ObservableObject {
         
         StorageService.shared.add(story:
             StoryModel(
+                id: audioId,
                 title: "My Story",
                 date: formattedDate,
                 theme: theme,
-                words: words,
-                audioPath: getDocumentsDirectory().appendingPathComponent("\(audioId).m4a").path()
+                words: words
             )
         )
     }

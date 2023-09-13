@@ -9,9 +9,17 @@ import SwiftUI
 
 struct StorySheetView: View {
     @Binding var story: StoryModel
+    var onDelete: () -> Void
     
     @State private var text = ""
     @State private var isEditing: Bool = false
+    
+    let service = AudioService()
+    
+    private func getDocumentsDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return paths[0]
+    }
     
     enum FocusField: Hashable {
         case title
@@ -23,8 +31,11 @@ struct StorySheetView: View {
             Text(story.date)
                 .multilineTextAlignment(.center)
                 .padding(.bottom, 8)
+                .padding(.top, 16)
                 .font(.system(size: 14))
                 .foregroundColor(.myGrey)
+            
+            Spacer()
             
             if (isEditing) {
                 HStack {
@@ -76,8 +87,7 @@ struct StorySheetView: View {
 
                 }
             }
-            
-            
+    
             Group {
                 Text("Theme: ")
                     .font(.system(size: 14))
@@ -105,8 +115,8 @@ struct StorySheetView: View {
             .padding(.bottom, 16)
             
             Button {
-                print(story.audioPath)
-                AudioService().playAudio(withPath: story.audioPath)
+                let path = getDocumentsDirectory().appendingPathComponent("\(story.id).m4a").path()
+                service.playAudio(withPath: path)
             } label: {
                 ElevatedCard(color: .myDarkBlue, content:  {
                     HStack {
@@ -125,11 +135,7 @@ struct StorySheetView: View {
             
             HStack {
                 ShareLink(
-                    item: Image("AppIcon"),
-                    preview: SharePreview(
-                        "Check out \"\(story.title)\" on Telly, my favorite app for learning English through stories! 📖\n",
-                        image: Image("AppIcon")
-                    )
+                    item: "Check out \"\(story.title)\" on Telly, my favorite app for learning English through stories! 📖\n"
                 ) {
                     IconCard(
                         icon: "square.and.arrow.up",
@@ -141,6 +147,7 @@ struct StorySheetView: View {
                 
                 Button {
                     StorageService.shared.remove(byID: story.id)
+                    onDelete()
                     RouterService.shared.hideSheet()
                 } label: {
                     IconCard(
@@ -159,6 +166,6 @@ struct StorySheetView: View {
 
 struct StorySheetView_Previews: PreviewProvider {
     static var previews: some View {
-        StorySheetView(story: .constant(StoryModel(title: "Branca de Neve", date: "Today")))
+        StorySheetView(story: .constant(StoryModel(title: "Branca de Neve", date: "Today"))) {}
     }
 }

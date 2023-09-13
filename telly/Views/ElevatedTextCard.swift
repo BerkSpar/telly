@@ -16,13 +16,14 @@ struct ElevatedTextCard: View {
         ElevatedCard(
             color: color,
             backgroundColor: selected ? color : Color.myBackground,
+            hasStroke: false,
             content:  {
                 Text(text)
                     .font(.system(size: 20))
                     .fontWidth(.expanded)
                     .bold()
                     .foregroundColor(selected ? Color.myBackground : color)
-                    .frame(width: 40, height: 40)
+                    .frame(width: 50, height: 40)
             }
         )
     }

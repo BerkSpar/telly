@@ -14,15 +14,15 @@ struct StoryView: View {
     @State var travellingSelection = false
     @State var shoppingSelection = false
     
-    @State var noun2Selection = false
+    @State var noun2Selection = true
     @State var noun3Selection = false
     @State var noun4Selection = false
     
-    @State var verb0Selection = false
+    @State var verb0Selection = true
     @State var verb1Selection = false
     @State var verb2Selection = false
     
-    @State var people0Selection = false
+    @State var people0Selection = true
     @State var people1Selection = false
     @State var people2Selection = false
     
@@ -82,16 +82,16 @@ struct StoryView: View {
                 
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 16) {
-                        Button {
-                            workSelection.toggle()
-                            travellingSelection = false
-                            shoppingSelection = false
-                            
-                            HapticsService.shared.play(.medium)
-                        } label: {
-                            ImageCard(title: "WORKSPACE", image: "category_workspace", isSelected: $workSelection)
-                        }
-                        
+//                        Button {
+//                            workSelection.toggle()
+//                            travellingSelection = false
+//                            shoppingSelection = false
+//
+//                            HapticsService.shared.play(.medium)
+//                        } label: {
+//                            ImageCard(title: "WORKSPACE", image: "category_workspace", isSelected: $workSelection)
+//                        }
+//
                         Button {
                             travellingSelection.toggle()
                             workSelection = false
@@ -126,7 +126,7 @@ struct StoryView: View {
                 }
                 .padding(.horizontal, 32)
                 
-                VStack{
+                VStack(spacing: 12){
                     HStack(spacing: 12) {
                         Text("NOUNS")
                             .font(.myTitle)
@@ -134,36 +134,43 @@ struct StoryView: View {
                         
                         Spacer()
                         
-                        Button {
-                            noun2Selection.toggle()
-                            noun3Selection = false
-                            noun4Selection = false
+                        HStack(spacing: 0) {
+                            Button {
+                                noun2Selection = true
+                                noun3Selection = false
+                                noun4Selection = false
+                                
+                                HapticsService.shared.play(.medium)
+                            } label: {
+                                ElevatedTextCard(text: "2", color: .myDarkBlue, selected: noun2Selection)
+                            }
                             
-                            HapticsService.shared.play(.medium)
-                        } label: {
-                            ElevatedTextCard(text: "2", color: .myDarkBlue, selected: noun2Selection)
-                        }
-                        
-                        Button {
-                            noun2Selection = false
-                            noun3Selection.toggle()
-                            noun4Selection = false
+                            Button {
+                                noun2Selection = false
+                                noun3Selection = true
+                                noun4Selection = false
+                                
+                                HapticsService.shared.play(.medium)
+                            } label: {
+                                ElevatedTextCard(text: "3", color: .myDarkBlue, selected: noun3Selection)
+                            }
                             
-                            HapticsService.shared.play(.medium)
-                        } label: {
-                            ElevatedTextCard(text: "3", color: .myDarkBlue, selected: noun3Selection)
+                            Button {
+                                noun2Selection = false
+                                noun3Selection = false
+                                noun4Selection = true
+                                
+                                HapticsService.shared.play(.medium)
+                            } label: {
+                                ElevatedTextCard(text: "4", color: .myDarkBlue, selected: noun4Selection)
+                            }
                         }
-                        
-                        Button {
-                            noun2Selection = false
-                            noun3Selection = false
-                            noun4Selection.toggle()
-                            
-                            HapticsService.shared.play(.medium)
-                        } label: {
-                            ElevatedTextCard(text: "4", color: .myDarkBlue, selected: noun4Selection)
-                        }
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 16)
+                                .stroke(Color.myDarkBlue, lineWidth: 2))
                     }
+                    
+                    
                     
                     Divider()
                     
@@ -174,35 +181,40 @@ struct StoryView: View {
                         
                         Spacer()
                         
-                        Button {
-                            verb0Selection.toggle()
-                            verb1Selection = false
-                            verb2Selection = false
+                        HStack(spacing: 0) {
+                            Button {
+                                verb0Selection = true
+                                verb1Selection = false
+                                verb2Selection = false
+                                
+                                HapticsService.shared.play(.medium)
+                            } label: {
+                                ElevatedTextCard(text: "0", color: .myPurple, selected: verb0Selection)
+                            }
                             
-                            HapticsService.shared.play(.medium)
-                        } label: {
-                            ElevatedTextCard(text: "0", color: .myPurple, selected: verb0Selection)
-                        }
-                        
-                        Button {
-                            verb0Selection = false
-                            verb1Selection.toggle()
-                            verb2Selection = false
+                            Button {
+                                verb0Selection = false
+                                verb1Selection = true
+                                verb2Selection = false
+                                
+                                HapticsService.shared.play(.medium)
+                            } label: {
+                                ElevatedTextCard(text: "1", color: .myPurple, selected: verb1Selection)
+                            }
                             
-                            HapticsService.shared.play(.medium)
-                        } label: {
-                            ElevatedTextCard(text: "1", color: .myPurple, selected: verb1Selection)
+                            Button {
+                                verb0Selection = false
+                                verb1Selection = false
+                                verb2Selection = true
+                                
+                                HapticsService.shared.play(.medium)
+                            } label: {
+                                ElevatedTextCard(text: "2", color: .myPurple, selected: verb2Selection)
+                            }
                         }
-                        
-                        Button {
-                            verb0Selection = false
-                            verb1Selection = false
-                            verb2Selection.toggle()
-                            
-                            HapticsService.shared.play(.medium)
-                        } label: {
-                            ElevatedTextCard(text: "2", color: .myPurple, selected: verb2Selection)
-                        }
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 16)
+                                .stroke(Color.myPurple, lineWidth: 2))
                     }
                     
                     Divider()
@@ -214,35 +226,40 @@ struct StoryView: View {
                         
                         Spacer()
                         
-                        Button {
-                            people0Selection.toggle()
-                            people1Selection = false
-                            people2Selection = false
+                        HStack(spacing: 0) {
+                            Button {
+                                people0Selection.toggle()
+                                people1Selection = false
+                                people2Selection = false
+                                
+                                HapticsService.shared.play(.medium)
+                            } label: {
+                                ElevatedTextCard(text: "0", color: .myReddish, selected: people0Selection)
+                            }
                             
-                            HapticsService.shared.play(.medium)
-                        } label: {
-                            ElevatedTextCard(text: "0", color: .myReddish, selected: people0Selection)
-                        }
-                        
-                        Button {
-                            people0Selection = false
-                            people1Selection.toggle()
-                            people2Selection = false
+                            Button {
+                                people0Selection = false
+                                people1Selection.toggle()
+                                people2Selection = false
+                                
+                                HapticsService.shared.play(.medium)
+                            } label: {
+                                ElevatedTextCard(text: "1", color: .myReddish, selected: people1Selection)
+                            }
                             
-                            HapticsService.shared.play(.medium)
-                        } label: {
-                            ElevatedTextCard(text: "1", color: .myReddish, selected: people1Selection)
+                            Button {
+                                people0Selection = false
+                                people1Selection = false
+                                people2Selection.toggle()
+                                
+                                HapticsService.shared.play(.medium)
+                            } label: {
+                                ElevatedTextCard(text: "2", color: .myReddish, selected: people2Selection)
+                            }
                         }
-                        
-                        Button {
-                            people0Selection = false
-                            people1Selection = false
-                            people2Selection.toggle()
-                            
-                            HapticsService.shared.play(.medium)
-                        } label: {
-                            ElevatedTextCard(text: "2", color: .myReddish, selected: people2Selection)
-                        }
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 16)
+                                .stroke(Color.myReddish, lineWidth: 2))
                     }
                 } .padding(.horizontal, 32)
             }

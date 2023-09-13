@@ -22,7 +22,7 @@ struct StorageService {
     }
     
     // Remove a story with a specific ID
-    func remove(byID id: UUID) {
+    func remove(byID id: String) {
         var currentStories = listAll()
         currentStories.removeAll(where: { $0.id == id })
         saveStories(currentStories)
