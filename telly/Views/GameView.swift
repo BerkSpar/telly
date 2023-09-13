@@ -15,6 +15,8 @@ struct GameView: View {
     @State var countdown = 3
     @State var showAlert = false
     
+    
+    
     @StateObject private var controller = GameController()
     
     func startCountdown() {
@@ -39,23 +41,25 @@ struct GameView: View {
                         .font(.system(size: 22))
                         .padding(.bottom, 24)
                 } else {
-                    Text("Time to read the words!")
-                        .font(.system(size: 22))
+                    Text("Take a look at the words")
+                        .font(.system(size: 24))
                         .bold()
                         .multilineTextAlignment(.center)
                         .frame(maxWidth: .infinity)
+                        .foregroundColor(.myDarkGrey)
                     
-                    Text("When you are ready, click the button below and start to telling your story")
-                        .font(.system(size: 14))
+                    Text("You will be able to see them again once you start your story")
+                        .font(.system(size: 16))
                         .multilineTextAlignment(.center)
-                        .frame(maxWidth: .infinity)
+                        .frame(width: 300)
                         .padding(.bottom, 24)
+                        .foregroundColor(.myDarkGrey)
                 }
                 
                 if (!controller.nouns.isEmpty) {
                     Text("NOUNS")
                         .font(.myHeader)
-                        .foregroundColor(.myDarkBlue)
+                        .foregroundColor(controller.showNouns ? .myDarkBlue : .myGrey)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.bottom, 8)
                     
@@ -77,7 +81,7 @@ struct GameView: View {
                 if (!controller.verbs.isEmpty) {
                     Text("VERBS")
                         .font(.myHeader)
-                        .foregroundColor(.myPurple)
+                        .foregroundColor(controller.showVerbs ? .myPurple : .myGrey)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.bottom, 8)
                     
@@ -98,7 +102,7 @@ struct GameView: View {
                 if (!controller.characters.isEmpty) {
                     Text("CHARACTERS")
                         .font(.myHeader)
-                        .foregroundColor(.myReddish)
+                        .foregroundColor(controller.showsCharacters ? .myReddish : .myGrey)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.bottom, 8)
                     
@@ -118,20 +122,32 @@ struct GameView: View {
                 
                 Spacer()
                 
-//                Text(controller.text)
-//                Text(controller.conjunto.map { $0.words[0] }.joined(separator: ", "))
-//                    .foregroundColor(.gray)
-                
                 if (!controller.isSpeaking) {
-                    ElevatedButton(
-                        backgroundColor: .myDarkBlue,
-                        textColor: .myGreen,
-                        text: "START SPEAKING",
-                        isDisabled: false
-                    ) {
-                        HapticsService.shared.play(.heavy)
-                        controller.play()
-                        startCountdown()
+                    HStack {
+                        ElevatedButton(
+                            backgroundColor: .myReddish,
+                            textColor: .myBackground,
+                            text: "QUIT",
+                            isDisabled: false
+                        ) {
+                            withAnimation() {
+                                HapticsService.shared.notify(.warning)
+                                RouterService.shared.navigate(.home)
+                            }
+                        }
+                        .frame(maxWidth: .infinity)
+                        
+                        ElevatedButton(
+                            backgroundColor: .myDarkBlue,
+                            textColor: .myGreen,
+                            text: "START",
+                            isDisabled: false
+                        ) {
+                            HapticsService.shared.play(.heavy)
+                            controller.play()
+                            startCountdown()
+                    }
+                        .frame(maxWidth: .infinity)
                     }
                 } else {
                     HStack {
@@ -218,7 +234,7 @@ struct GameView: View {
                         }
                     }
                     .padding(.vertical, 24)
-                    .padding(.horizontal, 24)
+                    .padding(.horizontal, 32)
                     .background(Color.myBackground)
                     .cornerRadius(24)
                     

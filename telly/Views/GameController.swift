@@ -32,6 +32,24 @@ class GameController: ObservableObject {
     
     @Published var wordSet = Set<ElementModel>()
     
+    var showNouns: Bool {
+        wordSet.contains { element in
+            return element.type == .nouns
+        }
+    }
+    
+    var showVerbs: Bool {
+        wordSet.contains { element in
+            return element.type == .verbs
+        }
+    }
+    
+    var showsCharacters: Bool {
+        wordSet.contains { element in
+            return element.type == .characters
+        }
+    }
+    
     func initialize(theme: String, nounsCount: Int, verbsCount: Int, charactersCount: Int) {
         self.theme = theme
         self.nounsCount = nounsCount
