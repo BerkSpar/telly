@@ -144,8 +144,11 @@ struct GameView: View {
                             textColor: .myGreen,
                             text: "FINISH"
                         ) {
-                            HapticsService.shared.notify(.success)
                             controller.stop()
+                            controller.save()
+                            
+                            HapticsService.shared.notify(.success)
+
                             RouterService.shared.navigate(.done(theme: controller.theme))
                         }
                         .frame(maxWidth: .infinity)
@@ -163,6 +166,7 @@ struct GameView: View {
                     charactersCount: charactersCount
                 )
             }
+            
             if controller.isSpeaking && countdown > 0 {
                 Rectangle()
                     .opacity(0.7)

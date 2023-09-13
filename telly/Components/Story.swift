@@ -21,7 +21,11 @@ struct Story: View {
             }
             
             Button {
-                
+                RouterService.shared.showSheet(
+                    StorySheetView(story: $storyModel)
+                        .presentationDetents([.height(350)])
+                        .presentationCompactAdaptation(.none)
+                )
             } label: {
                 HStack {
                     Text(storyModel.title)

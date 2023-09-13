@@ -19,6 +19,8 @@ class GameController: ObservableObject {
     
     @Published var isSpeaking = false
     
+    @Published var audioId = UUID().uuidString
+    
     private var service = SpeechRecognizerService()
     
     var nounsCount = 2
@@ -59,7 +61,7 @@ class GameController: ObservableObject {
     
     func play() {
         do {
-            try service.recognize { text in
+            try service.recognize(audioId: audioId) { text in
                 self.text = text
             }
             
@@ -73,5 +75,30 @@ class GameController: ObservableObject {
         isSpeaking = false
         
         service.stop()
+    }
+    
+    func save() {
+        let currentDate = Date()
+
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMMM d"
+        let formattedDate = formatter.string(from: currentDate)
+        
+        let words =  nouns.map { $0.words[0] } + verbs.map { $0.words[0] } + characters.map { $0.words[0] }
+        
+        StorageService.shared.add(story:
+            StoryModel(
+                title: "My Story",
+                date: formattedDate,
+                theme: theme,
+                words: words,
+                audioPath: getDocumentsDirectory().appendingPathComponent("\(audioId).m4a").path()
+            )
+        )
+    }
+    
+    private func getDocumentsDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return paths[0]
     }
 }

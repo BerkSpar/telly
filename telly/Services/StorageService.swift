@@ -1,12 +1,4 @@
-//
-//  StorageService.swift
-//  telly
-//
-//  Created by Felipe Passos on 24/08/23.
-//
-
 import Foundation
-import SwiftUI
 
 struct StorageService {
     static let shared = StorageService()
@@ -17,10 +9,23 @@ struct StorageService {
     func add(story: StoryModel) {
         var currentStories = listAll()
         currentStories.append(story)
-        
-        if let encoded = try? JSONEncoder().encode(currentStories) {
-            UserDefaults.standard.set(encoded, forKey: storageKey)
+        saveStories(currentStories)
+    }
+    
+    // Update a story with a specific ID
+    func update(story: StoryModel) {
+        var currentStories = listAll()
+        if let index = currentStories.firstIndex(where: { $0.id == story.id }) {
+            currentStories[index] = story
+            saveStories(currentStories)
         }
+    }
+    
+    // Remove a story with a specific ID
+    func remove(byID id: UUID) {
+        var currentStories = listAll()
+        currentStories.removeAll(where: { $0.id == id })
+        saveStories(currentStories)
     }
     
     // List all saved stories
@@ -30,5 +35,12 @@ struct StorageService {
             return decodedStories
         }
         return []
+    }
+    
+    // Helper function to save stories array to UserDefaults
+    private func saveStories(_ stories: [StoryModel]) {
+        if let encoded = try? JSONEncoder().encode(stories) {
+            UserDefaults.standard.set(encoded, forKey: storageKey)
+        }
     }
 }

@@ -28,10 +28,14 @@ class RouterService: ObservableObject {
     /// Changes to this property will trigger UI updates in any views observing it.
     @Published var isAlertPresented: Bool = false
     
+    @Published var isSheetPresented: Bool = false
+    
     /// The current alert object to be displayed.
     ///
     /// This property holds the specifics of an alert, including its title and any associated actions.
     @Published var alert: Alert = Alert(title: Text(""))
+    
+    @Published var sheet: AnyView = AnyView(Text("Sheet"))
 
     /// Displays a given alert to the user.
     ///
@@ -39,6 +43,15 @@ class RouterService: ObservableObject {
     func showAlert(_ alert: Alert) {
         self.alert = alert
         isAlertPresented = true
+    }
+    
+    func showSheet(_ sheet: some View) {
+        self.sheet = AnyView(sheet)
+        isSheetPresented = true
+    }
+    
+    func hideSheet() {
+        isSheetPresented = false
     }
     
     /// Changes the currently displayed screen to the provided one.

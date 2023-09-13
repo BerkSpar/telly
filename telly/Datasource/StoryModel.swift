@@ -10,6 +10,9 @@ import Foundation
 struct StoryModel: Codable {
     var id = UUID()
     
-    var title: String
-    var date: String
+    var title: String = ""
+    var date: String = ""
+    var theme: String = ""
+    var words: [String] = []
+    var audioPath: String = ""
 }

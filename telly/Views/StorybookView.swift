@@ -28,7 +28,7 @@ struct StorybookView: View {
                     }
                     
                     VStack(spacing: 16) {
-                        ForEach(StorageService.shared.listAll(), id: \.id) { story in
+                        ForEach(StorageService.shared.listAll().reversed(), id: \.id) { story in
                             Story(storyModel: story)
                         }
                     }

@@ -13,7 +13,7 @@ class SpeechRecognizerService {
     private var audioRecorder: AVAudioRecorder?
     private var audioFileURL: URL?
 
-    func recognize(callback: @escaping (_ text: String) -> Void) throws {        
+    func recognize(audioId: String, callback: @escaping (_ text: String) -> Void) throws {
         if let recognitionTask = speechRecognitionTask {
             recognitionTask.cancel()
             self.speechRecognitionTask = nil
@@ -30,7 +30,7 @@ class SpeechRecognizerService {
         recognitionRequest.shouldReportPartialResults = true
 
         // Setup and start audio recorder
-        try setupRecorder()
+        try setupRecorder(audioId)
         audioRecorder?.record()
 
         speechRecognitionTask = speechRecognizer.recognitionTask(with: recognitionRequest) { result, error in
@@ -81,8 +81,8 @@ class SpeechRecognizerService {
         audioRecorder?.stop()
     }
 
-    private func setupRecorder() throws {
-        let audioFilename = getDocumentsDirectory().appendingPathComponent("telly.m4a")
+    private func setupRecorder(_ id: String) throws {
+        let audioFilename = getDocumentsDirectory().appendingPathComponent("\(id).m4a")
         self.audioFileURL = audioFilename
         let settings = [
             AVFormatIDKey: Int(kAudioFormatMPEG4AAC),

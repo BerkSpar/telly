@@ -14,8 +14,9 @@ enum IconCardType {
 }
 
 struct IconCard: View {
-    let text: String
+    var text: String?
     var icon: String?
+    var iconSize: CGFloat = 40.0
     var color: Color = .myReddish
     var type: IconCardType = .none
     
@@ -41,23 +42,26 @@ struct IconCard: View {
             backgroundColor: type == .enabled ? color : .myBackground
         ) {
             VStack(spacing: 16) {
-                HStack {
-                    Text(text)
-                        .font(.myCard)
-                        .foregroundColor(getColor())
-                    
-                    Spacer()
-                    
-//                    Image(systemName: "speaker.wave.3.fill")
-//                        .foregroundColor(getColor())
+                if (text != nil) {
+                    HStack {
+                        Text(text!)
+                            .font(.myCard)
+                            .foregroundColor(getColor())
+                        
+                        
+                        Spacer()
+                        
+    //                    Image(systemName: "speaker.wave.3.fill")
+    //                        .foregroundColor(getColor())
+                    }
                 }
                 
                 if (icon != nil) {
                     Image(systemName: icon!)
                         .resizable()
                         .scaledToFit()
-                        .frame(height: 40)
-                        .font(.system(size: 40))
+                        .frame(height: iconSize)
+                        .font(.system(size: iconSize))
                         .foregroundColor(getIconColor())
                         
                     
@@ -94,8 +98,8 @@ struct IconCard_Previews: PreviewProvider {
                 )
                 
                 IconCard(
-                    text: "Schedule",
                     icon: "book",
+                    iconSize: 16,
                     type: .enabled
                 )
             }

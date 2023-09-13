@@ -46,6 +46,9 @@ struct ContentView: View {
         .alert(isPresented: $router.isAlertPresented) {
             router.alert
         }
+        .sheet(isPresented: $router.isSheetPresented) {
+            router.sheet
+        }
     }
 }
 

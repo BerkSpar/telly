@@ -27,7 +27,6 @@ struct HomeView: View {
         .background(Color.myDarkBlue)
         .padding(.top, 40)
         .ignoresSafeArea()
-        
     }
 }
 
