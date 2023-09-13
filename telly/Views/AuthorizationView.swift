@@ -33,7 +33,7 @@ struct AuthorizationView: View {
             ElevatedButton(
                 backgroundColor: .myDarkBlue,
                 textColor: .myBackground,
-                text: buttonText,
+                text: buttonText, isDisabled: false,
                 action: {
                     HapticsService.shared.play(.heavy)
                     

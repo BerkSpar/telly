@@ -21,11 +21,16 @@ class GameController: ObservableObject {
     
     @Published var audioId = UUID().uuidString
     
+    private var expectedWordCount: Int = 0
+    private var checkedWordCount: Int = 0
+    
     private var service = SpeechRecognizerService()
     
     var nounsCount = 2
     var verbsCount = 2
     var charactersCount = 2
+    
+    @Published var wordSet = Set<ElementModel>()
     
     func initialize(theme: String, nounsCount: Int, verbsCount: Int, charactersCount: Int) {
         self.theme = theme
@@ -40,24 +45,44 @@ class GameController: ObservableObject {
         nouns = ElementManager.getRandomElements(count: nounsCount, theme: theme, type: .nouns)
         verbs = ElementManager.getRandomElements(count: verbsCount, theme: theme, type: .verbs)
         characters = ElementManager.getRandomElements(count: charactersCount, theme: theme, type: .characters)
+        
+        let arr = nouns + verbs + characters
+        arr.forEach { element in
+            wordSet.insert(element)
+        }
     }
     
     func check(element: ElementModel) -> Bool {
         for word in element.words {
-            if text.contains(word) {
-                print("Notifica sucesso")
-                HapticsService.shared.notify(.success)
+            if text.lowercased().contains(word.lowercased()) {
                 
+                if wordSet.contains(element){
+                    DispatchQueue.main.async {
+                        self.wordSet.remove(element)
+                    }
+                }
+                
+                HapticsService.shared.notify(.success)
+              
                 if (word.lowercased() == "apple") {
                     GameService.shared.reportAchievement(identifier: "apple_odyssey", progress: 1.0/26.0 * 100.0)
+                    
                 }
                 
                 return true
             }
         }
-        
         return false
     }
+    
+    func checkAllWords() -> Bool {
+        if wordSet.isEmpty {
+            return false
+        } else {
+            return true
+        }
+    }
+    
     
     func play() {
         do {

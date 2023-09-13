@@ -37,7 +37,7 @@ struct DoneView: View {
                         .foregroundColor(.myDarkGrey)
                 }
                 
-                ElevatedButton(backgroundColor: .myDarkBlue, textColor: .myGreen, text: "RETURN TO\nMAIN PAGE", action: {
+                ElevatedButton(backgroundColor: .myDarkBlue, textColor: .myGreen, text: "RETURN TO\nMAIN PAGE", isDisabled: false, action: {
                     HapticsService.shared.play(.heavy)
                     
                     reportAchievements()
