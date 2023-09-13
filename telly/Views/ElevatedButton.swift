@@ -36,7 +36,9 @@ struct ElevatedButton: View {
                     .fontWidth(.expanded)
                     .fontWeight(.heavy)
                     .foregroundColor(buttonTextColor())
+                    .frame(maxWidth: .infinity)
                     .padding(16)
+                    
             }
         }
         .disabled(isDisabled)

@@ -44,6 +44,7 @@
 		F7C4F9102A9B110500691AC2 /* GameService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C4F90F2A9B110500691AC2 /* GameService.swift */; };
 		F7C7D46D2AB0069100EC8256 /* AudioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C7D46C2AB0069100EC8256 /* AudioService.swift */; };
 		F7C7D46F2AB1232C00EC8256 /* StorySheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C7D46E2AB1232C00EC8256 /* StorySheetView.swift */; };
+		F7C7D4712AB250D100EC8256 /* AnimatedIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C7D4702AB250D100EC8256 /* AnimatedIcon.swift */; };
 		F7CBC9302A9FCCA700073AA3 /* Datasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CBC92F2A9FCCA700073AA3 /* Datasource.swift */; };
 		F7CBC9322A9FCCC300073AA3 /* ElementManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CBC9312A9FCCC300073AA3 /* ElementManager.swift */; };
 		F7CBC9342A9FCECD00073AA3 /* ElementModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CBC9332A9FCECD00073AA3 /* ElementModel.swift */; };
@@ -108,6 +109,7 @@
 		F7C4F90F2A9B110500691AC2 /* GameService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameService.swift; sourceTree = "<group>"; };
 		F7C7D46C2AB0069100EC8256 /* AudioService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioService.swift; sourceTree = "<group>"; };
 		F7C7D46E2AB1232C00EC8256 /* StorySheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorySheetView.swift; sourceTree = "<group>"; };
+		F7C7D4702AB250D100EC8256 /* AnimatedIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedIcon.swift; sourceTree = "<group>"; };
 		F7CBC92F2A9FCCA700073AA3 /* Datasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Datasource.swift; sourceTree = "<group>"; };
 		F7CBC9312A9FCCC300073AA3 /* ElementManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementManager.swift; sourceTree = "<group>"; };
 		F7CBC9332A9FCECD00073AA3 /* ElementModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementModel.swift; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 				8CA51D662AA6C760007061B2 /* Authorization.swift */,
 				F7676D062AA90A1B00502627 /* ProgressBar.swift */,
 				F7676D0C2AAF297C00502627 /* Story.swift */,
+				F7C7D4702AB250D100EC8256 /* AnimatedIcon.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -413,6 +416,7 @@
 				F7895EB72A97D11E00E8B286 /* StorageService.swift in Sources */,
 				F7CBC95E2AA1283700073AA3 /* ElevatedCard.swift in Sources */,
 				8CA51D672AA6C760007061B2 /* Authorization.swift in Sources */,
+				F7C7D4712AB250D100EC8256 /* AnimatedIcon.swift in Sources */,
 				F7CBC95C2AA11BB700073AA3 /* ImageCard.swift in Sources */,
 				F7895EAD2A97CBCD00E8B286 /* Array+Ext.swift in Sources */,
 				F75343DD2AA182F90006E2F6 /* ElevatedButton.swift in Sources */,
@@ -573,7 +577,6 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -611,7 +614,6 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

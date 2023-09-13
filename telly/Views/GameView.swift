@@ -36,10 +36,15 @@ struct GameView: View {
         ZStack {
             VStack(spacing: 0) {
                 if (controller.isSpeaking) {
-                    Text("Theme: \(controller.theme)")
-                        .bold()
-                        .font(.system(size: 22))
-                        .padding(.bottom, 24)
+                    HStack() {
+                        AnimatedIcon()
+                        
+                        Text("Theme: \(controller.theme)")
+                            .bold()
+                            .font(.system(size: 22))
+                            
+                    }
+                    .padding(.bottom, 24)
                 } else {
                     Text("Take a look at the words")
                         .font(.system(size: 24))
@@ -123,7 +128,7 @@ struct GameView: View {
                 Spacer()
                 
                 if (!controller.isSpeaking) {
-                    HStack {
+                    HStack(spacing: 16) {
                         ElevatedButton(
                             backgroundColor: .myReddish,
                             textColor: .myBackground,
@@ -150,7 +155,7 @@ struct GameView: View {
                         .frame(maxWidth: .infinity)
                     }
                 } else {
-                    HStack {
+                    HStack(spacing: 16) {
                         ElevatedButton(
                             backgroundColor: .myReddish,
                             textColor: .myBackground,
@@ -233,6 +238,7 @@ struct GameView: View {
                             }
                         }
                     }
+                    .frame(width: 300)
                     .padding(.vertical, 24)
                     .padding(.horizontal, 32)
                     .background(Color.myBackground)

@@ -292,6 +292,7 @@ struct StoryView: View {
                     }
                 }
             )
+            .padding(.horizontal, 32)
             
             Spacer()
         }

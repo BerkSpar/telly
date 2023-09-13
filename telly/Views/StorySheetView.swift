@@ -118,7 +118,7 @@ struct StorySheetView: View {
                 let path = getDocumentsDirectory().appendingPathComponent("\(story.id).m4a").path()
                 service.playAudio(withPath: path)
             } label: {
-                ElevatedCard(color: .myDarkBlue, content:  {
+                ElevatedCard(color: .myDarkBlue, hasStroke: true, content:  {
                     HStack {
                         Text("Play Audio")
                             .foregroundColor(.myDarkBlue)
@@ -126,6 +126,7 @@ struct StorySheetView: View {
                         Spacer()
                         
                         Image(systemName: "play.circle.fill")
+                            .font(.system(size: 32))
                             .foregroundColor(.myDarkBlue)
                     }
                     .padding(16)
