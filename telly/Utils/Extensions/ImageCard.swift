@@ -43,7 +43,7 @@ struct ImageCard: View {
         .padding(12)
         .background(
             RoundedRectangle(cornerRadius: 16)
-                .stroke(Color.myGrey, lineWidth: 2)
+                .stroke(changeColor(), lineWidth: 2)
                 .background(
                     RoundedRectangle(cornerRadius: 16)
                         .fill(changeBackgroundColor())

@@ -10,7 +10,7 @@ import SwiftUI
 struct ElevatedCard<Content: View>: View {
     var color: Color = Color.myDarkBlue
     var backgroundColor: Color = Color.myBackground
-    var hasStroke: Bool
+    var hasStroke: Bool = false
     let content: () -> Content
     
     func strokeColor() -> Color {

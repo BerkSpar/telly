@@ -30,7 +30,6 @@ struct ElevatedButton: View {
             ElevatedCard(
                 color: isDisabled ? .myGrey : backgroundColor,
                 backgroundColor: isDisabled ? .myGrey : backgroundColor
-                hasStroke: false
             ) {
                 Text(text)
                     .font(.system(size: 24))

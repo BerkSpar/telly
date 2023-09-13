@@ -16,7 +16,6 @@ struct ElevatedTextCard: View {
         ElevatedCard(
             color: color,
             backgroundColor: selected ? color : Color.myBackground,
-            hasStroke: false,
             content:  {
                 Text(text)
                     .font(.system(size: 20))
