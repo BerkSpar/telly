@@ -10,25 +10,37 @@ import SwiftUI
 struct ElevatedButton: View {
     var backgroundColor: Color
     var textColor: Color
-    
+     
     let text: String
+    
+    var isDisabled: Bool
+    
     let action: () -> Void
+    
+    func buttonTextColor() -> Color {
+        if isDisabled {
+            return .myBackground
+        } else {
+            return textColor
+        }
+    }
     
     var body: some View {
         Button(action: action) {
             ElevatedCard(
-                color: backgroundColor,
-                backgroundColor: backgroundColor,
+                color: isDisabled ? .myGrey : backgroundColor,
+                backgroundColor: isDisabled ? .myGrey : backgroundColor
                 hasStroke: false
             ) {
                 Text(text)
                     .font(.system(size: 24))
                     .fontWidth(.expanded)
                     .fontWeight(.heavy)
-                    .foregroundColor(textColor)
+                    .foregroundColor(buttonTextColor())
                     .padding(16)
             }
         }
+        .disabled(isDisabled)
     }
 }
 
@@ -37,7 +49,8 @@ struct ElevatedButton_Previews: PreviewProvider {
         ElevatedButton(
             backgroundColor: .myDarkBlue,
             textColor: .myGreen,
-            text: "START!"
+            text: "START!",
+            isDisabled: true
         
         ) {
             print("Ihu")

@@ -268,6 +268,7 @@ struct StoryView: View {
                 backgroundColor: .myDarkBlue,
                 textColor: .myGreen,
                 text: "START",
+                isDisabled: false,
                 action: {
                     HapticsService.shared.play(.medium)
 

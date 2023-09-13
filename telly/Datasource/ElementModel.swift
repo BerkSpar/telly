@@ -13,11 +13,12 @@ enum ElementType {
     case characters
 }
 
-struct ElementModel: Identifiable {
+struct ElementModel: Identifiable, Hashable {
     var id = UUID()
     
     var icon: String
     var words: [String]
     var type: ElementType
     var theme: [String]
+
 }
