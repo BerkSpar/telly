@@ -14,9 +14,7 @@ struct GameView: View {
     public var charactersCount: Int
     @State var countdown = 3
     @State var showAlert = false
-    
-    
-    
+
     @StateObject private var controller = GameController()
     
     func startCountdown() {
@@ -149,6 +147,7 @@ struct GameView: View {
                     }
                         .frame(maxWidth: .infinity)
                     }
+                    
                 } else {
                     HStack {
                         ElevatedButton(

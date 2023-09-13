@@ -24,9 +24,18 @@ struct DoneView: View {
     var body: some View {
         ZStack {
             Rectangle()
-                .foregroundColor(.myGreen)
+                .foregroundColor(.myBackground)
+            
+            VStack {
+                Spacer()
+                Image("wave")
+                    .resizable()
+                    .scaledToFit()
+            }
             VStack(spacing: 32) {
                 VStack {
+                    Image("telly_done")
+                    
                     Text("Well done!")
                         .font(.myLargeTitle)
                         .foregroundColor(.myDarkGrey)
@@ -37,16 +46,28 @@ struct DoneView: View {
                         .foregroundColor(.myDarkGrey)
                 }
                 
-                ElevatedButton(backgroundColor: .myDarkBlue, textColor: .myGreen, text: "RETURN TO\nMAIN PAGE", isDisabled: false, action: {
-                    HapticsService.shared.play(.heavy)
+                VStack(spacing: 16) {
+                    ElevatedButton(backgroundColor: .myDarkBlue, textColor: .myGreen, text: "SAVE MY STORY", isDisabled: false, action: {
+                        
+                        //escrever lógica para abrir modal e a pessoa salvar a história + ir para storybookview
+                        
+                        HapticsService.shared.play(.heavy)
+                        
+                        reportAchievements()
+                        
+                        RouterService.shared.navigate(.home)
+                        
+                    })
                     
-                    reportAchievements()
-                    
-                    RouterService.shared.navigate(.home)
-                    
-                })
+                    Button {
+                        //escrever lógica para não salvar nada e ir para a homeview
+                    } label: {
+                        Text("I don't want to save my story")
+                            .foregroundColor(.myDarkGrey)
+                            .underline()
+                    }
+                }
             }
-            
         }
         .ignoresSafeArea()
     }
