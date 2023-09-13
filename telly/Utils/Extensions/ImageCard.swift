@@ -31,13 +31,10 @@ struct ImageCard: View {
     var body: some View {
         VStack(spacing: 8) {
             Image(image)
-//                .resizable()
-//                .frame(width: 130, height: 100)
-//                .padding(.vertical, 2)
-//                .background(Color.myBackground)
-//                .cornerRadius(8)
-            
-            
+                .resizable()
+                .frame(width: 130, height: 100)
+                .scaledToFill()
+                
             Text(title)
                 .font(.myBodyBold)
                 .bold()
@@ -46,7 +43,7 @@ struct ImageCard: View {
         .padding(12)
         .background(
             RoundedRectangle(cornerRadius: 16)
-                .stroke(changeColor(), lineWidth: 2)
+                .stroke(Color.myGrey, lineWidth: 2)
                 .background(
                     RoundedRectangle(cornerRadius: 16)
                         .fill(changeBackgroundColor())

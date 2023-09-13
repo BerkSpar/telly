@@ -9,6 +9,8 @@ import SwiftUI
 import AVFAudio
 
 struct StorybookView: View {
+    @State var stories:[StoryModel] = StorageService.shared.listAll().reversed()
+    
     var body: some View {
         ScrollView {
             VStack(spacing: 32) {
@@ -28,11 +30,13 @@ struct StorybookView: View {
                     }
                     
                     VStack(spacing: 16) {
-                        ForEach(StorageService.shared.listAll().reversed(), id: \.id) { story in
-                            Story(storyModel: story)
+                        ForEach(stories, id: \.id) { story in
+                            Story(storyModel: story) {
+                                print("apagou")
+                                stories = StorageService.shared.listAll().reversed()
+                            }
                         }
                     }
-                    
                 }
             }
             .padding(.vertical, 32)

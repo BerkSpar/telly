@@ -20,7 +20,7 @@ struct TabLabel: View {
                 .fontWidth(.expanded)
                 .bold()
                 .padding(.vertical, 12)
-                .frame(width: 200)
+                .frame(maxWidth: .infinity)
                 .background(Color.myBackground)
                 .cornerRadius(32, corners: corner)
         } else {
@@ -29,7 +29,7 @@ struct TabLabel: View {
                 .fontWidth(.expanded)
                 .bold()
                 .padding(.vertical, 12)
-                .frame(width: 200)
+                .frame(maxWidth: .infinity)
                 .foregroundColor(.myGreen)
                 .background(Color.myDarkBlue)
                 .cornerRadius(32, corners: corner)

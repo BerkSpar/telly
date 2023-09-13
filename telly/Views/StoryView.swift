@@ -82,16 +82,16 @@ struct StoryView: View {
                 
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 16) {
-                        Button {
-                            workSelection.toggle()
-                            travellingSelection = false
-                            shoppingSelection = false
-                            
-                            HapticsService.shared.play(.medium)
-                        } label: {
-                            ImageCard(title: "WORKSPACE", image: "category_workspace", isSelected: $workSelection)
-                        }
-                        
+//                        Button {
+//                            workSelection.toggle()
+//                            travellingSelection = false
+//                            shoppingSelection = false
+//
+//                            HapticsService.shared.play(.medium)
+//                        } label: {
+//                            ImageCard(title: "WORKSPACE", image: "category_workspace", isSelected: $workSelection)
+//                        }
+//
                         Button {
                             travellingSelection.toggle()
                             workSelection = false
