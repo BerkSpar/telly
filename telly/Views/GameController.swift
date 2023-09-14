@@ -18,6 +18,7 @@ class GameController: ObservableObject {
     @Published var text = ""
     
     @Published var isSpeaking = false
+    @Published var started = false
     
     @Published var audioId = UUID().uuidString
     
@@ -98,6 +99,9 @@ class GameController: ObservableObject {
         }
     }
     
+    func prepareToPlay() {
+        started = true
+    }
     
     func play() {
         do {
@@ -113,6 +117,7 @@ class GameController: ObservableObject {
     
     func stop() {
         isSpeaking = false
+        started = false
         
         service.stop()
     }

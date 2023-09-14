@@ -23,10 +23,11 @@ struct GameView: View {
     func startCountdown() {
         let interval = DispatchTimeInterval.seconds(1)
         DispatchQueue.main.asyncAfter(deadline: .now() + interval) {
-            if controller.isSpeaking && countdown > 0 {
+            if controller.started && countdown > 0 {
                 countdown -= 1
-                
                 startCountdown()
+            } else if controller.started && countdown == 0 {
+                controller.play()
             }
         }
     }
@@ -34,7 +35,7 @@ struct GameView: View {
     var body: some View {
         ZStack {
             VStack(spacing: 0) {
-                if (controller.isSpeaking) {
+                if (controller.started) {
                     HStack() {
                         AnimatedIcon()
 
@@ -165,13 +166,14 @@ struct GameView: View {
 
                 Spacer()
 
-                if (!controller.isSpeaking) {
+                if (!controller.started) {
                     HStack(spacing: 16) {
                         ElevatedButton(
                             backgroundColor: .myReddish,
                             textColor: .myBackground,
                             text: "QUIT"
                         ) {
+                            controller.stop()
                             HapticsService.shared.notify(.warning)
                             RouterService.shared.navigate(.home)
                         }
@@ -183,7 +185,8 @@ struct GameView: View {
                             text: "START"
                         ) {
                             HapticsService.shared.play(.heavy)
-                            controller.play()
+                            controller.prepareToPlay()
+                            countdown = 3
                             startCountdown()
                     }
                         .frame(maxWidth: .infinity)
@@ -200,6 +203,12 @@ struct GameView: View {
                             withAnimation(.spring()) {
                                 HapticsService.shared.notify(.warning)
                                 showAlert = true
+                                
+                                RouterService.shared.showPopUp(
+                                    Popup(title: "Do you really want to stop de game?", bodyText: "Any progress you may have made so far won't be saved", numberOfButtons: 2, buttonText: "NO", action: {
+                                        controller.stop()
+                                    })
+                                )
                             }
                         }
                         .frame(maxWidth: .infinity)
@@ -233,11 +242,8 @@ struct GameView: View {
             }
 
             .overlay {
-                Popup(alert: $showAlert, title: "Do you really want to stop de game?", bodyText: "Any progress you may have made so far won't be saved", numberOfButtons: 2, buttonText: "NO", action: {
-                    controller.stop()
-                })
-
-                if controller.isSpeaking && countdown > 0 {
+                
+                if controller.started && countdown > 0 {
                     Rectangle()
                         .opacity(0.7)
                         .ignoresSafeArea()

@@ -8,8 +8,27 @@
 import SwiftUI
 
 struct Popup: View {
-    @Binding var alert: Bool
-  
+
+    internal init(title: LocalizedStringKey, bodyText: LocalizedStringKey, numberOfButtons: Int, buttonText: LocalizedStringKey, secondButtonText: LocalizedStringKey = "YES", action: @escaping () -> Void) {
+        self.title = title
+        self.bodyText = bodyText
+        self.numberOfButtons = numberOfButtons
+        self.buttonText = buttonText
+        self.secondButtonText = secondButtonText
+        self.action = action
+        self.secondaryAction = nil
+    }
+    
+    internal init(title: LocalizedStringKey, bodyText: LocalizedStringKey, numberOfButtons: Int, buttonText: LocalizedStringKey, secondButtonText: LocalizedStringKey = "YES", action: @escaping () -> Void, secondaryAction: @escaping () -> Void) {
+        self.title = title
+        self.bodyText = bodyText
+        self.numberOfButtons = numberOfButtons
+        self.buttonText = buttonText
+        self.secondButtonText = secondButtonText
+        self.action = action
+        self.secondaryAction = secondaryAction
+    }
+ 
     var title: LocalizedStringKey
     var bodyText: LocalizedStringKey
     var numberOfButtons: Int
@@ -17,6 +36,8 @@ struct Popup: View {
     var secondButtonText: LocalizedStringKey = "YES"
     
     var action: () -> Void
+    var secondaryAction: (() -> Void)?
+    
     
     @StateObject private var controller = GameController()
     
@@ -48,7 +69,7 @@ struct Popup: View {
                     if numberOfButtons == 2 {
                         ElevatedButton(backgroundColor: .myReddish,textColor: .myBackground, text: secondButtonText, isDisabled: false) {
                             withAnimation() {
-                                alert = false
+                                RouterService.shared.hidePopUp()
                                 action()
                                 HapticsService.shared.play(.heavy)
                             }
@@ -56,7 +77,8 @@ struct Popup: View {
                         
                         ElevatedButton(backgroundColor: .myDarkBlue, textColor: .myBackground, text: buttonText, isDisabled: false) {
                             withAnimation() {
-                                alert = false
+                                RouterService.shared.hidePopUp()
+                                secondaryAction?()
                                 HapticsService.shared.play(.soft)
                             }
                         }
@@ -65,7 +87,7 @@ struct Popup: View {
                     if numberOfButtons == 1 {
                         ElevatedButton(backgroundColor: .myDarkBlue, textColor: .myBackground, text: buttonText, isDisabled: false) {
                             withAnimation() {
-                                alert = false
+                                RouterService.shared.hidePopUp()
                                 HapticsService.shared.play(.soft)
                             }
                         }
@@ -78,14 +100,13 @@ struct Popup: View {
             .cornerRadius(24)
             .padding(32)
             
-        }.opacity(alert ? 1 : 0)
+        }
     }
 }
 
 struct Popup_Previews: PreviewProvider {
     static var previews: some View {
-        Popup(alert: .constant(true),
-              title: "Title of popup",
+        Popup(title: "Title of popup",
               bodyText: "Body of the warning",
               numberOfButtons: 2,
               buttonText: "NO") {

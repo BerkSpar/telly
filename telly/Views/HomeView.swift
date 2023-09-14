@@ -11,8 +11,6 @@ struct HomeView: View {
     @State var storyViewIsSelected = true
     @State var storybookViewIsSelected = false
     
-    @State var showAlert = false
-    
     @GestureState private var dragOffset: CGSize = .zero
     
     var body: some View {
@@ -42,7 +40,7 @@ struct HomeView: View {
             Tab(storyIsSelected: $storyViewIsSelected, storybookIsSelected: $storybookViewIsSelected)
             
             if storyViewIsSelected {
-                StoryView(alert: $showAlert)
+                StoryView()
                     .transition(.move(edge: .leading))
             } else if storybookViewIsSelected {
                 StorybookView()
@@ -53,16 +51,6 @@ struct HomeView: View {
         .padding(.top, 40)
         .ignoresSafeArea()
         .gesture(dragGesture)
-        .overlay{
-            Popup(alert: $showAlert, title: "You need to select one theme", bodyText: "", numberOfButtons: 1, buttonText: "OK", action: {
-                print("ok")
-            })
-        }
-        .overlay{
-            Popup(alert: $showAlert, title: "Are you sure that you want to delete your story?", bodyText: "You won't be able to recover your audio afterwards", numberOfButtons: 2, buttonText: "NO", action: {
-                print("ok")
-            })
-        }
         
     }
 }
