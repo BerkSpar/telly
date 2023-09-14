@@ -211,11 +211,11 @@ struct GameView: View {
                             isDisabled: controller.checkAllWords()
                         ) {
                             controller.stop()
-                            controller.save()
+                            let story = controller.getStory()
 
                             HapticsService.shared.notify(.success)
 
-                            RouterService.shared.navigate(.done(theme: controller.theme))
+                            RouterService.shared.navigate(.done(story: story))
                         }
                         .frame(maxWidth: .infinity)
                     }
