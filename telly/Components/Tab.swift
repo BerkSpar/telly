@@ -12,8 +12,8 @@ struct Tab: View {
     @Binding var storyIsSelected: Bool
     @Binding var storybookIsSelected: Bool
     
-    var firstButtonText = "NEW STORY"
-    var secondButtonText = "STORYBOOK"
+    let firstButtonText: LocalizedStringKey = "NEW STORY"
+    let secondButtonText: LocalizedStringKey = "STORYBOOK"
     
     func storyCorner(view: Bool) -> UIRectCorner {
         if view && firstButtonText == "NEW STORY" {

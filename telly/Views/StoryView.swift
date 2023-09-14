@@ -74,11 +74,11 @@ struct StoryView: View {
 
             VStack {
                 HStack {
-                    Text("Choose the story theme")
+                    Text("Choose the story theme:")
                         .font(.myBody)
                     Spacer()
                 }
-                .padding(.horizontal, 32)
+                .padding(.horizontal, 24)
                 
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 16) {
@@ -113,7 +113,7 @@ struct StoryView: View {
                         }
                         
                     }
-                    .padding(.horizontal, 32)
+                    .padding(.horizontal, 24)
                     .padding(.vertical, 2)
                 }
             }
@@ -124,7 +124,7 @@ struct StoryView: View {
                         .fixedSize(horizontal: false, vertical: true)
                     Spacer()
                 }
-                .padding(.horizontal, 32)
+                .padding(.horizontal, 24)
                 
                 VStack(spacing: 12){
                     HStack(spacing: 12) {
@@ -261,7 +261,7 @@ struct StoryView: View {
                             RoundedRectangle(cornerRadius: 16)
                                 .stroke(Color.myReddish, lineWidth: 2))
                     }
-                } .padding(.horizontal, 32)
+                } .padding(.horizontal, 24)
             }
 
             ElevatedButton(
@@ -292,7 +292,7 @@ struct StoryView: View {
                     }
                 }
             )
-            .padding(.horizontal, 32)
+            .padding(.horizontal, 24)
             
             Spacer()
         }

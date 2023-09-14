@@ -1,0 +1,50 @@
+/* 
+  Localizable.strings
+  telly
+
+  Created by Felipe Passos on 13/09/23.
+  
+*/
+"date_format" = "dd/MM/yyyy";
+"Choose the story theme:" = "Escolha o tema da história:";
+"WORKSPACE" = "TRABALHO";
+"TRAVELLING" = "VIAGEM";
+"SHOPPING" = "COMPRAS";
+"Choose the quantity of each type of word:" = "Escolha a quantidade de cada tipo de palavra:";
+"NOUNS" = "NOMES";
+"VERBS" = "VERBOS";
+"PEOPLE" = "PESSOAS";
+"START" = "COMEÇAR";
+"You need to select one theme" = "Você precisa escolher um tema";
+"You need to select the nouns" = "Você precisa selecionar os nomes";
+"ACHIEVEMENTS" = "CONQUISTAS";
+"MY STORIES" = "MINHAS HISTÓRIAS";
+"Title" = "Título";
+"Theme: " = "Tema: ";
+"Words: " = "Palavras: ";
+"Play Audio" = "Reproduzir Áudio";
+"Take a look at the words" = "De uma olhada nas palavras";
+"You will be able to see them again once you start your story" = "Você poderá ver elas novamente quando começar a sua história";
+"QUIT" = "SAIR";
+"START" = "INICIAR";
+"STOP" = "PARAR";
+"FINISH" = "ACABAR";
+"Do you really want to quit?" = "Você realmente deseja sair?";
+"Any progress you may have made so far won't be saved" = "Todo o progresso que você fez não será salvo";
+"YES" = "SIM";
+"NO" = "NÃO";
+"Well done!" = "Arrasou!";
+"You made an awesome story!" = "Você fez uma história incrível!";
+"RETURN TO\nMAIN PAGE" = "VOLTE PARA A\nPÁGINA INICIAL";
+"To play the game you must enable your microphone" = "Para jogar você precisa permitir o uso do seu microfone";
+"That's because we will identify if you are pronouncing the words" = "Isso porque nós identificamos se você está pronunciando as palavras";
+"Ok, I understand" = "Tá bom, entendi";
+"Welcome, \nStoryteller!" = "Bem-vindo(a), \ncriador de histórias!";
+"NEW STORY" = "CRIAR";
+"STORYBOOK" = "HISTÓRIAS";
+"My Story" = "Minha História";
+"Theme: %@" = "Tema: %@";
+"shopping" = "compras";
+"traveling" = "viagem";
+"work" = "trabalho";
+"Check out my story on Telly, my favorite app for learning English through stories! 📖\n" = "Veja a minha história no Telly, meu aplicativo favorito para aprender inglês através de histórias";

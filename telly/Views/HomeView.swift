@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct HomeView: View {
-    @State private var text = "Home View"
     @State var storyViewIsSelected = true
     @State var storybookViewIsSelected = false
     

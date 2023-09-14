@@ -36,7 +36,6 @@ struct StorybookView: View {
                         VStack(spacing: 16) {
                             ForEach(stories, id: \.id) { story in
                                 Story(storyModel: story) {
-                                    print("apagou")
                                     stories = StorageService.shared.listAll().reversed()
                                 }
                             }
@@ -45,7 +44,7 @@ struct StorybookView: View {
                 }
             }
             .padding(.vertical, 32)
-            .padding(.horizontal, 32)
+            .padding(.horizontal, 24)
         }
         .background(Color.myBackground)
     }

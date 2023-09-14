@@ -45,6 +45,7 @@
 		F7C7D46D2AB0069100EC8256 /* AudioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C7D46C2AB0069100EC8256 /* AudioService.swift */; };
 		F7C7D46F2AB1232C00EC8256 /* StorySheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C7D46E2AB1232C00EC8256 /* StorySheetView.swift */; };
 		F7C7D4712AB250D100EC8256 /* AnimatedIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C7D4702AB250D100EC8256 /* AnimatedIcon.swift */; };
+		F7C7D4742AB2ABDA00EC8256 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F7C7D4762AB2ABDA00EC8256 /* Localizable.strings */; };
 		F7CBC9302A9FCCA700073AA3 /* Datasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CBC92F2A9FCCA700073AA3 /* Datasource.swift */; };
 		F7CBC9322A9FCCC300073AA3 /* ElementManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CBC9312A9FCCC300073AA3 /* ElementManager.swift */; };
 		F7CBC9342A9FCECD00073AA3 /* ElementModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CBC9332A9FCECD00073AA3 /* ElementModel.swift */; };
@@ -110,6 +111,9 @@
 		F7C7D46C2AB0069100EC8256 /* AudioService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioService.swift; sourceTree = "<group>"; };
 		F7C7D46E2AB1232C00EC8256 /* StorySheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorySheetView.swift; sourceTree = "<group>"; };
 		F7C7D4702AB250D100EC8256 /* AnimatedIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedIcon.swift; sourceTree = "<group>"; };
+		F7C7D4752AB2ABDA00EC8256 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F7C7D4772AB2ABE000EC8256 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		F7C7D4782AB2BD4600EC8256 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F7CBC92F2A9FCCA700073AA3 /* Datasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Datasource.swift; sourceTree = "<group>"; };
 		F7CBC9312A9FCCC300073AA3 /* ElementManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementManager.swift; sourceTree = "<group>"; };
 		F7CBC9332A9FCECD00073AA3 /* ElementModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementModel.swift; sourceTree = "<group>"; };
@@ -299,6 +303,7 @@
 				F7CBC94A2AA1116100073AA3 /* K2D-SemiBoldItalic.ttf */,
 				F7CBC9412AA1116000073AA3 /* K2D-Thin.ttf */,
 				F7CBC93D2AA1116000073AA3 /* K2D-ThinItalic.ttf */,
+				F7C7D4762AB2ABDA00EC8256 /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -347,6 +352,8 @@
 			knownRegions = (
 				en,
 				Base,
+				"pt-BR",
+				fr,
 			);
 			mainGroup = F7895E882A97C96800E8B286;
 			packageReferences = (
@@ -381,6 +388,7 @@
 				F7CBC94D2AA1116100073AA3 /* K2D-ThinItalic.ttf in Resources */,
 				F7CBC9572AA1116100073AA3 /* K2D-ExtraLightItalic.ttf in Resources */,
 				F7CBC94E2AA1116100073AA3 /* K2D-Regular.ttf in Resources */,
+				F7C7D4742AB2ABDA00EC8256 /* Localizable.strings in Resources */,
 				F7CBC9582AA1116100073AA3 /* K2D-Italic.ttf in Resources */,
 				F7CBC9562AA1116100073AA3 /* K2D-Light.ttf in Resources */,
 			);
@@ -439,6 +447,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F7C7D4762AB2ABDA00EC8256 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F7C7D4752AB2ABDA00EC8256 /* en */,
+				F7C7D4772AB2ABE000EC8256 /* pt-BR */,
+				F7C7D4782AB2BD4600EC8256 /* fr */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		F7895E9D2A97C96900E8B286 /* Debug */ = {
@@ -563,7 +584,7 @@
 				CODE_SIGN_ENTITLEMENTS = telly/telly.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_ASSET_PATHS = "\"telly/Preview Content\"";
 				DEVELOPMENT_TEAM = R9V648Y475;
 				ENABLE_PREVIEWS = YES;
@@ -576,7 +597,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -600,7 +621,7 @@
 				CODE_SIGN_ENTITLEMENTS = telly/telly.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_ASSET_PATHS = "\"telly/Preview Content\"";
 				DEVELOPMENT_TEAM = R9V648Y475;
 				ENABLE_PREVIEWS = YES;
@@ -613,7 +634,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

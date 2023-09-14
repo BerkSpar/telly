@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct Authorization: View {
-    var titleVoice: String
-    var titleSound: String
+    var titleVoice: LocalizedStringKey
+    var titleSound: LocalizedStringKey
     var icon: String
-    var bodyText: String
+    var bodyText: LocalizedStringKey
     
     var body: some View {
         VStack{

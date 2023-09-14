@@ -10,10 +10,10 @@ import Speech
 
 struct AuthorizationView: View {
     
-    @State var title = "To play the game you must enable your microphone"
+    @State var title: LocalizedStringKey = "To play the game you must enable your microphone"
     @State var icon = "microphone_authorization"
-    @State var bodyText = "That's because we will identify if you are pronouncing the words"
-    @State var buttonText = "Ok, I understand"
+    @State var bodyText: LocalizedStringKey = "That's because we will identify if you are pronouncing the words"
+    @State var buttonText: LocalizedStringKey = "Ok, I understand"
     
     let completion: () -> Void
     
