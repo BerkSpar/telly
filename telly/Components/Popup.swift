@@ -9,7 +9,7 @@ import SwiftUI
 
 struct Popup: View {
     @Binding var alert: Bool
-    
+  
     var title: LocalizedStringKey
     var bodyText: LocalizedStringKey
     var numberOfButtons: Int
@@ -76,6 +76,7 @@ struct Popup: View {
             .padding(.horizontal, 32)
             .background(Color.myBackground)
             .cornerRadius(24)
+            .padding(32)
             
         }.opacity(alert ? 1 : 0)
     }

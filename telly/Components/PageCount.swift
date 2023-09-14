@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PageCount: View {
     var currentPage: Int
-    var totalPages = 4
+    var totalPages = 3
     
     var body: some View {
         
