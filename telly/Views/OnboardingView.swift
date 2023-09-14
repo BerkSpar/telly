@@ -11,7 +11,7 @@ import Speech
 
 struct OnboardingView: View {
     @State private var bounce = false
-
+    
     var body: some View {
         VStack {
             Spacer()
@@ -30,21 +30,31 @@ struct OnboardingView: View {
                             .repeatCount(3, autoreverses: true),
                         value: bounce
                     )
-                    
+                
                 Spacer()
             }
             
             Spacer()
-                
+            
         }
         .background(Color.myBackground)
         .onAppear {
+            var canNavigate = false
             bounce.toggle()  // Start the bounce animation
             
             Task {
                 try await Task.sleep(nanoseconds: Duration(seconds: 1).inNanoseconds())
                 
                 GameService.shared.authenticate { error in
+                    canNavigate = true
+                }
+                
+                if StorageService.shared.isFirstLogin {
+                    RouterService.shared.navigate(.tutorial)
+                    
+                }
+                
+                if canNavigate {
                     RouterService.shared.navigate(.home)
                 }
             }

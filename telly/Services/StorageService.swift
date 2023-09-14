@@ -3,6 +3,8 @@ import Foundation
 struct StorageService {
     static let shared = StorageService()
     
+    var isFirstLogin = true
+    
     private let storageKey = "stories"
     
     // Save a new story

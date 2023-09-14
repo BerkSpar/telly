@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C80DE2E2AB24B4D00304A83 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C80DE2D2AB24B4D00304A83 /* TutorialView.swift */; };
 		8CA51D4F2A9D27DB007061B2 /* WordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA51D4E2A9D27DB007061B2 /* WordsView.swift */; };
 		8CA51D512A9D2A20007061B2 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA51D502A9D2A20007061B2 /* GameView.swift */; };
 		8CA51D532A9D2C17007061B2 /* DoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA51D522A9D2C17007061B2 /* DoneView.swift */; };
@@ -69,6 +70,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8C80DE2D2AB24B4D00304A83 /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
 		8CA51D4E2A9D27DB007061B2 /* WordsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsView.swift; sourceTree = "<group>"; };
 		8CA51D502A9D2A20007061B2 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		8CA51D522A9D2C17007061B2 /* DoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneView.swift; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 			children = (
 				F7895E962A97C96800E8B286 /* ContentView.swift */,
 				F7895EA62A97CAF900E8B286 /* OnboardingView.swift */,
+				8C80DE2D2AB24B4D00304A83 /* TutorialView.swift */,
 				F7895EB42A97CF9400E8B286 /* HomeView.swift */,
 				8CA51D5F2AA13EC6007061B2 /* StoryView.swift */,
 				8CA51D622AA13EE9007061B2 /* StorybookView.swift */,
@@ -404,6 +407,7 @@
 				F7895EB12A97CD4200E8B286 /* RouterService.swift in Sources */,
 				8CA51D5E2AA12FEE007061B2 /* Tab.swift in Sources */,
 				F75343D92AA178280006E2F6 /* RangeTile.swift in Sources */,
+				8C80DE2E2AB24B4D00304A83 /* TutorialView.swift in Sources */,
 				F7895EAA2A97CB8300E8B286 /* HapticService.swift in Sources */,
 				F7895EA72A97CAF900E8B286 /* OnboardingView.swift in Sources */,
 				8CA51D632AA13EE9007061B2 /* StorybookView.swift in Sources */,
