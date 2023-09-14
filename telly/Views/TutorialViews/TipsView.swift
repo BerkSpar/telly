@@ -33,7 +33,7 @@ struct TipsView: View {
             
             VStack(spacing: 32) {
                 VStack(spacing: 12) {
-                    PageCount(currentPage: 1)
+                    PageCount(currentPage: 3)
                     SpeechBallon(telly: "speaking_telly", title: "So, to start your storytelling, we’ll choose the theme!", label: "Tap on one of the themes to select it!")
                 }
                 

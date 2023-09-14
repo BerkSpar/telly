@@ -229,10 +229,6 @@ struct WordsSelection: View {
                             verbs = getVerbsCount()
                             people = getPeopleCount()
                             
-                            if (getNounsCount() == 0) {
-                                RouterService.shared.showAlert(Alert(title: Text("You need to select the nouns")))
-                                return
-                            }
                             RouterService.shared.onboarding(.tips)
                             
                         }}

@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ThemeSelectionView: View {
+    @State var showAlert = false
+    
     @State var workSelection = false
     @State var travellingSelection = false
     @State var shoppingSelection = false
@@ -104,8 +106,11 @@ struct ThemeSelectionView: View {
                             
                             themeSelected = getThemeName()
                             
+                            
+                            
                             if (getThemeName() == "") {
-                                RouterService.shared.showAlert(Alert(title: Text("You need to select one theme")))
+                                showAlert = true
+                                
                                 return
                             }
                             RouterService.shared.onboarding(.wordsSelection)
@@ -115,6 +120,12 @@ struct ThemeSelectionView: View {
             
             .padding(32)
             .ignoresSafeArea()
+            
+        }
+        .overlay{
+            Popup(alert: $showAlert, title: "You need to select one theme", bodyText: "", numberOfButtons: 1, buttonText: "OK", action: {
+                print("ok")
+            })
         }
         
     }

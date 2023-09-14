@@ -10,6 +10,8 @@ import Speech
 import AVFAudio
 
 struct StoryView: View {
+    @Binding var alert: Bool
+    
     @State var workSelection = false
     @State var travellingSelection = false
     @State var shoppingSelection = false
@@ -282,8 +284,7 @@ struct StoryView: View {
                         HapticsService.shared.play(.medium)
                         
                         if (getThemeName() == "") {
-                            RouterService.shared.showAlert(Alert(title: Text("You need to select one theme")))
-                            return
+                            alert = true
                         }
                         
                         if (getNounsCount() == 0) {
@@ -315,6 +316,6 @@ struct StoryView: View {
 
 struct StoryView_Previews: PreviewProvider {
     static var previews: some View {
-        StoryView()
+        StoryView(alert: .constant(false))
     }
 }
