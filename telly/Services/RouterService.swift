@@ -32,12 +32,16 @@ class RouterService: ObservableObject {
     
     @Published var isSheetPresented: Bool = false
     
+    @Published var isPopUpPresented: Bool = false
+    
     /// The current alert object to be displayed.
     ///
     /// This property holds the specifics of an alert, including its title and any associated actions.
     @Published var alert: Alert = Alert(title: Text(""))
     
     @Published var sheet: AnyView = AnyView(Text("Sheet"))
+    
+    @Published var popUp: Popup = Popup(title: "", bodyText: "", numberOfButtons: 1, buttonText: "", action: {})
 
     /// Displays a given alert to the user.
     ///
@@ -54,6 +58,16 @@ class RouterService: ObservableObject {
     
     func hideSheet() {
         isSheetPresented = false
+    }
+    
+    func showPopUp(_ popUp: Popup) {
+        print("Show popUp")
+        self.popUp = popUp
+        isPopUpPresented = true
+    }
+    
+    func hidePopUp() {
+        isPopUpPresented = false
     }
     
     /// Changes the currently displayed screen to the provided one.

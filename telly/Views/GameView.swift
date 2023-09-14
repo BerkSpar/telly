@@ -200,6 +200,10 @@ struct GameView: View {
                             withAnimation(.spring()) {
                                 HapticsService.shared.notify(.warning)
                                 showAlert = true
+                                
+                                RouterService.shared.showPopUp(
+                                    Popup(title: "Do you really want to stop de game?", bodyText: "Any progress you may have made so far won't be saved", numberOfButtons: 2, buttonText: "NO", action: { controller.stop() })
+                                )
                             }
                         }
                         .frame(maxWidth: .infinity)
@@ -233,10 +237,7 @@ struct GameView: View {
             }
 
             .overlay {
-                Popup(alert: $showAlert, title: "Do you really want to stop de game?", bodyText: "Any progress you may have made so far won't be saved", numberOfButtons: 2, buttonText: "NO", action: {
-                    controller.stop()
-                })
-
+                
                 if controller.isSpeaking && countdown > 0 {
                     Rectangle()
                         .opacity(0.7)

@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct StorySheetView: View {
-    @State var showAlert = false
-    
     @Binding var story: StoryModel
     var onDelete: () -> Void
     
@@ -23,6 +21,12 @@ struct StorySheetView: View {
     private func getDocumentsDirectory() -> URL {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         return paths[0]
+    }
+    
+   func delete() {
+        StorageService.shared.remove(byID: story.id)
+        onDelete()
+        RouterService.shared.hideSheet()
     }
     
     enum FocusField: Hashable {
@@ -151,7 +155,10 @@ struct StorySheetView: View {
                 }
                 
                 Button {
-                    showAlert = true
+                    RouterService.shared.hideSheet()
+                    RouterService.shared.showPopUp(Popup(title: "Are you sure that you want to delete your story?", bodyText: "You won't be able to recover your audio afterwards", numberOfButtons: 2, buttonText: "NO", action: {
+                        delete()
+                    }, secondaryAction: { RouterService.shared.isSheetPresented = true }))
                 } label: {
                     IconCard(
                         icon: "trash",
@@ -164,14 +171,6 @@ struct StorySheetView: View {
             }
         }
         .padding([.leading, .trailing], 32)
-        
-        .overlay{
-            Popup(alert: $showAlert, title: "Are you sure that you want to delete your story?", bodyText: "You won't be able to recover your audio afterwards", numberOfButtons: 2, buttonText: "NO", action: {
-                StorageService.shared.remove(byID: story.id)
-                onDelete()
-                RouterService.shared.hideSheet()
-            })
-        }
     }
 }
 

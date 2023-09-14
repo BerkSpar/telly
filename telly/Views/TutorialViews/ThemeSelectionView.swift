@@ -109,7 +109,9 @@ struct ThemeSelectionView: View {
                             
                             
                             if (getThemeName() == "") {
-                                showAlert = true
+                                RouterService.shared.showPopUp(Popup( title: "You need to select one theme", bodyText: "", numberOfButtons: 1, buttonText: "OK", action: {
+                                    print("ok")
+                                }))
                                 
                                 return
                             }
@@ -121,11 +123,6 @@ struct ThemeSelectionView: View {
             .padding(32)
             .ignoresSafeArea()
             
-        }
-        .overlay{
-            Popup(alert: $showAlert, title: "You need to select one theme", bodyText: "", numberOfButtons: 1, buttonText: "OK", action: {
-                print("ok")
-            })
         }
         
     }
