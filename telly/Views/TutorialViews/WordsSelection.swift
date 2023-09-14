@@ -58,7 +58,7 @@ struct WordsSelection: View {
                 VStack(spacing: 12) {
                     PageCount(currentPage: 2)
                     
-                    SpeechBallon(telly: "tellyIcon", title: "Let's choose how many nouns, verbs, and characters for your story.", label: "You'll need to use those words while telling your story, More words, greater challenge.")
+                    SpeechBallon(telly: "tellyIcon", title: "Let's choose how many nouns, verbs, and people for your story.", label: "You'll need to use those words while telling your story. More words, greater challenge.")
                 }
                 VStack {
                     HStack {

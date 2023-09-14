@@ -9,6 +9,7 @@ import SwiftUI
 
 struct Popup: View {
     @Binding var alert: Bool
+  
     var title: LocalizedStringKey
     var bodyText: LocalizedStringKey
     var numberOfButtons: Int
