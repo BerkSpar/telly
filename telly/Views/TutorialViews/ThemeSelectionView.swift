@@ -37,7 +37,7 @@ struct ThemeSelectionView: View {
                 }
                 VStack(spacing: 12) {
                     HStack {
-                        Text("Choose the story theme")
+                        Text("Choose the story theme:")
                             .font(.myBody)
                         Spacer()
                     }

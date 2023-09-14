@@ -122,7 +122,7 @@ class GameController: ObservableObject {
         service.stop()
     }
     
-    func save() {
+    func getStory() -> StoryModel{
         let currentDate = Date()
 
         let formatter = DateFormatter()
@@ -131,14 +131,12 @@ class GameController: ObservableObject {
         
         let words =  nouns.map { $0.words[0] } + verbs.map { $0.words[0] } + characters.map { $0.words[0] }
         
-        StorageService.shared.add(story:
-            StoryModel(
-                id: audioId,
-                title: NSLocalizedString("My Story", comment: "The story title"),
-                date: formattedDate,
-                theme: theme,
-                words: words
-            )
+        return StoryModel(
+            id: audioId,
+            title: NSLocalizedString("My Story", comment: "The story title"),
+            date: formattedDate,
+            theme: theme,
+            words: words
         )
     }
     

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DoneView: View {
-    var theme: String
+    @State var story: StoryModel
     
     private func reportAchievements() {
         GameService.shared.reportAchievement(identifier: "page_01", progress: 100.00)
@@ -16,9 +16,9 @@ struct DoneView: View {
         GameService.shared.reportAchievement(identifier: "each_month", progress: 1/12 * 100.00)
         GameService.shared.reportAchievement(identifier: "a_to_z", progress: 1/26 * 100.00)
         
-        if theme == "work" { GameService.shared.reportAchievement(identifier: "you_better_work", progress: 100.00) }
-        if theme == "traveling" { GameService.shared.reportAchievement(identifier: "beachbound", progress: 100.00) }
-        if theme == "shopping" { GameService.shared.reportAchievement(identifier: "lets_go_shopping", progress: 100.00) }
+        if story.theme == "work" { GameService.shared.reportAchievement(identifier: "you_better_work", progress: 100.00) }
+        if story.theme == "traveling" { GameService.shared.reportAchievement(identifier: "beachbound", progress: 100.00) }
+        if story.theme == "shopping" { GameService.shared.reportAchievement(identifier: "lets_go_shopping", progress: 100.00) }
     }
     
     var body: some View {
@@ -49,18 +49,24 @@ struct DoneView: View {
                 VStack(spacing: 16) {
                     ElevatedButton(backgroundColor: .myDarkBlue, textColor: .myBackground, text: "SAVE MY STORY", action: {
                         
-                        //escrever lógica para abrir modal e a pessoa salvar a história + ir para storybookview
+                        RouterService.shared.showSheet(
+                            StorySheetView(story: $story) {
+                                print("")
+                            }
+                            .presentationDetents([.height(300)])
+                        )
                         
                         HapticsService.shared.play(.heavy)
-                        
                         reportAchievements()
-                        
                         RouterService.shared.navigate(.home)
                         
                     })
+                    .padding(.horizontal, 24)
                     
                     Button {
-                        //escrever lógica para não salvar nada e ir para a homeview
+                        HapticsService.shared.play(.heavy)
+                        reportAchievements()
+                        RouterService.shared.navigate(.home)
                     } label: {
                         Text("I don't want to save my story")
                             .foregroundColor(.myDarkGrey)
@@ -75,6 +81,6 @@ struct DoneView: View {
 
 struct DoneView_Previews: PreviewProvider {
     static var previews: some View {
-        DoneView(theme: "workspace")
+        DoneView(story: StoryModel())
     }
 }

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct WelcomeView: View {
     
-    func bodyText(_ text: String) -> some View {
+    func bodyText(_ text: LocalizedStringKey) -> some View {
         Text(text)
             .frame(width: 280)
             .foregroundColor(.myDarkGrey)
@@ -63,6 +63,8 @@ struct WelcomeView: View {
                     RouterService.shared.onboarding(.themeSelection)
                 }
             }
+            .padding(.horizontal, 24)
+            
             Spacer()
         }
         .background(Color.myGreen)

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct Popup: View {
+
     internal init(title: LocalizedStringKey, bodyText: LocalizedStringKey, numberOfButtons: Int, buttonText: LocalizedStringKey, secondButtonText: LocalizedStringKey = "YES", action: @escaping () -> Void) {
         self.title = title
         self.bodyText = bodyText
@@ -27,7 +28,7 @@ struct Popup: View {
         self.action = action
         self.secondaryAction = secondaryAction
     }
-    
+ 
     var title: LocalizedStringKey
     var bodyText: LocalizedStringKey
     var numberOfButtons: Int
