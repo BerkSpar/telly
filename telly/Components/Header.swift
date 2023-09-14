@@ -34,6 +34,7 @@ struct Header: View {
         .padding(.horizontal, 24)
         .padding(.top, 40)
         .padding(.bottom, 24)
+        .background(Color.myDarkBlue)
     }
 }
 

@@ -9,6 +9,7 @@ import SwiftUI
 
 enum Screen {
     case onboarding
+    case tutorial
     case home
     case words
     case game(theme: String, nouns: Int, verbs: Int, characters: Int)
@@ -23,7 +24,9 @@ struct ContentView: View {
         ZStack {
             switch(router.screen) {
             case .onboarding: OnboardingView()
+            case .tutorial: TutorialView()
             case .home: HomeView()
+                    .transition(.slide)
             case .words: WordsView()
             case .done(theme: let theme):
                 DoneView(theme: theme)
@@ -41,6 +44,7 @@ struct ContentView: View {
                     verbsCount: verbs,
                     charactersCount: characters
                 )
+                .transition(.push(from: .trailing))
             }
         }
         .alert(isPresented: $router.isAlertPresented) {
@@ -49,6 +53,7 @@ struct ContentView: View {
         .sheet(isPresented: $router.isSheetPresented) {
             router.sheet
         }
+       
     }
 }
 

@@ -13,7 +13,7 @@ struct ElevatedButton: View {
      
     let text: LocalizedStringKey
     
-    var isDisabled: Bool
+    var isDisabled: Bool = false
     
     let action: () -> Void
     
