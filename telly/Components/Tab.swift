@@ -43,19 +43,24 @@ struct Tab: View {
         HStack(spacing: 0) {
             TabLabel(isSelected: $storyIsSelected, text: firstButtonText, corner: storyCorner(view: storyIsSelected))
                 .onTapGesture {
-                    storyIsSelected = true
-                    storybookIsSelected = false
+                    withAnimation(.spring()){
+                        storyIsSelected = true
+                        storybookIsSelected = false
+                    }
                 }
                 .background(hasBackground(view: storyIsSelected))
             
             TabLabel(isSelected: $storybookIsSelected, text: secondButtonText, corner: storybookCorner(view: storybookIsSelected))
                 .onTapGesture {
-                    storyIsSelected = false
-                    storybookIsSelected = true
+                    withAnimation(.spring()){
+                        storyIsSelected = false
+                        storybookIsSelected = true
+                    }
                 }
                 .background(hasBackground(view: storybookIsSelected))
             
         }
+        .background(Color.myDarkBlue)
     }
     struct Tab_Previews: PreviewProvider {
         static var previews: some View {

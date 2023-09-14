@@ -23,6 +23,8 @@ class RouterService: ObservableObject {
     /// Changes to this property will trigger UI updates in any views observing it.
     @Published var screen: Screen = .onboarding
     
+    @Published var onboardingScreen: OnboardingScreen = .welcome
+    
     /// A flag indicating if an alert is currently being presented.
     ///
     /// Changes to this property will trigger UI updates in any views observing it.
@@ -60,5 +62,10 @@ class RouterService: ObservableObject {
     func navigate(_ screen: Screen) {
         self.screen = screen
     }
+    
+    func onboarding(_ screen: OnboardingScreen) {
+        self.onboardingScreen = screen
+    }
+    
 }
 

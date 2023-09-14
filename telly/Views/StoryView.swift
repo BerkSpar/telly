@@ -266,9 +266,8 @@ struct StoryView: View {
 
             ElevatedButton(
                 backgroundColor: .myDarkBlue,
-                textColor: .myGreen,
+                textColor: .myBackground,
                 text: "START",
-                isDisabled: false,
                 action: {
                     HapticsService.shared.play(.medium)
 

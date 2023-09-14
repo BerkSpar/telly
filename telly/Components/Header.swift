@@ -30,9 +30,11 @@ struct Header: View {
             
             Spacer()
         }
+        
         .padding(.horizontal, 32)
         .padding(.top, 40)
         .padding(.bottom, 24)
+        .background(Color.myDarkBlue)
     }
 }
 

@@ -50,8 +50,9 @@ struct OnboardingView: View {
                 }
                 
                 if StorageService.shared.isFirstLogin {
-                    RouterService.shared.navigate(.tutorial)
-                    
+                    withAnimation(){
+                        RouterService.shared.navigate(.tutorial)
+                    }
                 }
                 
                 if canNavigate {

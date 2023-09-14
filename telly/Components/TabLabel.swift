@@ -23,6 +23,9 @@ struct TabLabel: View {
                 .frame(maxWidth: .infinity)
                 .background(Color.myBackground)
                 .cornerRadius(32, corners: corner)
+//                .transition(.asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .leading)))
+                .transition(.move(edge: .leading))
+            
         } else {
             Text(text)
                 .font(.title3)
@@ -30,9 +33,12 @@ struct TabLabel: View {
                 .bold()
                 .padding(.vertical, 12)
                 .frame(maxWidth: .infinity)
-                .foregroundColor(.myGreen)
+                .foregroundColor(.myBackground)
                 .background(Color.myDarkBlue)
                 .cornerRadius(32, corners: corner)
+//                .transition(.asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .leading)))
+                .transition(.move(edge: .trailing))
+         
         }
     }
 }

@@ -16,9 +16,8 @@ struct StorybookView: View {
             VStack(spacing: 32) {
                 if (GameService.shared.player.isAuthenticated) {
                     ElevatedButton(backgroundColor: .myDarkBlue,
-                                   textColor: .myGreen,
-                                   text: "ACHIEVEMENTS",
-                                   isDisabled: false) {
+                                   textColor: .myBackground,
+                                   text: "ACHIEVEMENTS") {
                         GameService.shared.showAchievements()
                     }
                 }

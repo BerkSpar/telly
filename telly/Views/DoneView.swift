@@ -47,7 +47,7 @@ struct DoneView: View {
                 }
                 
                 VStack(spacing: 16) {
-                    ElevatedButton(backgroundColor: .myDarkBlue, textColor: .myGreen, text: "SAVE MY STORY", isDisabled: false, action: {
+                    ElevatedButton(backgroundColor: .myDarkBlue, textColor: .myBackground, text: "SAVE MY STORY", action: {
                         
                         //escrever lógica para abrir modal e a pessoa salvar a história + ir para storybookview
                         

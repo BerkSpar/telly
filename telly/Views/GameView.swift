@@ -125,8 +125,7 @@ struct GameView: View {
                         ElevatedButton(
                             backgroundColor: .myReddish,
                             textColor: .myBackground,
-                            text: "QUIT",
-                            isDisabled: false
+                            text: "QUIT"
                         ) {
                             withAnimation() {
                                 HapticsService.shared.notify(.warning)
@@ -137,9 +136,8 @@ struct GameView: View {
                         
                         ElevatedButton(
                             backgroundColor: .myDarkBlue,
-                            textColor: .myGreen,
-                            text: "START",
-                            isDisabled: false
+                            textColor: .myBackground,
+                            text: "START"
                         ) {
                             HapticsService.shared.play(.heavy)
                             controller.play()
@@ -165,7 +163,7 @@ struct GameView: View {
                         
                         ElevatedButton(
                             backgroundColor: .myDarkBlue,
-                            textColor: .myGreen,
+                            textColor: .myBackground,
                             text: "FINISH",
                             isDisabled: controller.checkAllWords()
                         ) {
