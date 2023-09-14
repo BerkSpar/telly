@@ -17,7 +17,7 @@ struct WelcomeView: View {
             .fixedSize(horizontal: false, vertical: true)
     }
     
-    func boldText(_ text: String) -> some View {
+    func boldText(_ text: LocalizedStringKey) -> some View {
         Text(text)
             .bold()
             .foregroundColor(.myDarkGrey)
