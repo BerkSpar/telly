@@ -63,6 +63,8 @@ struct WelcomeView: View {
                     RouterService.shared.onboarding(.themeSelection)
                 }
             }
+            .padding(.horizontal, 24)
+            
             Spacer()
         }
         .background(Color.myGreen)

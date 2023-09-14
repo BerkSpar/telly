@@ -52,15 +52,16 @@ struct DoneView: View {
                         //escrever lógica para abrir modal e a pessoa salvar a história + ir para storybookview
                         
                         HapticsService.shared.play(.heavy)
-                        
                         reportAchievements()
-                        
                         RouterService.shared.navigate(.home)
                         
                     })
+                    .padding(.horizontal, 24)
                     
                     Button {
-                        //escrever lógica para não salvar nada e ir para a homeview
+                        HapticsService.shared.play(.heavy)
+                        reportAchievements()
+                        RouterService.shared.navigate(.home)
                     } label: {
                         Text("I don't want to save my story")
                             .foregroundColor(.myDarkGrey)

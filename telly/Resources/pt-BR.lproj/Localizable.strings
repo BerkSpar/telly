@@ -64,4 +64,6 @@
 "Some tips for you:" = "Algumas dicas para você:";
 "You can also say words in the plural and conjugate verbs in any tense!" = "Você também pode falar as palavras no plural e conjugar os verbos em qualquer tempo verbal!";
 "When you have used all the words, the finish button will be enabled." = "Quando você usar todas as palavras, o botão de acabar estará disponível.";
-"%d of %d" = "%d de %d";
+"%lld of %lld" = "%lld de %lld";
+"SAVE MY STORY"= "SALVAR MINHA HISTÓRIA";
+"I don't want to save my story" = "Eu não quero salvar minha história";
