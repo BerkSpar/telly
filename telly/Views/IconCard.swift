@@ -19,6 +19,7 @@ struct IconCard: View {
     var iconSize: CGFloat = 40.0
     var color: Color = .myReddish
     var type: IconCardType = .none
+    var onTap: (() -> Void)?
     
     func getColor() -> Color {
         switch(type) {
@@ -102,7 +103,7 @@ struct IconCard_Previews: PreviewProvider {
                     icon: "book",
                     iconSize: 16,
                     type: .enabled
-                )
+                ) {}
             }
             .padding([.leading, .trailing], 16)
         }

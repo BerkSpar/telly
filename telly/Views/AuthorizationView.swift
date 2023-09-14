@@ -52,6 +52,7 @@ struct AuthorizationView: View {
                     }
                 }
             )
+            .padding(.horizontal, 24)
             
             if isSpeechDenied() {
                 Text("You must enable your microphone")

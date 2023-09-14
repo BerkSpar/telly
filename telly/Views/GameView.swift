@@ -18,6 +18,8 @@ struct GameView: View {
     
     @StateObject private var controller = GameController()
     
+    let service = SynthesisService()
+    
     func startCountdown() {
         let interval = DispatchTimeInterval.seconds(1)
         DispatchQueue.main.asyncAfter(deadline: .now() + interval) {
@@ -69,12 +71,25 @@ struct GameView: View {
                         ForEach(controller.nouns) { element in
                             let isChecked = controller.check(element: element)
 
-                            IconCard(
-                                text: element.words[0],
-                                icon: element.icon,
-                                color: .myDarkBlue,
-                                type: isChecked ? .disabled : .none
-                            )
+                            if (controller.isSpeaking) {
+                                IconCard(
+                                    text: element.words[0],
+                                    icon: element.icon,
+                                    color: .myDarkBlue,
+                                    type: isChecked ? .disabled : .none
+                                )
+                            } else {
+                                Button {
+                                    service.speak(element.words[0])
+                                } label: {
+                                    IconCard(
+                                        text: element.words[0],
+                                        icon: element.icon,
+                                        color: .myDarkBlue,
+                                        type: isChecked ? .disabled : .none
+                                    )
+                                }
+                            }
                         }
                     }
                     .padding(.bottom, 24)
@@ -91,11 +106,24 @@ struct GameView: View {
                         ForEach(controller.verbs) { element in
                             let isChecked = controller.check(element: element)
 
-                            IconCard(
-                                text: element.words[0],
-                                color: .myPurple,
-                                type: isChecked ? .disabled : .none
-                            )
+                            if (controller.isSpeaking) {
+                                IconCard(
+                                    text: element.words[0],
+                                    color: .myPurple,
+                                    type: isChecked ? .disabled : .none
+                                )
+                            } else {
+                                Button {
+                                    service.speak(element.words[0])
+                                } label: {
+                                    IconCard(
+                                        text: element.words[0],
+                                        color: .myPurple,
+                                        type: isChecked ? .disabled : .none
+                                    )
+                                }
+
+                            }
                         }
                     }
                     .padding(.bottom, 24)
@@ -112,11 +140,24 @@ struct GameView: View {
                         ForEach(controller.characters) { element in
                             let isChecked = controller.check(element: element)
 
-                            IconCard(
-                                text: element.words[0],
-                                color: .myReddish,
-                                type: isChecked ? .disabled : .none
-                            )
+                            if (controller.isSpeaking) {
+                                IconCard(
+                                    text: element.words[0],
+                                    color: .myReddish,
+                                    type: isChecked ? .disabled : .none
+                                )
+                            } else {
+                                Button {
+                                    service.speak(element.words[0])
+                                } label: {
+                                    IconCard(
+                                        text: element.words[0],
+                                        color: .myReddish,
+                                        type: isChecked ? .disabled : .none
+                                    )
+                                }
+
+                            }
                         }
                     }
                     .padding(.bottom, 24)

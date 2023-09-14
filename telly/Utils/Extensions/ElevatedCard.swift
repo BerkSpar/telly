@@ -11,6 +11,7 @@ struct ElevatedCard<Content: View>: View {
     var color: Color = Color.myDarkBlue
     var backgroundColor: Color = Color.myBackground
     var hasStroke: Bool = false
+    var hasShadow: Bool = false
     let content: () -> Content
     
     func strokeColor() -> Color {

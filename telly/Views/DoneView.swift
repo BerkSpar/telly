@@ -45,6 +45,7 @@ struct DoneView: View {
                     RouterService.shared.navigate(.home)
                     
                 })
+                .padding(.horizontal, 24)
             }
             
         }

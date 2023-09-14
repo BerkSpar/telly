@@ -46,6 +46,7 @@
 		F7C7D46F2AB1232C00EC8256 /* StorySheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C7D46E2AB1232C00EC8256 /* StorySheetView.swift */; };
 		F7C7D4712AB250D100EC8256 /* AnimatedIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C7D4702AB250D100EC8256 /* AnimatedIcon.swift */; };
 		F7C7D4742AB2ABDA00EC8256 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F7C7D4762AB2ABDA00EC8256 /* Localizable.strings */; };
+		F7C7D47A2AB2C64600EC8256 /* SynthesisService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C7D4792AB2C64600EC8256 /* SynthesisService.swift */; };
 		F7CBC9302A9FCCA700073AA3 /* Datasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CBC92F2A9FCCA700073AA3 /* Datasource.swift */; };
 		F7CBC9322A9FCCC300073AA3 /* ElementManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CBC9312A9FCCC300073AA3 /* ElementManager.swift */; };
 		F7CBC9342A9FCECD00073AA3 /* ElementModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CBC9332A9FCECD00073AA3 /* ElementModel.swift */; };
@@ -114,6 +115,7 @@
 		F7C7D4752AB2ABDA00EC8256 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F7C7D4772AB2ABE000EC8256 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		F7C7D4782AB2BD4600EC8256 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F7C7D4792AB2C64600EC8256 /* SynthesisService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynthesisService.swift; sourceTree = "<group>"; };
 		F7CBC92F2A9FCCA700073AA3 /* Datasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Datasource.swift; sourceTree = "<group>"; };
 		F7CBC9312A9FCCC300073AA3 /* ElementManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementManager.swift; sourceTree = "<group>"; };
 		F7CBC9332A9FCECD00073AA3 /* ElementModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementModel.swift; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 				F7895EBD2A97D70100E8B286 /* SpeechRegonizerService.swift */,
 				F7C4F90F2A9B110500691AC2 /* GameService.swift */,
 				F7C7D46C2AB0069100EC8256 /* AudioService.swift */,
+				F7C7D4792AB2C64600EC8256 /* SynthesisService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -417,6 +420,7 @@
 				F75343D92AA178280006E2F6 /* RangeTile.swift in Sources */,
 				F7895EAA2A97CB8300E8B286 /* HapticService.swift in Sources */,
 				F7895EA72A97CAF900E8B286 /* OnboardingView.swift in Sources */,
+				F7C7D47A2AB2C64600EC8256 /* SynthesisService.swift in Sources */,
 				8CA51D632AA13EE9007061B2 /* StorybookView.swift in Sources */,
 				F7CBC9342A9FCECD00073AA3 /* ElementModel.swift in Sources */,
 				F7C4F9102A9B110500691AC2 /* GameService.swift in Sources */,
@@ -584,7 +588,7 @@
 				CODE_SIGN_ENTITLEMENTS = telly/telly.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_ASSET_PATHS = "\"telly/Preview Content\"";
 				DEVELOPMENT_TEAM = R9V648Y475;
 				ENABLE_PREVIEWS = YES;
@@ -621,7 +625,7 @@
 				CODE_SIGN_ENTITLEMENTS = telly/telly.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_ASSET_PATHS = "\"telly/Preview Content\"";
 				DEVELOPMENT_TEAM = R9V648Y475;
 				ENABLE_PREVIEWS = YES;
