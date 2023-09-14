@@ -9,8 +9,8 @@ import SwiftUI
 
 struct SpeechBallon: View {
     var telly: String
-    var title: String
-    var label:  String
+    var title: LocalizedStringKey
+    var label: LocalizedStringKey
     
     var body: some View {
         

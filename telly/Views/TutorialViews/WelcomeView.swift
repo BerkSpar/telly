@@ -9,7 +9,7 @@ import SwiftUI
 
 struct WelcomeView: View {
     
-    func bodyText(_ text: String) -> some View {
+    func bodyText(_ text: LocalizedStringKey) -> some View {
         Text(text)
             .frame(width: 280)
             .foregroundColor(.myDarkGrey)
