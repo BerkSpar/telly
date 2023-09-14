@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
+  <file original="telly/en.lproj/InfoPlist.strings" datatype="plaintext" source-language="en" target-language="pt-BR">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="14.3.1" build-num="14E300c"/>
+    </header>
+    <body>
+      <trans-unit id="CFBundleDisplayName" xml:space="preserve">
+        <source>Telly</source>
+        <note>Bundle display name</note>
+      </trans-unit>
+      <trans-unit id="CFBundleName" xml:space="preserve">
+        <source>telly</source>
+        <note>Bundle name</note>
+      </trans-unit>
+      <trans-unit id="NSMicrophoneUsageDescription" xml:space="preserve">
+        <source>We need access to the microphone to capture audio.</source>
+        <note>Privacy - Microphone Usage Description</note>
+      </trans-unit>
+      <trans-unit id="NSSpeechRecognitionUsageDescription" xml:space="preserve">
+        <source>We need access to speech recognition to transcribe your voice into text.</source>
+        <note>Privacy - Speech Recognition Usage Description</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="telly/Resources/en.lproj/Localizable.strings" source-language="en" target-language="pt-BR" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="14.3.1" build-num="14E300c"/>
+    </header>
+    <body>
+      <trans-unit id="%lld" xml:space="preserve">
+        <source>%lld</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="1" xml:space="preserve">
+        <source>1</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Any progress you may have made so far won't be saved" xml:space="preserve">
+        <source>Any progress you may have made so far won't be saved</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="CHARACTERS" xml:space="preserve">
+        <source>CHARACTERS</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Choose the quantity of each type of word:" xml:space="preserve">
+        <source>Choose the quantity of each type of word:</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Choose the story theme" xml:space="preserve">
+        <source>Choose the story theme</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Do you really want to quit de game?" xml:space="preserve">
+        <source>Do you really want to quit de game?</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Go to settings" xml:space="preserve">
+        <source>Go to settings</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="MY STORIES" xml:space="preserve">
+        <source>MY STORIES</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="NOUNS" xml:space="preserve">
+        <source>NOUNS</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="PEOPLE" xml:space="preserve">
+        <source>PEOPLE</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Play Audio" xml:space="preserve">
+        <source>Play Audio</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Precisamos da sua autorização de audio" xml:space="preserve">
+        <source>Precisamos da sua autorização de audio</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Pronto" xml:space="preserve">
+        <source>Pronto</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Selecione as palavras" xml:space="preserve">
+        <source>Selecione as palavras</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Sheet" xml:space="preserve">
+        <source>Sheet</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Take a look at the words" xml:space="preserve">
+        <source>Take a look at the words</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Theme: " xml:space="preserve">
+        <source>Theme: </source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Theme: %@" xml:space="preserve">
+        <source>Theme: %@</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Title" xml:space="preserve">
+        <source>Title</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="VERBS" xml:space="preserve">
+        <source>VERBS</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Você se recusou para escutar seu áudio. Ative nas suas configurações para continuar." xml:space="preserve">
+        <source>Você se recusou para escutar seu áudio. Ative nas suas configurações para continuar.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Welcome, Storyteller!" xml:space="preserve">
+        <source>Welcome, Storyteller!</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Well done!" xml:space="preserve">
+        <source>Well done!</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Words: " xml:space="preserve">
+        <source>Words: </source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="You haven't given us permission and the game won't work without it" xml:space="preserve">
+        <source>You haven't given us permission and the game won't work without it</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="You made an awesome story!" xml:space="preserve">
+        <source>You made an awesome story!</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="You must enable your microphone" xml:space="preserve">
+        <source>You must enable your microphone</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="You need to select one theme" xml:space="preserve">
+        <source>You need to select one theme</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="You need to select the nouns" xml:space="preserve">
+        <source>You need to select the nouns</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="You will be able to see them again once you start your story" xml:space="preserve">
+        <source>You will be able to see them again once you start your story</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

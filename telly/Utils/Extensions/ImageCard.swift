@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ImageCard: View {
-    var title: String
+    var title: LocalizedStringKey
     var image: String
     @Binding var isSelected: Bool
     

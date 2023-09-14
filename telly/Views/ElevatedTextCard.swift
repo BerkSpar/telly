@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ElevatedTextCard: View {
-    let text: String
+    let text: LocalizedStringKey
     var color: Color = Color.myReddish
     var selected: Bool = false
     

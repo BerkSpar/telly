@@ -23,15 +23,15 @@ struct Header: View {
                     .foregroundColor(.myDarkBlue)
                     
             }
-            Text("Welcome, Storyteller!")
-                .frame(width: 140)
+            
+            Text("Welcome, \nStoryteller!")
                 .font(.myTitle)
+                .frame(maxWidth: .infinity, alignment: .leading)
                 .foregroundColor(.myBackground)
             
             Spacer()
         }
-        
-        .padding(.horizontal, 32)
+        .padding(.horizontal, 24)
         .padding(.top, 40)
         .padding(.bottom, 24)
         .background(Color.myDarkBlue)

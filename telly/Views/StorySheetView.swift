@@ -14,6 +14,8 @@ struct StorySheetView: View {
     @State private var text = ""
     @State private var isEditing: Bool = false
     
+    let shareText = NSLocalizedString("Check out my story on Telly, my favorite app for learning English through stories! 📖\n", comment: "Share text")
+    
     let service = AudioService()
     
     private func getDocumentsDirectory() -> URL {
@@ -118,7 +120,7 @@ struct StorySheetView: View {
                 let path = getDocumentsDirectory().appendingPathComponent("\(story.id).m4a").path()
                 service.playAudio(withPath: path)
             } label: {
-                ElevatedCard(color: .myDarkBlue, content:  {
+                ElevatedCard(color: .myDarkBlue, hasStroke: true, content:  {
                     HStack {
                         Text("Play Audio")
                             .foregroundColor(.myDarkBlue)
@@ -126,6 +128,7 @@ struct StorySheetView: View {
                         Spacer()
                         
                         Image(systemName: "play.circle.fill")
+                            .font(.system(size: 32))
                             .foregroundColor(.myDarkBlue)
                     }
                     .padding(16)
@@ -135,7 +138,7 @@ struct StorySheetView: View {
             
             HStack {
                 ShareLink(
-                    item: "Check out \"\(story.title)\" on Telly, my favorite app for learning English through stories! 📖\n"
+                    item: shareText
                 ) {
                     IconCard(
                         icon: "square.and.arrow.up",

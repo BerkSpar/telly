@@ -1,0 +1,51 @@
+/* 
+  Localizable.strings
+  telly
+
+  Created by Felipe Passos on 13/09/23.
+  
+*/
+
+"date_format" = "dd/MM/yyyy";
+"Choose the story theme:" = "Choisissez le thème de l'histoire:";
+"WORKSPACE" = "TRAVAIL";
+"TRAVELLING" = "VOYAGE";
+"SHOPPING" = "ACHATS";
+"Choose the quantity of each type of word:" = "Choisissez la quantité de chaque type de mot:";
+"NOUNS" = "NOMS";
+"VERBS" = "VERBES";
+"PEOPLE" = "PERSONNES";
+"START" = "COMMENCER";
+"You need to select one theme" = "Vous devez choisir un thème";
+"You need to select the nouns" = "Vous devez sélectionner les noms";
+"ACHIEVEMENTS" = "RÉALISATIONS";
+"MY STORIES" = "MES HISTOIRES";
+"Title" = "Titre";
+"Theme: " = "Thème: ";
+"Words: " = "Mots: ";
+"Play Audio" = "Lire Audio";
+"Take a look at the words" = "Jetez un œil aux mots";
+"You will be able to see them again once you start your story" = "Vous pourrez les revoir une fois que vous commencerez votre histoire";
+"QUIT" = "QUITTER";
+"START" = "DÉBUT";
+"STOP" = "STOP";
+"FINISH" = "FINIR";
+"Do you really want to quit?" = "Voulez-vous vraiment quitter?";
+"Any progress you may have made so far won't be saved" = "Toute progression que vous avez faite ne sera pas enregistrée";
+"YES" = "OUI";
+"NO" = "NON";
+"Well done!" = "Bravo!";
+"You made an awesome story!" = "Vous avez créé une histoire incroyable!";
+"RETURN TO\nMAIN PAGE" = "RETOUR À LA\nPAGE PRINCIPALE";
+"To play the game you must enable your microphone" = "Pour jouer, vous devez activer votre microphone";
+"That's because we will identify if you are pronouncing the words" = "C'est parce que nous identifierons si vous prononcez les mots";
+"Ok, I understand" = "D'accord, je comprends";
+"Welcome, \nStoryteller!" = "Bienvenue, \nconteur!";
+"NEW STORY" = "NOUVELLE HISTOIRE";
+"STORYBOOK" = "LIVRE D'HISTOIRES";
+"My Story" = "Mon Histoire";
+"Theme: %@" = "Thème: %@";
+"shopping" = "achats";
+"traveling" = "voyage";
+"work" = "travail";
+"Check out my story on Telly, my favorite app for learning English through stories! 📖\n" = "Découvrez mon histoire sur Telly, mon appli préférée pour apprendre l'anglais à travers des histoires! 📖\n";

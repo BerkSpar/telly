@@ -22,27 +22,28 @@ struct StorybookView: View {
                     }
                 }
                 
-                VStack {
-                    HStack {
-                        Text("MY STORIES")
-                            .font(.myTitle)
-                            .foregroundColor(.myDarkBlue)
+                if (!stories.isEmpty) {
+                    VStack {
+                        HStack {
+                            Text("MY STORIES")
+                                .font(.myTitle)
+                                .foregroundColor(.myDarkBlue)
+                            
+                            Spacer()
+                        }
                         
-                        Spacer()
-                    }
-                    
-                    VStack(spacing: 16) {
-                        ForEach(stories, id: \.id) { story in
-                            Story(storyModel: story) {
-                                print("apagou")
-                                stories = StorageService.shared.listAll().reversed()
+                        VStack(spacing: 16) {
+                            ForEach(stories, id: \.id) { story in
+                                Story(storyModel: story) {
+                                    stories = StorageService.shared.listAll().reversed()
+                                }
                             }
                         }
                     }
                 }
             }
             .padding(.vertical, 32)
-            .padding(.horizontal, 32)
+            .padding(.horizontal, 24)
         }
         .background(Color.myBackground)
     }

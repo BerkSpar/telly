@@ -12,10 +12,13 @@ struct GameView: View {
     public var nounsCount: Int
     public var verbsCount: Int
     public var charactersCount: Int
+    
     @State var countdown = 3
     @State var showAlert = false
 
     @StateObject private var controller = GameController()
+    
+    let service = SynthesisService()
     
     func startCountdown() {
         let interval = DispatchTimeInterval.seconds(1)
@@ -29,15 +32,18 @@ struct GameView: View {
     }
     
     var body: some View {
-        
-        
         ZStack {
             VStack(spacing: 0) {
                 if (controller.isSpeaking) {
-                    Text("Theme: \(controller.theme)")
-                        .bold()
-                        .font(.system(size: 22))
-                        .padding(.bottom, 24)
+                    HStack() {
+                        AnimatedIcon()
+
+                        Text("Theme: \(NSLocalizedString(controller.theme, comment: "Theme name"))")
+                            .bold()
+                            .font(.system(size: 22))
+
+                    }
+                    .padding(.bottom, 24)
                 } else {
                     Text("Take a look at the words")
                         .font(.system(size: 24))
@@ -45,7 +51,7 @@ struct GameView: View {
                         .multilineTextAlignment(.center)
                         .frame(maxWidth: .infinity)
                         .foregroundColor(.myDarkGrey)
-                    
+
                     Text("You will be able to see them again once you start your story")
                         .font(.system(size: 16))
                         .multilineTextAlignment(.center)
@@ -53,87 +59,124 @@ struct GameView: View {
                         .padding(.bottom, 24)
                         .foregroundColor(.myDarkGrey)
                 }
-                
+
                 if (!controller.nouns.isEmpty) {
                     Text("NOUNS")
                         .font(.myHeader)
                         .foregroundColor(controller.showNouns ? .myDarkBlue : .myGrey)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.bottom, 8)
-                    
+
                     LazyVGrid(columns: [GridItem(), GridItem()]) {
                         ForEach(controller.nouns) { element in
                             let isChecked = controller.check(element: element)
-                            
-                            IconCard(
-                                text: element.words[0],
-                                icon: element.icon,
-                                color: .myDarkBlue,
-                                type: isChecked ? .disabled : .none
-                            )
+
+                            if (controller.isSpeaking) {
+                                IconCard(
+                                    text: element.words[0],
+                                    icon: element.icon,
+                                    color: .myDarkBlue,
+                                    type: isChecked ? .disabled : .none
+                                )
+                            } else {
+                                Button {
+                                    service.speak(element.words[0])
+                                } label: {
+                                    IconCard(
+                                        text: element.words[0],
+                                        icon: element.icon,
+                                        color: .myDarkBlue,
+                                        type: isChecked ? .disabled : .none
+                                    )
+                                }
+                            }
                         }
                     }
                     .padding(.bottom, 24)
                 }
-                
+
                 if (!controller.verbs.isEmpty) {
                     Text("VERBS")
                         .font(.myHeader)
                         .foregroundColor(controller.showVerbs ? .myPurple : .myGrey)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.bottom, 8)
-                    
+
                     LazyVGrid(columns: [GridItem(), GridItem()]) {
                         ForEach(controller.verbs) { element in
                             let isChecked = controller.check(element: element)
-                            
-                            IconCard(
-                                text: element.words[0],
-                                color: .myPurple,
-                                type: isChecked ? .disabled : .none
-                            )
+
+                            if (controller.isSpeaking) {
+                                IconCard(
+                                    text: element.words[0],
+                                    color: .myPurple,
+                                    type: isChecked ? .disabled : .none
+                                )
+                            } else {
+                                Button {
+                                    service.speak(element.words[0])
+                                } label: {
+                                    IconCard(
+                                        text: element.words[0],
+                                        color: .myPurple,
+                                        type: isChecked ? .disabled : .none
+                                    )
+                                }
+
+                            }
                         }
                     }
                     .padding(.bottom, 24)
                 }
-                
+
                 if (!controller.characters.isEmpty) {
-                    Text("CHARACTERS")
+                    Text("PEOPLE")
                         .font(.myHeader)
                         .foregroundColor(controller.showsCharacters ? .myReddish : .myGrey)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.bottom, 8)
-                    
+
                     LazyVGrid(columns: [GridItem(), GridItem()]) {
                         ForEach(controller.characters) { element in
                             let isChecked = controller.check(element: element)
-                            
-                            IconCard(
-                                text: element.words[0],
-                                color: .myReddish,
-                                type: isChecked ? .disabled : .none
-                            )
+
+                            if (controller.isSpeaking) {
+                                IconCard(
+                                    text: element.words[0],
+                                    color: .myReddish,
+                                    type: isChecked ? .disabled : .none
+                                )
+                            } else {
+                                Button {
+                                    service.speak(element.words[0])
+                                } label: {
+                                    IconCard(
+                                        text: element.words[0],
+                                        color: .myReddish,
+                                        type: isChecked ? .disabled : .none
+                                    )
+                                }
+
+                            }
                         }
                     }
                     .padding(.bottom, 24)
                 }
-                
+
                 Spacer()
-                
+
                 if (!controller.isSpeaking) {
-                    HStack {
+                    HStack(spacing: 16) {
                         ElevatedButton(
                             backgroundColor: .myReddish,
                             textColor: .myBackground,
                             text: "QUIT"
                         ) {
-                            withAnimation() {
-                                HapticsService.shared.notify(.warning)
-                                RouterService.shared.navigate(.home)
-                            }
+                            HapticsService.shared.notify(.warning)
+                            RouterService.shared.navigate(.home)
                         }
                         .frame(maxWidth: .infinity)
-                        
+
                         ElevatedButton(
                             backgroundColor: .myDarkBlue,
                             textColor: .myBackground,
@@ -147,7 +190,7 @@ struct GameView: View {
                     }
                     
                 } else {
-                    HStack {
+                    HStack(spacing: 16) {
                         ElevatedButton(
                             backgroundColor: .myReddish,
                             textColor: .myBackground,
@@ -160,7 +203,7 @@ struct GameView: View {
                             }
                         }
                         .frame(maxWidth: .infinity)
-                        
+
                         ElevatedButton(
                             backgroundColor: .myDarkBlue,
                             textColor: .myBackground,
@@ -169,9 +212,9 @@ struct GameView: View {
                         ) {
                             controller.stop()
                             controller.save()
-                            
+
                             HapticsService.shared.notify(.success)
-                            
+
                             RouterService.shared.navigate(.done(theme: controller.theme))
                         }
                         .frame(maxWidth: .infinity)
@@ -188,7 +231,7 @@ struct GameView: View {
                     charactersCount: charactersCount
                 )
             }
-            
+
             .overlay {
                 Popup(alert: $showAlert, title: "Do you really want to stop de game?", bodyText: "Any progress you may have made so far won't be saved", numberOfButtons: 2, buttonText: "NO", action: {
                     controller.stop()
@@ -204,7 +247,7 @@ struct GameView: View {
                         .foregroundColor(.myBackground)
                 }
             }
-            
+
         }
     }
     

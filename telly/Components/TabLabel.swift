@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TabLabel: View {
     @Binding var isSelected: Bool
-    var text: String
+    var text: LocalizedStringKey
     var corner: UIRectCorner
     
     var body: some View {

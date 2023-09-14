@@ -5,7 +5,7 @@
 //  Created by Felipe Passos on 04/09/23.
 //
 
-import Foundation
+import SwiftUI
 
 @MainActor
 class GameController: ObservableObject {
@@ -79,12 +79,9 @@ class GameController: ObservableObject {
                         self.wordSet.remove(element)
                     }
                 }
-                
-                HapticsService.shared.notify(.success)
               
                 if (word.lowercased() == "apple") {
                     GameService.shared.reportAchievement(identifier: "apple_odyssey", progress: 1.0/26.0 * 100.0)
-                    
                 }
                 
                 return true
@@ -124,7 +121,7 @@ class GameController: ObservableObject {
         let currentDate = Date()
 
         let formatter = DateFormatter()
-        formatter.dateFormat = "MMMM d"
+        formatter.dateFormat = NSLocalizedString("date_format", comment: "Date format")
         let formattedDate = formatter.string(from: currentDate)
         
         let words =  nouns.map { $0.words[0] } + verbs.map { $0.words[0] } + characters.map { $0.words[0] }
@@ -132,7 +129,7 @@ class GameController: ObservableObject {
         StorageService.shared.add(story:
             StoryModel(
                 id: audioId,
-                title: "My Story",
+                title: NSLocalizedString("My Story", comment: "The story title"),
                 date: formattedDate,
                 theme: theme,
                 words: words

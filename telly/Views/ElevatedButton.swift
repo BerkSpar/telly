@@ -11,7 +11,7 @@ struct ElevatedButton: View {
     var backgroundColor: Color
     var textColor: Color
      
-    let text: String
+    let text: LocalizedStringKey
     
     var isDisabled: Bool = false
     
@@ -36,7 +36,9 @@ struct ElevatedButton: View {
                     .fontWidth(.expanded)
                     .fontWeight(.heavy)
                     .foregroundColor(buttonTextColor())
+                    .frame(maxWidth: .infinity)
                     .padding(16)
+                    
             }
         }
         .disabled(isDisabled)

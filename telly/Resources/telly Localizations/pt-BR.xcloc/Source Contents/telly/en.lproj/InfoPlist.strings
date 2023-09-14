@@ -1,0 +1,8 @@
+/* Bundle display name */
+"CFBundleDisplayName" = "Telly";
+/* Bundle name */
+"CFBundleName" = "telly";
+/* Privacy - Microphone Usage Description */
+"NSMicrophoneUsageDescription" = "We need access to the microphone to capture audio.";
+/* Privacy - Speech Recognition Usage Description */
+"NSSpeechRecognitionUsageDescription" = "We need access to speech recognition to transcribe your voice into text.";
