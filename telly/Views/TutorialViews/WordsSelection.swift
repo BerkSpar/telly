@@ -222,20 +222,22 @@ struct WordsSelection: View {
                     textColor: .myBackground,
                     text: "NEXT",
                     action: {
-                        HapticsService.shared.play(.medium)
-                        
-                        nouns = getNounsCount()
-                        verbs = getVerbsCount()
-                        people = getPeopleCount()
-                        
-                        if (getNounsCount() == 0) {
-                            RouterService.shared.showAlert(Alert(title: Text("You need to select the nouns")))
-                            return
-                        }
-                        RouterService.shared.onboarding(.tips)
-                    }
+                        withAnimation(.spring()) {
+                            HapticsService.shared.play(.medium)
+                            
+                            nouns = getNounsCount()
+                            verbs = getVerbsCount()
+                            people = getPeopleCount()
+                            
+                            if (getNounsCount() == 0) {
+                                RouterService.shared.showAlert(Alert(title: Text("You need to select the nouns")))
+                                return
+                            }
+                            RouterService.shared.onboarding(.tips)
+                            
+                        }}
                 )}
-            
+                    
             
             .padding(32)
             

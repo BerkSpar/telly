@@ -31,6 +31,7 @@ struct TutorialView: View {
             case .wordsSelection: WordsSelection(nouns: $nouns, verbs: $verbs, people: $characters)
                     .transition(.push(from: .trailing))
             case .tips: TipsView(themeSelected: $theme, nouns: $nouns, verbs: $verbs, people: $characters)
+                    .transition(.push(from: .trailing))
             }
         }
         

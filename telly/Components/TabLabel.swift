@@ -24,7 +24,8 @@ struct TabLabel: View {
                 .background(Color.myBackground)
                 .cornerRadius(32, corners: corner)
 //                .transition(.asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .leading)))
-                .transition(.move(edge: .leading))
+//                .transition(.move(edge: .leading))
+                .transition(.identity)
             
         } else {
             Text(text)
@@ -37,7 +38,8 @@ struct TabLabel: View {
                 .background(Color.myDarkBlue)
                 .cornerRadius(32, corners: corner)
 //                .transition(.asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .leading)))
-                .transition(.move(edge: .trailing))
+//                .transition(.move(edge: .trailing))
+                .transition(.identity)
          
         }
     }

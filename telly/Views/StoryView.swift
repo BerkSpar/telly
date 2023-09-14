@@ -136,33 +136,42 @@ struct StoryView: View {
                         
                         HStack(spacing: 0) {
                             Button {
-                                noun2Selection = true
-                                noun3Selection = false
-                                noun4Selection = false
-                                
-                                HapticsService.shared.play(.medium)
+                                withAnimation(.spring()){
+                                    noun2Selection = true
+                                    noun3Selection = false
+                                    noun4Selection = false
+                                    
+                                    HapticsService.shared.play(.medium)
+                                }
                             } label: {
                                 ElevatedTextCard(text: "2", color: .myDarkBlue, selected: noun2Selection)
+                                
                             }
                             
                             Button {
-                                noun2Selection = false
-                                noun3Selection = true
-                                noun4Selection = false
-                                
-                                HapticsService.shared.play(.medium)
+                                withAnimation(.spring()){
+                                    noun2Selection = false
+                                    noun3Selection = true
+                                    noun4Selection = false
+                                    
+                                    HapticsService.shared.play(.medium)
+                                }
                             } label: {
                                 ElevatedTextCard(text: "3", color: .myDarkBlue, selected: noun3Selection)
+                                    
                             }
                             
                             Button {
-                                noun2Selection = false
-                                noun3Selection = false
-                                noun4Selection = true
-                                
-                                HapticsService.shared.play(.medium)
+                                withAnimation(.spring()){
+                                    noun2Selection = false
+                                    noun3Selection = false
+                                    noun4Selection = true
+                                    
+                                    HapticsService.shared.play(.medium)
+                                }
                             } label: {
                                 ElevatedTextCard(text: "4", color: .myDarkBlue, selected: noun4Selection)
+//
                             }
                         }
                         .overlay(
@@ -269,25 +278,28 @@ struct StoryView: View {
                 textColor: .myBackground,
                 text: "START",
                 action: {
-                    HapticsService.shared.play(.medium)
-
-                    if (getThemeName() == "") {
-                        RouterService.shared.showAlert(Alert(title: Text("You need to select one theme")))
-                        return
-                    }
-
-                    if (getNounsCount() == 0) {
-                        RouterService.shared.showAlert(Alert(title: Text("You need to select the nouns")))
-                        return
-                    }
-
-                    verifyAuthentication {
-                        RouterService.shared.navigate(.game(
-                            theme: getThemeName(),
-                            nouns: getNounsCount(),
-                            verbs: getVerbsCount(),
-                            characters: getPeopleCount()
-                        ))
+                    withAnimation(.spring()) {
+                        HapticsService.shared.play(.medium)
+                        
+                        if (getThemeName() == "") {
+                            RouterService.shared.showAlert(Alert(title: Text("You need to select one theme")))
+                            return
+                        }
+                        
+                        if (getNounsCount() == 0) {
+                            RouterService.shared.showAlert(Alert(title: Text("You need to select the nouns")))
+                            return
+                        }
+                        
+                        verifyAuthentication {
+                            RouterService.shared.navigate(.game(
+                                theme: getThemeName(),
+                                nouns: getNounsCount(),
+                                verbs: getVerbsCount(),
+                                characters: getPeopleCount()
+                            ))
+                            
+                        }
                     }
                 }
             )

@@ -15,7 +15,8 @@ struct ElevatedTextCard: View {
     var body: some View {
         ElevatedCard(
             color: color,
-            backgroundColor: selected ? color : Color.myBackground,
+            backgroundColor: selected ? color : Color.myBackground
+            ,
             content:  {
                 Text(text)
                     .font(.system(size: 20))
@@ -23,8 +24,9 @@ struct ElevatedTextCard: View {
                     .bold()
                     .foregroundColor(selected ? Color.myBackground : color)
                     .frame(width: 50, height: 40)
+                    
             }
-        )
+        ) 
     }
 }
 

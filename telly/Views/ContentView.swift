@@ -26,6 +26,7 @@ struct ContentView: View {
             case .onboarding: OnboardingView()
             case .tutorial: TutorialView()
             case .home: HomeView()
+                    .transition(.slide)
             case .words: WordsView()
             case .done(theme: let theme):
                 DoneView(theme: theme)
@@ -43,6 +44,7 @@ struct ContentView: View {
                     verbsCount: verbs,
                     charactersCount: characters
                 )
+                .transition(.push(from: .trailing))
             }
         }
         .alert(isPresented: $router.isAlertPresented) {

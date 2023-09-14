@@ -82,15 +82,17 @@ struct TipsView: View {
                     textColor: .myBackground,
                     text: "NEXT",
                     action: {
-                        HapticsService.shared.play(.medium)
-                        
-                        verifyAuthentication {
-                            RouterService.shared.navigate(.game(
-                                theme: themeSelected,
-                                nouns: nouns,
-                                verbs: verbs,
-                                characters: people
-                            ))
+                        withAnimation(.spring()) {
+                            HapticsService.shared.play(.medium)
+                            
+                            verifyAuthentication {
+                                RouterService.shared.navigate(.game(
+                                    theme: themeSelected,
+                                    nouns: nouns,
+                                    verbs: verbs,
+                                    characters: people
+                                ))
+                            }
                         }
                     }
                 )}

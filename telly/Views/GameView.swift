@@ -154,7 +154,7 @@ struct GameView: View {
                             text: "STOP",
                             isDisabled: false
                         ) {
-                            withAnimation() {
+                            withAnimation(.spring()) {
                                 HapticsService.shared.notify(.warning)
                                 showAlert = true
                             }
@@ -190,55 +190,10 @@ struct GameView: View {
             }
             
             .overlay {
-                ZStack {
-                    Rectangle()
-                        .foregroundColor(.myDarkBlue)
-                        .opacity(0.6)
-                        .ignoresSafeArea()
-                    
-                    VStack(spacing: 16) {
-                        VStack(spacing: 4) {
-                            HStack {
-                                Text("Do you really want to quit de game?")
-                                    .foregroundColor(.myDarkGrey)
-                                    .font(.title2)
-                                    .bold()
-                                    .multilineTextAlignment(.center)
-                                    .frame(width: 200)
-                                
-                            }
-                            Text("Any progress you may have made so far won't be saved")
-                                .frame(width: 250)
-                                .foregroundColor(.myDarkGrey)
-                                .multilineTextAlignment(.center)
-                        }
-                        
-                        HStack(spacing: 14) {
-                            ElevatedButton(backgroundColor: .myReddish,textColor: .myBackground, text: "YES", isDisabled: false) {
-                                withAnimation() {
-                                    showAlert = false
-                                    controller.stop()
-                                    HapticsService.shared.play(.heavy)
-                                }
-                            }
-                            
-                            ElevatedButton(backgroundColor: .myDarkBlue, textColor: .myBackground, text: "NO", isDisabled: false) {
-                                withAnimation() {
-                                    showAlert = false
-                                    HapticsService.shared.play(.soft)
-                                }
-                            }
-                        }
-                    }
-                    .padding(.vertical, 24)
-                    .padding(.horizontal, 32)
-                    .background(Color.myBackground)
-                    .cornerRadius(24)
-                    
-                    
-                    
-                }.opacity(showAlert ? 1 : 0)
-                
+                Popup(alert: $showAlert, title: "Do you really want to stop de game?", bodyText: "Any progress you may have made so far won't be saved", numberOfButtons: 2, buttonText: "NO", action: {
+                    controller.stop()
+                })
+
                 if controller.isSpeaking && countdown > 0 {
                     Rectangle()
                         .opacity(0.7)
