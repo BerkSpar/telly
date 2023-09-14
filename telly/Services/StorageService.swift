@@ -3,9 +3,8 @@ import Foundation
 struct StorageService {
     static let shared = StorageService()
     
-    var isFirstLogin = true
-    
     private let storageKey = "stories"
+    private let onboardingKey = "hasSeenOnboarding"
     
     // Save a new story
     func add(story: StoryModel) {
@@ -44,5 +43,15 @@ struct StorageService {
         if let encoded = try? JSONEncoder().encode(stories) {
             UserDefaults.standard.set(encoded, forKey: storageKey)
         }
+    }
+    
+    // Set the onboarding status
+    func setOnboardingSeen(_ hasSeen: Bool) {
+        UserDefaults.standard.set(hasSeen, forKey: onboardingKey)
+    }
+    
+    // Check if the user has seen the onboarding
+    func hasSeenOnboarding() -> Bool {
+        return UserDefaults.standard.bool(forKey: onboardingKey)
     }
 }

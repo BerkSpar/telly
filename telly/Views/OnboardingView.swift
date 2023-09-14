@@ -39,23 +39,20 @@ struct OnboardingView: View {
         }
         .background(Color.myBackground)
         .onAppear {
-            var canNavigate = false
-            bounce.toggle()  // Start the bounce animation
+            bounce.toggle()
             
             Task {
                 try await Task.sleep(nanoseconds: Duration(seconds: 1).inNanoseconds())
                 
                 GameService.shared.authenticate { error in
-                    canNavigate = true
-                }
-                
-                if StorageService.shared.isFirstLogin {
-                    withAnimation(){
-                        RouterService.shared.navigate(.tutorial)
+                    if !StorageService.shared.hasSeenOnboarding() {
+                        withAnimation(){
+                            RouterService.shared.navigate(.tutorial)
+                        }
+                        
+                        return
                     }
-                }
-                
-                if canNavigate {
+                    
                     RouterService.shared.navigate(.home)
                 }
             }

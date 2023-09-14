@@ -83,6 +83,7 @@ struct TipsView: View {
                     text: "NEXT",
                     action: {
                         withAnimation(.spring()) {
+                            StorageService.shared.setOnboardingSeen(true)
                             HapticsService.shared.play(.medium)
                             
                             verifyAuthentication {
