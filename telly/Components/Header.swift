@@ -28,10 +28,12 @@ struct Header: View {
                 .font(.myTitle)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .foregroundColor(.myBackground)
+                .lineSpacing(-2)
             
             Spacer()
         }
-        .padding(.horizontal, 24)
+        .padding(.leading, 24)
+        .padding(.trailing, 12)
         .padding(.top, 40)
         .padding(.bottom, 24)
         .background(Color.myDarkBlue)

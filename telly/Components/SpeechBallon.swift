@@ -22,12 +22,13 @@ struct SpeechBallon: View {
                 
             
                 .foregroundColor(.myDarkBlue)
-            VStack(spacing: 8) {
+            VStack(spacing: 4) {
                 HStack {
                     Text(title)
                         .font(.headline)
                         .bold()
                         .fixedSize(horizontal: false, vertical: true)
+                        .lineSpacing(-2)
                     Spacer()
                 }
                 
@@ -35,13 +36,14 @@ struct SpeechBallon: View {
                     Text(label)
                         .font(.caption)
                         .fixedSize(horizontal: false, vertical: true)
+                        .lineSpacing(-1)
                     Spacer()
                 }
             }
         }
         .padding(.vertical, 24)
         .padding(.leading, 32)
-        .padding(.trailing, 16)
+        .padding(.trailing, 12)
         .background(
             RoundedRectangle(cornerRadius: 24)
                 .stroke(Color.myDarkBlue, lineWidth: 4)
