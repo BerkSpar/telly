@@ -53,11 +53,11 @@ struct Popup: View {
                             .font(.title2)
                             .bold()
                             .multilineTextAlignment(.center)
-                            .frame(width: 200)
+                            .frame(width: 260)
                         
                     }
                     Text(bodyText)
-                        .frame(width: 250)
+                        .frame(width: 260)
                         .foregroundColor(.myDarkGrey)
                         .multilineTextAlignment(.center)
                 }

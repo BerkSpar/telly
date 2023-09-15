@@ -28,6 +28,8 @@ struct AuthorizationView: View {
     var body: some View {
         VStack(spacing: 24) {
             
+            Spacer()
+            
             Authorization(titleVoice: title, titleSound: "", icon: icon, bodyText: bodyText)
             
             ElevatedButton(
@@ -71,7 +73,11 @@ struct AuthorizationView: View {
                     Text("Precisamos da sua autorização de audio")
                 }
             }
+            
+            Spacer()
+            
         }
+        .background(Color.myBackground)
     }
     
     struct AuthorizationView_Previews: PreviewProvider {
