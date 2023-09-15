@@ -60,6 +60,7 @@ struct WelcomeView: View {
             ElevatedButton(backgroundColor: .myDarkBlue, textColor: .myBackground, text: "LET'S GO!") {
                 
                 withAnimation(.spring()) {
+                    HapticsService.shared.play(.medium)
                     RouterService.shared.onboarding(.themeSelection)
                 }
             }

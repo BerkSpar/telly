@@ -48,14 +48,14 @@ struct DoneView: View {
                 
                 VStack(spacing: 16) {
                     ElevatedButton(backgroundColor: .myDarkBlue, textColor: .myBackground, text: "SAVE MY STORY", action: {
-                        
-                        RouterService.shared.showSheet(
-                            StorySheetView(story: $story) {
-                                print("")
-                            }
-                            .presentationDetents([.height(300)])
-                        )
-                        
+                        withAnimation(.spring()) {
+                            RouterService.shared.showSheet(
+                                StorySheetView(story: $story) {
+                                    print("")
+                                }
+                                    .presentationDetents([.height(300)])
+                            )
+                        }
                         HapticsService.shared.play(.heavy)
                         reportAchievements()
                         RouterService.shared.navigate(.home)
@@ -64,9 +64,11 @@ struct DoneView: View {
                     .padding(.horizontal, 24)
                     
                     Button {
-                        HapticsService.shared.play(.heavy)
-                        reportAchievements()
-                        RouterService.shared.navigate(.home)
+                        withAnimation(.spring()) {
+                            HapticsService.shared.play(.heavy)
+                            reportAchievements()
+                            RouterService.shared.navigate(.home)
+                        }
                     } label: {
                         Text("I don't want to save my story")
                             .foregroundColor(.myDarkGrey)

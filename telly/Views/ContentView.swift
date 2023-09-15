@@ -26,10 +26,11 @@ struct ContentView: View {
             case .onboarding: OnboardingView()
             case .tutorial: TutorialView()
             case .home: HomeView()
-                    .transition(.slide)
+                    .transition(.move(edge: .leading))
             case .words: WordsView()
             case .done(story: let story):
                 DoneView(story: story)
+                    .transition(.move(edge: .trailing))
             case .authorization(completion: let completion):
                 AuthorizationView(completion: completion)
             case .game(
@@ -44,7 +45,7 @@ struct ContentView: View {
                     verbsCount: verbs,
                     charactersCount: characters
                 )
-                .transition(.push(from: .trailing))
+                
             }
         }
         .alert(isPresented: $router.isAlertPresented) {

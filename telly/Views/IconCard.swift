@@ -42,7 +42,9 @@ struct IconCard: View {
             color: getColor(),
             backgroundColor: type == .enabled ? color : .myBackground,
             hasStroke: true
-        ) {
+        )
+        
+        {
             VStack(spacing: 16) {
                 if (text != nil) {
                     HStack {
@@ -57,6 +59,7 @@ struct IconCard: View {
     //                        .foregroundColor(getColor())
                     }
                 }
+                
                 
                 if (icon != nil) {
                     Image(systemName: icon!)
@@ -82,7 +85,7 @@ struct IconCard_Previews: PreviewProvider {
                     text: "Schedule",
                     icon: "book",
                     type: .disabled
-                )
+                ) 
                 
                 IconCard(
                     text: "Schedule",
