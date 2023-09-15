@@ -19,6 +19,7 @@ struct IconCard: View {
     var iconSize: CGFloat = 40.0
     var color: Color = .myReddish
     var type: IconCardType = .none
+    var hasSpeaker: Bool = false
     var onTap: (() -> Void)?
     
     func getColor() -> Color {
@@ -50,14 +51,14 @@ struct IconCard: View {
                             .font(.myCard)
                             .foregroundColor(getColor())
                         
-                        
                         Spacer()
                         
-                        //                    Image(systemName: "speaker.wave.3.fill")
-                        //                        .foregroundColor(getColor())
+                        if hasSpeaker {
+                            Image(systemName: "speaker.wave.3.fill")
+                                .foregroundColor(getColor())
+                        }
                     }
                 }
-                
                 
                 if (icon != nil) {
                     Image(systemName: icon!)
@@ -66,8 +67,6 @@ struct IconCard: View {
                         .frame(height: iconSize)
                         .font(.system(size: iconSize))
                         .foregroundColor(getIconColor())
-                    
-                    
                 }
             }
             .padding(16)
