@@ -38,9 +38,6 @@ struct Popup: View {
     var action: () -> Void
     var secondaryAction: (() -> Void)?
     
-    
-    @StateObject private var controller = GameController()
-    
     var body: some View {
         ZStack {
             Rectangle()

@@ -53,13 +53,17 @@ struct DoneView: View {
                                 StorySheetView(story: $story) {
                                     print("")
                                 }
-                                    .presentationDetents([.height(300)])
+                                .presentationDetents([.height(300)])
+                                .onDisappear {
+                                    RouterService.shared.navigate(.home)
+                                }
                             )
                         }
+                        
+                        StorageService.shared.add(story: story)
+
                         HapticsService.shared.play(.heavy)
                         reportAchievements()
-                        RouterService.shared.navigate(.home)
-                        
                     })
                     .padding(.horizontal, 24)
                     

@@ -9,7 +9,7 @@ import Foundation
 import AVFAudio
 
 class AudioService {
-    private var audioPlayer: AVAudioPlayer?
+    var audioPlayer: AVAudioPlayer?
     
     init() { }
     
@@ -23,7 +23,15 @@ class AudioService {
             return
         }
         
-        print("Tentando executar")
+        // Configure the audio session for playback
+        let audioSession = AVAudioSession.sharedInstance()
+        do {
+            try audioSession.setCategory(.playback, mode: .default, options: [])
+            try audioSession.setActive(true)
+        } catch {
+            print("Failed to set up audio session: \(error.localizedDescription)")
+            return
+        }
         
         do {
             audioPlayer = try AVAudioPlayer(contentsOf: url)

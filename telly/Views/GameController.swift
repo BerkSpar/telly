@@ -61,6 +61,8 @@ class GameController: ObservableObject {
     }
     
     func generateElements() {
+        wordSet.removeAll()
+        
         nouns = ElementManager.getRandomElements(count: nounsCount, theme: theme, type: .nouns)
         verbs = ElementManager.getRandomElements(count: verbsCount, theme: theme, type: .verbs)
         characters = ElementManager.getRandomElements(count: charactersCount, theme: theme, type: .characters)

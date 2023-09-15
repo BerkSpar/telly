@@ -18,6 +18,8 @@ struct StorySheetView: View {
     
     let service = AudioService()
     
+    @State var isPlaying: Bool = false
+    
     private func getDocumentsDirectory() -> URL {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         return paths[0]
@@ -122,25 +124,48 @@ struct StorySheetView: View {
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.bottom, 16)
             
-            Button {
-                let path = getDocumentsDirectory().appendingPathComponent("\(story.id).m4a").path()
-                service.playAudio(withPath: path)
-            } label: {
-                ElevatedCard(color: .myDarkBlue, hasStroke: true, content:  {
-                    HStack {
-                        Text("Play Audio")
-                            .foregroundColor(.myDarkBlue)
-                        
-                        Spacer()
-                        
-                        Image(systemName: "play.circle.fill")
-                            .font(.system(size: 32))
-                            .foregroundColor(.myDarkBlue)
-                    }
-                    .padding(16)
-                })
+            if isPlaying {
+                Button {
+                    service.stopAudio()
+                    isPlaying = false
+                } label: {
+                    ElevatedCard(color: .myReddish, hasStroke: true, content:  {
+                        HStack {
+                            Text("Stop Audio")
+                                .foregroundColor(.myReddish)
+                            
+                            Spacer()
+                            
+                            Image(systemName: "stop.circle.fill")
+                                .font(.system(size: 32))
+                                .foregroundColor(.myReddish)
+                        }
+                        .padding(16)
+                    })
+                }
+                .padding(.bottom, 16)
+            } else {
+                Button {
+                    let path = getDocumentsDirectory().appendingPathComponent("\(story.id).m4a").path()
+                    service.playAudio(withPath: path)
+                    isPlaying = true
+                } label: {
+                    ElevatedCard(color: .myDarkBlue, hasStroke: true, content:  {
+                        HStack {
+                            Text("Play Audio")
+                                .foregroundColor(.myDarkBlue)
+                            
+                            Spacer()
+                            
+                            Image(systemName: "play.circle.fill")
+                                .font(.system(size: 32))
+                                .foregroundColor(.myDarkBlue)
+                        }
+                        .padding(16)
+                    })
+                }
+                .padding(.bottom, 16)
             }
-            .padding(.bottom, 16)
             
             HStack {
                 ShareLink(
@@ -171,6 +196,14 @@ struct StorySheetView: View {
             }
         }
         .padding([.leading, .trailing], 32)
+        .onAppear {
+            Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+                self.isPlaying = service.audioPlayer?.isPlaying ?? false
+            }
+        }
+        .onDisappear {
+            service.stopAudio()
+        }
     }
 }
 

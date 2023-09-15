@@ -14,13 +14,13 @@ class SpeechRecognizerService {
     private var audioFileURL: URL?
 
     func recognize(audioId: String, callback: @escaping (_ text: String) -> Void) throws {
-//        let audioSession = AVAudioSession.sharedInstance()
-//        do {
-//            try audioSession.setCategory(.playAndRecord, mode: .videoChat, options: .mixWithOthers)
-//            try audioSession.setActive(true, options: .notifyOthersOnDeactivation)
-//        } catch {
-//            print("Error in config of Speech")
-//        }
+        let audioSession = AVAudioSession.sharedInstance()
+        do {
+            try audioSession.setCategory(.playAndRecord, mode: .default, options: .mixWithOthers)
+            try audioSession.setActive(true, options: .notifyOthersOnDeactivation)
+        } catch {
+            print("Error in config of Speech")
+        }
         
         if let recognitionTask = speechRecognitionTask {
             recognitionTask.cancel()

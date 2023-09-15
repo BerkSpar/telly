@@ -51,7 +51,6 @@ struct IconCard: View {
                             .font(.myCard)
                             .foregroundColor(getColor())
                         
-                        
                         Spacer()
                         
                         if hasSpeaker {
