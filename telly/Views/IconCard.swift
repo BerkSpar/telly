@@ -19,6 +19,7 @@ struct IconCard: View {
     var iconSize: CGFloat = 40.0
     var color: Color = .myReddish
     var type: IconCardType = .none
+    var hasSpeaker: Bool = false
     var onTap: (() -> Void)?
     
     func getColor() -> Color {
@@ -42,9 +43,7 @@ struct IconCard: View {
             color: getColor(),
             backgroundColor: type == .enabled ? color : .myBackground,
             hasStroke: true
-        )
-        
-        {
+        ) {
             VStack(spacing: 16) {
                 if (text != nil) {
                     HStack {
@@ -55,11 +54,12 @@ struct IconCard: View {
                         
                         Spacer()
                         
-    //                    Image(systemName: "speaker.wave.3.fill")
-    //                        .foregroundColor(getColor())
+                        if hasSpeaker {
+                            Image(systemName: "speaker.wave.3.fill")
+                                .foregroundColor(getColor())
+                        }
                     }
                 }
-                
                 
                 if (icon != nil) {
                     Image(systemName: icon!)
@@ -68,8 +68,6 @@ struct IconCard: View {
                         .frame(height: iconSize)
                         .font(.system(size: iconSize))
                         .foregroundColor(getIconColor())
-                        
-                    
                 }
             }
             .padding(16)
@@ -85,7 +83,7 @@ struct IconCard_Previews: PreviewProvider {
                     text: "Schedule",
                     icon: "book",
                     type: .disabled
-                ) 
+                )
                 
                 IconCard(
                     text: "Schedule",

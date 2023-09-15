@@ -39,42 +39,61 @@ struct GameView: View {
         }
     }
     
+    func hasSpeakerIcon() -> Bool {
+        if !controller.started {
+            return true
+        } else {
+            return false
+        }
+    }
+    
     var body: some View {
         ZStack {
             VStack(spacing: 0) {
                 if (controller.started) {
-                    HStack() {
+                    HStack(spacing: 12) {
                         AnimatedIcon()
                         
                         Text("Theme: \(NSLocalizedString(controller.theme, comment: "Theme name"))")
+                            .font(.system(size: 24))
                             .bold()
-                            .font(.system(size: 22))
+                            .foregroundColor(.myDarkGrey)
                         
                     }
                     .padding(.bottom, 24)
                 } else {
-                    Text("Take a look at the words")
-                        .font(.system(size: 24))
-                        .bold()
-                        .multilineTextAlignment(.center)
-                        .frame(maxWidth: .infinity)
-                        .foregroundColor(.myDarkGrey)
-                    
-                    Text("You will be able to see them again once you start your story")
-                        .font(.system(size: 16))
-                        .multilineTextAlignment(.center)
-                        .frame(width: 300)
-                        .padding(.bottom, 24)
-                        .foregroundColor(.myDarkGrey)
+                    VStack(spacing: 8) {
+                        Text("Let's listen the pronunciation!")
+                            .font(.system(size: 24))
+                            .bold()
+                            .multilineTextAlignment(.center)
+                            .frame(maxWidth: .infinity)
+                            .foregroundColor(.myDarkGrey)
+                        
+                        Text("Tap the boxes to hear the word's pronunciation, after you will only be able to read them")
+                            .font(.system(size: 16))
+                            .multilineTextAlignment(.center)
+                            .frame(width: 350)
+                            .padding(.bottom, 24)
+                            .foregroundColor(.myDarkGrey)
+                            .fixedSize(horizontal: false, vertical: true)
+                    }
                 }
                 
                 if (!controller.nouns.isEmpty) {
-                    
-                    Text("NOUNS")
-                        .font(.myHeader)
-                        .foregroundColor(controller.showNouns ? .myDarkBlue : .myGrey)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding(.bottom, 8)
+                    if (controller.isSpeaking) {
+                        Text("NOUNS")
+                            .font(.myHeader)
+                            .foregroundColor(controller.showNouns ? .myDarkBlue : .myGrey)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(.bottom, 8)
+                    } else {
+                        Text("NOUNS")
+                            .font(.myHeader)
+                            .foregroundColor(.myDarkBlue)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(.bottom, 8)
+                    }
                     
                     LazyVGrid(columns: [GridItem(), GridItem()]) {
                         ForEach(controller.nouns) { element in
@@ -95,7 +114,8 @@ struct GameView: View {
                                         text: element.words[0],
                                         icon: element.icon,
                                         color: .myDarkBlue,
-                                        type: isChecked ? .disabled : .none
+                                        type: .none,
+                                        hasSpeaker: hasSpeakerIcon()
                                     )
                                 }
                             }
@@ -107,11 +127,19 @@ struct GameView: View {
                     
                 
                 if (!controller.verbs.isEmpty) {
-                    Text("VERBS")
-                        .font(.myHeader)
-                        .foregroundColor(controller.showVerbs ? .myPurple : .myGrey)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding(.bottom, 8)
+                    if (controller.isSpeaking) {
+                        Text("VERBS")
+                            .font(.myHeader)
+                            .foregroundColor(controller.showVerbs ? .myPurple : .myGrey)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(.bottom, 8)
+                    } else {
+                        Text("VERBS")
+                            .font(.myHeader)
+                            .foregroundColor(.myPurple)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(.bottom, 8)
+                    }
                     
                     LazyVGrid(columns: [GridItem(), GridItem()]) {
                         ForEach(controller.verbs) { element in
@@ -130,7 +158,8 @@ struct GameView: View {
                                     IconCard(
                                         text: element.words[0],
                                         color: .myPurple,
-                                        type: isChecked ? .disabled : .none
+                                        type: .none,
+                                        hasSpeaker: hasSpeakerIcon()
                                     )
                                 }
                                 
@@ -141,11 +170,20 @@ struct GameView: View {
                 }
                 
                 if (!controller.characters.isEmpty) {
-                    Text("PEOPLE")
-                        .font(.myHeader)
-                        .foregroundColor(controller.showsCharacters ? .myReddish : .myGrey)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding(.bottom, 8)
+                    if (controller.isSpeaking) {
+                        Text("PEOPLE")
+                            .font(.myHeader)
+                            .foregroundColor(controller.showsCharacters ? .myReddish : .myGrey)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(.bottom, 8)
+                    }
+                    else {
+                        Text("PEOPLE")
+                            .font(.myHeader)
+                            .foregroundColor(.myReddish)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(.bottom, 8)
+                    }
                     
                     LazyVGrid(columns: [GridItem(), GridItem()]) {
                         ForEach(controller.characters) { element in
@@ -164,7 +202,8 @@ struct GameView: View {
                                     IconCard(
                                         text: element.words[0],
                                         color: .myReddish,
-                                        type: isChecked ? .disabled : .none
+                                        type: .none,
+                                        hasSpeaker: hasSpeakerIcon()
                                     )
                                 }
                                 
@@ -220,7 +259,7 @@ struct GameView: View {
                                 showAlert = true
                                 
                                 RouterService.shared.showPopUp(
-                                    Popup(title: "Do you really want to stop de game?", bodyText: "Any progress you may have made so far won't be saved", numberOfButtons: 2, buttonText: "NO", action: {
+                                    Popup(title: "Do you really want to stop the game?", bodyText: "Any progress you may have made so far won't be saved", numberOfButtons: 2, buttonText: "NO", action: {
                                         controller.stop()
                                     })
                                 )
