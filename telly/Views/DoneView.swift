@@ -48,28 +48,31 @@ struct DoneView: View {
                 
                 VStack(spacing: 16) {
                     ElevatedButton(backgroundColor: .myDarkBlue, textColor: .myBackground, text: "SAVE MY STORY", action: {
+                        withAnimation(.spring()) {
+                            RouterService.shared.showSheet(
+                                StorySheetView(story: $story) {
+                                    print("")
+                                }
+                                .presentationDetents([.height(300)])
+                                .onDisappear {
+                                    RouterService.shared.navigate(.home)
+                                }
+                            )
+                        }
                         
                         StorageService.shared.add(story: story)
-                        
-                        RouterService.shared.showSheet(
-                            StorySheetView(story: $story) {
-                                print("")
-                            }
-                            .presentationDetents([.height(300)])
-                            .onDisappear {
-                                RouterService.shared.navigate(.home)
-                            }
-                        )
-                        
+
                         HapticsService.shared.play(.heavy)
                         reportAchievements()
                     })
                     .padding(.horizontal, 24)
                     
                     Button {
-                        HapticsService.shared.play(.heavy)
-                        reportAchievements()
-                        RouterService.shared.navigate(.home)
+                        withAnimation(.spring()) {
+                            HapticsService.shared.play(.heavy)
+                            reportAchievements()
+                            RouterService.shared.navigate(.home)
+                        }
                     } label: {
                         Text("I don't want to save my story")
                             .foregroundColor(.myDarkGrey)

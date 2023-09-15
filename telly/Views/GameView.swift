@@ -15,8 +15,12 @@ struct GameView: View {
     
     @State var countdown = 3
     @State var showAlert = false
-
+    
+    @State private var bounce = false
+    
     @StateObject private var controller = GameController()
+    
+    @State private var timeElapsed: Double = 0
     
     let service = SynthesisService()
     
@@ -24,8 +28,11 @@ struct GameView: View {
         let interval = DispatchTimeInterval.seconds(1)
         DispatchQueue.main.asyncAfter(deadline: .now() + interval) {
             if controller.started && countdown > 0 {
+                withAnimation(.spring()) {
                 countdown -= 1
                 startCountdown()
+                
+                                }
             } else if controller.started && countdown == 0 {
                 controller.play()
             }
@@ -38,11 +45,11 @@ struct GameView: View {
                 if (controller.started) {
                     HStack() {
                         AnimatedIcon()
-
+                        
                         Text("Theme: \(NSLocalizedString(controller.theme, comment: "Theme name"))")
                             .bold()
                             .font(.system(size: 22))
-
+                        
                     }
                     .padding(.bottom, 24)
                 } else {
@@ -52,7 +59,7 @@ struct GameView: View {
                         .multilineTextAlignment(.center)
                         .frame(maxWidth: .infinity)
                         .foregroundColor(.myDarkGrey)
-
+                    
                     Text("You will be able to see them again once you start your story")
                         .font(.system(size: 16))
                         .multilineTextAlignment(.center)
@@ -60,18 +67,19 @@ struct GameView: View {
                         .padding(.bottom, 24)
                         .foregroundColor(.myDarkGrey)
                 }
-
+                
                 if (!controller.nouns.isEmpty) {
+                    
                     Text("NOUNS")
                         .font(.myHeader)
                         .foregroundColor(controller.showNouns ? .myDarkBlue : .myGrey)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.bottom, 8)
-
+                    
                     LazyVGrid(columns: [GridItem(), GridItem()]) {
                         ForEach(controller.nouns) { element in
                             let isChecked = controller.check(element: element)
-
+                            
                             if (controller.isSpeaking) {
                                 IconCard(
                                     text: element.words[0],
@@ -94,19 +102,21 @@ struct GameView: View {
                         }
                     }
                     .padding(.bottom, 24)
+                    
                 }
-
+                    
+                
                 if (!controller.verbs.isEmpty) {
                     Text("VERBS")
                         .font(.myHeader)
                         .foregroundColor(controller.showVerbs ? .myPurple : .myGrey)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.bottom, 8)
-
+                    
                     LazyVGrid(columns: [GridItem(), GridItem()]) {
                         ForEach(controller.verbs) { element in
                             let isChecked = controller.check(element: element)
-
+                            
                             if (controller.isSpeaking) {
                                 IconCard(
                                     text: element.words[0],
@@ -123,24 +133,24 @@ struct GameView: View {
                                         type: isChecked ? .disabled : .none
                                     )
                                 }
-
+                                
                             }
                         }
                     }
                     .padding(.bottom, 24)
                 }
-
+                
                 if (!controller.characters.isEmpty) {
                     Text("PEOPLE")
                         .font(.myHeader)
                         .foregroundColor(controller.showsCharacters ? .myReddish : .myGrey)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.bottom, 8)
-
+                    
                     LazyVGrid(columns: [GridItem(), GridItem()]) {
                         ForEach(controller.characters) { element in
                             let isChecked = controller.check(element: element)
-
+                            
                             if (controller.isSpeaking) {
                                 IconCard(
                                     text: element.words[0],
@@ -157,15 +167,16 @@ struct GameView: View {
                                         type: isChecked ? .disabled : .none
                                     )
                                 }
-
+                                
                             }
                         }
                     }
                     .padding(.bottom, 24)
+                    
                 }
-
+                
                 Spacer()
-
+                
                 if (!controller.started) {
                     HStack(spacing: 16) {
                         ElevatedButton(
@@ -173,22 +184,26 @@ struct GameView: View {
                             textColor: .myBackground,
                             text: "QUIT"
                         ) {
-                            controller.stop()
-                            HapticsService.shared.notify(.warning)
-                            RouterService.shared.navigate(.home)
+                            withAnimation(.spring()) {
+                                controller.stop()
+                                HapticsService.shared.notify(.warning)
+                                RouterService.shared.navigate(.home)
+                            }
                         }
                         .frame(maxWidth: .infinity)
-
+                        
                         ElevatedButton(
                             backgroundColor: .myDarkBlue,
                             textColor: .myBackground,
                             text: "START"
                         ) {
-                            HapticsService.shared.play(.heavy)
-                            controller.prepareToPlay()
-                            countdown = 3
-                            startCountdown()
-                    }
+                            withAnimation(.spring()) {
+                                HapticsService.shared.play(.heavy)
+                                controller.prepareToPlay()
+                                countdown = 3
+                                startCountdown()
+                            }
+                        }
                         .frame(maxWidth: .infinity)
                     }
                     
@@ -212,24 +227,28 @@ struct GameView: View {
                             }
                         }
                         .frame(maxWidth: .infinity)
-
+                        
                         ElevatedButton(
                             backgroundColor: .myDarkBlue,
                             textColor: .myBackground,
                             text: "FINISH",
                             isDisabled: controller.checkAllWords()
                         ) {
-                            controller.stop()
-                            let story = controller.getStory()
-
-                            HapticsService.shared.notify(.success)
-
-                            RouterService.shared.navigate(.done(story: story))
+                            withAnimation(.spring())
+                            {
+                                controller.stop()
+                                let story = controller.getStory()
+                                
+                                HapticsService.shared.notify(.success)
+                                
+                                RouterService.shared.navigate(.done(story: story))
+                            }
                         }
                         .frame(maxWidth: .infinity)
                     }
                 }
             }
+            
             .padding(24)
             .background(Color.myBackground)
             .onAppear {
@@ -240,32 +259,33 @@ struct GameView: View {
                     charactersCount: charactersCount
                 )
             }
-
-            .overlay {
+            
+            if controller.started && countdown > 0 {
+                Rectangle()
+                    .opacity(0.7)
+                    .ignoresSafeArea()
+                    .foregroundColor(.myDarkBlue)
+                Text("\(countdown)")
+                    .font(.myLargeTitle)
+                    .foregroundColor(.myBackground)
+                    .transition(.scale)
                 
-                if controller.started && countdown > 0 {
-                    Rectangle()
-                        .opacity(0.7)
-                        .ignoresSafeArea()
-                        .foregroundColor(.myDarkGrey)
-                    Text("\(countdown)")
-                        .font(.myLargeTitle)
-                        .foregroundColor(.myBackground)
-                }
+                TimerCircleView(timeElapsed: $timeElapsed, totalTime: 1)
+                
             }
-
         }
-    }
-    
-    struct GameView_Previews: PreviewProvider {
-        static var previews: some View {
-            GameView(
-                theme: "work",
-                nounsCount: 4,
-                verbsCount: 2,
-                charactersCount: 2
-            )
         }
-    }
     
-}
+        
+        struct GameView_Previews: PreviewProvider {
+            static var previews: some View {
+                GameView(
+                    theme: "work",
+                    nounsCount: 4,
+                    verbsCount: 2,
+                    charactersCount: 2
+                )
+            }
+        }
+        
+    }

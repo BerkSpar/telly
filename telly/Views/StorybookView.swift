@@ -18,6 +18,7 @@ struct StorybookView: View {
                     ElevatedButton(backgroundColor: .myDarkBlue,
                                    textColor: .myBackground,
                                    text: "ACHIEVEMENTS") {
+                        HapticsService.shared.play(.medium)
                         GameService.shared.showAchievements()
                     }
                 }

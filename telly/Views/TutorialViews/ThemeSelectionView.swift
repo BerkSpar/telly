@@ -109,6 +109,7 @@ struct ThemeSelectionView: View {
                             
                             
                             if (getThemeName() == "") {
+                                HapticsService.shared.notify(.warning)
                                 RouterService.shared.showPopUp(Popup( title: "You need to select one theme", bodyText: "", numberOfButtons: 1, buttonText: "OK", action: {
                                     print("ok")
                                 }))
