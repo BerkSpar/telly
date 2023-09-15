@@ -16,6 +16,16 @@ class SynthesisService {
         
          utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
         
+        // Configure the audio session for playback
+        let audioSession = AVAudioSession.sharedInstance()
+        do {
+            try audioSession.setCategory(.playback, mode: .default, options: [])
+            try audioSession.setActive(true)
+        } catch {
+            print("Failed to set up audio session: \(error.localizedDescription)")
+            return
+        }
+        
         synthesizer.speak(utterance)
     }
 }
