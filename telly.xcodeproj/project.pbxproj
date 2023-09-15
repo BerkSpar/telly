@@ -50,7 +50,6 @@
 		F7895EBE2A97D70100E8B286 /* SpeechRegonizerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7895EBD2A97D70100E8B286 /* SpeechRegonizerService.swift */; };
 		F795FB0B2A9E6932009C6DEF /* Duration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F795FB0A2A9E6932009C6DEF /* Duration.swift */; };
 		F795FB0D2A9E6EBD009C6DEF /* AuthorizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F795FB0C2A9E6EBD009C6DEF /* AuthorizationView.swift */; };
-		F79E35E22AB3A1220071CE94 /* AddStorySheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79E35E12AB3A1220071CE94 /* AddStorySheetView.swift */; };
 		F7C4F9102A9B110500691AC2 /* GameService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C4F90F2A9B110500691AC2 /* GameService.swift */; };
 		F7C7D46D2AB0069100EC8256 /* AudioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C7D46C2AB0069100EC8256 /* AudioService.swift */; };
 		F7C7D46F2AB1232C00EC8256 /* StorySheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C7D46E2AB1232C00EC8256 /* StorySheetView.swift */; };
@@ -126,7 +125,6 @@
 		F7895EBD2A97D70100E8B286 /* SpeechRegonizerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRegonizerService.swift; sourceTree = "<group>"; };
 		F795FB0A2A9E6932009C6DEF /* Duration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Duration.swift; sourceTree = "<group>"; };
 		F795FB0C2A9E6EBD009C6DEF /* AuthorizationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationView.swift; sourceTree = "<group>"; };
-		F79E35E12AB3A1220071CE94 /* AddStorySheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStorySheetView.swift; sourceTree = "<group>"; };
 		F7C4F90E2A9B07D600691AC2 /* telly.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = telly.entitlements; sourceTree = "<group>"; };
 		F7C4F90F2A9B110500691AC2 /* GameService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameService.swift; sourceTree = "<group>"; };
 		F7C7D46C2AB0069100EC8256 /* AudioService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioService.swift; sourceTree = "<group>"; };
@@ -237,7 +235,6 @@
 				8CA51D5F2AA13EC6007061B2 /* StoryView.swift */,
 				8CA51D622AA13EE9007061B2 /* StorybookView.swift */,
 				F7C7D46E2AB1232C00EC8256 /* StorySheetView.swift */,
-				F79E35E12AB3A1220071CE94 /* AddStorySheetView.swift */,
 				8CA51D502A9D2A20007061B2 /* GameView.swift */,
 				8CA51D522A9D2C17007061B2 /* DoneView.swift */,
 				8CA51D4E2A9D27DB007061B2 /* WordsView.swift */,
@@ -458,7 +455,6 @@
 				8CA51D5E2AA12FEE007061B2 /* Tab.swift in Sources */,
 				F75343D92AA178280006E2F6 /* RangeTile.swift in Sources */,
 				8C80DE2E2AB24B4D00304A83 /* TutorialView.swift in Sources */,
-				F79E35E22AB3A1220071CE94 /* AddStorySheetView.swift in Sources */,
 				F7895EAA2A97CB8300E8B286 /* HapticService.swift in Sources */,
 				F7895EA72A97CAF900E8B286 /* OnboardingView.swift in Sources */,
 				F7C7D47A2AB2C64600EC8256 /* SynthesisService.swift in Sources */,
