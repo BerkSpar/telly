@@ -25,16 +25,18 @@ struct GameView: View {
     let service = SynthesisService()
     
     func startCountdown() {
-        let interval = DispatchTimeInterval.seconds(1)
-        DispatchQueue.main.asyncAfter(deadline: .now() + interval) {
+        
+        
+        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
             if controller.started && countdown > 0 {
                 withAnimation(.spring()) {
-                countdown -= 1
-                startCountdown()
-                
-                                }
+                    countdown -= 1
+                }
             } else if controller.started && countdown == 0 {
                 controller.play()
+                timer.invalidate()
+            } else {
+                timer.invalidate()
             }
         }
     }
@@ -104,7 +106,7 @@ struct GameView: View {
                     .padding(.bottom, 24)
                     
                 }
-                    
+                
                 
                 if (!controller.verbs.isEmpty) {
                     Text("VERBS")
@@ -200,7 +202,7 @@ struct GameView: View {
                             withAnimation(.spring()) {
                                 HapticsService.shared.play(.heavy)
                                 controller.prepareToPlay()
-                                countdown = 3
+                                countdown = 4
                                 startCountdown()
                             }
                         }
@@ -222,6 +224,12 @@ struct GameView: View {
                                 RouterService.shared.showPopUp(
                                     Popup(title: "Do you really want to stop de game?", bodyText: "Any progress you may have made so far won't be saved", numberOfButtons: 2, buttonText: "NO", action: {
                                         controller.stop()
+                                        controller.initialize(
+                                            theme: theme,
+                                            nounsCount: nounsCount,
+                                            verbsCount: verbsCount,
+                                            charactersCount: charactersCount
+                                        )
                                     })
                                 )
                             }
@@ -234,13 +242,14 @@ struct GameView: View {
                             text: "FINISH",
                             isDisabled: controller.checkAllWords()
                         ) {
+                            
+                            controller.stop()
+                            let story = controller.getStory()
+                            
+                            HapticsService.shared.notify(.success)
+                            
                             withAnimation(.spring())
                             {
-                                controller.stop()
-                                let story = controller.getStory()
-                                
-                                HapticsService.shared.notify(.success)
-                                
                                 RouterService.shared.navigate(.done(story: story))
                             }
                         }
@@ -252,6 +261,7 @@ struct GameView: View {
             .padding(24)
             .background(Color.myBackground)
             .onAppear {
+                print("iniciou")
                 controller.initialize(
                     theme: theme,
                     nounsCount: nounsCount,
@@ -274,18 +284,18 @@ struct GameView: View {
                 
             }
         }
-        }
-    
-        
-        struct GameView_Previews: PreviewProvider {
-            static var previews: some View {
-                GameView(
-                    theme: "work",
-                    nounsCount: 4,
-                    verbsCount: 2,
-                    charactersCount: 2
-                )
-            }
-        }
-        
     }
+    
+    
+    struct GameView_Previews: PreviewProvider {
+        static var previews: some View {
+            GameView(
+                theme: "work",
+                nounsCount: 4,
+                verbsCount: 2,
+                charactersCount: 2
+            )
+        }
+    }
+    
+}

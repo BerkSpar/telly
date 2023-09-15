@@ -27,8 +27,6 @@ struct StoryView: View {
     @State var people1Selection = false
     @State var people2Selection = false
     
-    @State private var currentElements: [ElementModel] = []
-
     func getThemeName() -> String {
         if (workSelection) { return "work" }
         if (travellingSelection) { return "traveling" }
