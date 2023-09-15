@@ -241,7 +241,7 @@ struct GameView: View {
                             withAnimation(.spring()) {
                                 HapticsService.shared.play(.heavy)
                                 controller.prepareToPlay()
-                                countdown = 4
+                                countdown = 3
                                 startCountdown()
                             }
                         }
