@@ -67,10 +67,10 @@ struct WordsSelection: View {
                             .fixedSize(horizontal: false, vertical: true)
                         Spacer()
                     }
-                    .padding(.horizontal, 32)
+                    .padding(.horizontal, 24)
                     
                     VStack(spacing: 12){
-                        HStack(spacing: 12) {
+                        HStack(spacing: 4) {
                             Text("NOUNS")
                                 .font(.myTitle)
                                 .foregroundColor(.myDarkBlue)
@@ -115,7 +115,7 @@ struct WordsSelection: View {
                         
                         Divider()
                         
-                        HStack(spacing: 12) {
+                        HStack(spacing: 4) {
                             Text("VERBS")
                                 .font(.myTitle)
                                 .foregroundColor(.myPurple)
@@ -160,7 +160,7 @@ struct WordsSelection: View {
                         
                         Divider()
                         
-                        HStack(spacing: 12) {
+                        HStack(spacing: 4) {
                             Text("PEOPLE")
                                 .font(.myTitle)
                                 .foregroundColor(.myReddish)
@@ -202,7 +202,7 @@ struct WordsSelection: View {
                                 RoundedRectangle(cornerRadius: 16)
                                     .stroke(Color.myReddish, lineWidth: 2))
                         }
-                    } .padding(.horizontal, 26)
+                    } .padding(.horizontal, 24)
                     
                     
                 }
