@@ -261,7 +261,7 @@ struct GameView: View {
                                 showAlert = true
                                 
                                 RouterService.shared.showPopUp(
-                                    Popup(title: "Do you really want to stop the game?", bodyText: "Any progress you may have made so far won't be saved", numberOfButtons: 2, buttonText: "NO", action: {
+                                    Popup(title: "Do you really want to stop the game?", bodyText: "Any progress you may have made so far won't be saved and the words will be changed", numberOfButtons: 2, buttonText: "NO", action: {
                                         controller.stop()
                                         controller.initialize(
                                             theme: theme,

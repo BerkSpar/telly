@@ -31,7 +31,7 @@
 "STOP" = "STOP";
 "FINISH" = "FINIR";
 "Do you really want to quit?" = "Voulez-vous vraiment quitter?";
-"Any progress you may have made so far won't be saved" = "Toute progression que vous avez faite ne sera pas enregistrée";
+"Any progress you may have made so far won't be saved and the words will be changed" = "Les progrès réalisés jusqu'à présent ne seront pas sauvegardés et les mots seront modifiés";
 "YES" = "OUI";
 "NO" = "NON";
 "Well done!" = "Bravo!";

@@ -30,7 +30,7 @@
 "STOP" = "PARAR";
 "FINISH" = "ACABAR";
 "Do you really want to quit?" = "Você realmente deseja sair?";
-"Any progress you may have made so far won't be saved" = "Todo o progresso que você fez não será salvo";
+"Any progress you may have made so far won't be saved and the words will be changed" = "Todo o progresso que você fez não será salvo e as palavras serão trocadas";
 "YES" = "SIM";
 "NO" = "NÃO";
 "Well done!" = "Arrasou!";
