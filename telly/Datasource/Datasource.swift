@@ -469,12 +469,6 @@ class Datasource {
                 words: ["manager", "managers"],
                 type: .characters,
                 theme: ["shopping"]
-            ),
-            ElementModel(
-                icon: "",
-                words: ["security guard", "security guards"],
-                type: .characters,
-                theme: ["shopping"]
             )
             
         ]
