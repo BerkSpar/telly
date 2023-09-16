@@ -68,9 +68,10 @@ struct AuthorizationView: View {
                         self.buttonText = "Go to settings"}
                 
                 if isAudioDenied() {
-                    Text("Você se recusou para escutar seu áudio. Ative nas suas configurações para continuar.")
+                    Text("You have decided to listen to your audio. Activate it in your settings to continue.")
                 } else {
-                    Text("Precisamos da sua autorização de audio")
+                    Text(
+                        "We need your audio authorization")
                 }
             }
             

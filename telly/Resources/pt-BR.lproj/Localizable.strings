@@ -70,3 +70,6 @@
 "Are you sure that you want to delete your story?" = "Você tem certeza que quer apagar sua história?";
 "You won't be able to recover your audio afterwards" = "Você não poderá recuperar o seu áudio mais tarde";
 "Do you really want to stop the game?" = "Você realmente quer pausar o jogo?";
+
+"We need your audio authorization" = "Nós precisamos da sua autorização de áudio";
+"You have decided to listen to your audio. Activate it in your settings to continue." = "Você decidiu ouvir seu áudio. Ative-o nas suas configurações para continuar.";

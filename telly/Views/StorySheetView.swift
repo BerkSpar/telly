@@ -194,6 +194,7 @@ struct StorySheetView: View {
                 }
 
             }
+            .padding(.bottom, 16)
         }
         .padding([.leading, .trailing], 32)
         .onAppear {
