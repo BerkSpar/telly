@@ -32,10 +32,9 @@ struct ElevatedButton: View {
                 backgroundColor: isDisabled ? .myGrey : backgroundColor
             ) {
                 Text(text)
-//                    .font(.system(size: 24))
-//                    .fontWidth(.expanded)
-//                    .fontWeight(.heavy)
-                    .font(.caption)
+                    .font(.system(size: 24))
+                    .fontWidth(.expanded)
+                    .fontWeight(.heavy)
                     .foregroundColor(buttonTextColor())
                     .frame(maxWidth: .infinity)
                     .padding(16)

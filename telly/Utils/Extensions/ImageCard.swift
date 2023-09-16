@@ -32,7 +32,7 @@ struct ImageCard: View {
         VStack(spacing: 8) {
             Image(image)
                 .resizable()
-                .frame(maxWidth:  200, maxHeight: 100)
+                .frame(width: 130, height: 100)
                 .scaledToFill()
                 
             Text(title)
