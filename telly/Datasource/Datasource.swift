@@ -8,9 +8,14 @@
 import Foundation
 
 class Datasource {
-    static let allThemes = ["shopping", "traveling", "work"]
-
-    static var elements: [ElementModel] = [
+    static let shared = Datasource()
+    
+    var elements: [ElementModel] = []
+    
+    init() {
+        let allThemes = ["shopping", "traveling", "work"]
+        
+        let allElements = [
             ElementModel(
                 icon: "apple.logo",
                 words: ["apple", "apples"],
@@ -470,7 +475,18 @@ class Datasource {
                 type: .characters,
                 theme: ["shopping"]
             )
-            
         ]
-
+        
+        for element in allElements {
+            var current = element
+            current.words.removeAll()
+            
+            for word in element.words {
+                let formmatedWord = word.localized(forLanguageCode: LocaleService.shared.gameLocale)
+                current.words.append(formmatedWord)
+            }
+            
+            elements.append(current)
+        }
+    }
 }

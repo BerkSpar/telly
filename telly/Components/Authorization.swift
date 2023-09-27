@@ -22,7 +22,7 @@ struct Authorization: View {
                 .frame(width: 300)
             
             Image(icon)
-                .foregroundColor(.myDarkBlue)
+                .foregroundColor(.darkBlue)
             
             Text(bodyText)
                 .multilineTextAlignment(.center)

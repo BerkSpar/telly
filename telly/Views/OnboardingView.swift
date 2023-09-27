@@ -8,6 +8,7 @@
 import SwiftUI
 import AVFAudio
 import Speech
+import GoogleMobileAds
 
 struct OnboardingView: View {
     @State private var bounce = false
@@ -22,7 +23,7 @@ struct OnboardingView: View {
                 Image("telly")
                     .resizable()
                     .scaledToFit()
-                    .foregroundColor(.myDarkBlue)
+                    .foregroundColor(.darkBlue)
                     .frame(height: 300)
                     .scaleEffect(bounce ? 1.1 : 1.0)
                     .animation(
@@ -37,11 +38,17 @@ struct OnboardingView: View {
             Spacer()
             
         }
-        .background(Color.myBackground)
+        .background(Color.background)
         .onAppear {
             bounce.toggle()
             
             Task {
+                GADMobileAds.sharedInstance().disableSDKCrashReporting()
+                AVSpeechSynthesisVoice.speechVoices()
+                
+                RewardedAd.shared.loadAd(withAdUnitId: AdService.rewardedStoryId)
+                InterstitialAd.shared.loadAd(withAdUnitId: AdService.intersticalDoneId)
+                
                 try await Task.sleep(nanoseconds: Duration(seconds: 1).inNanoseconds())
                 
                 GameService.shared.authenticate { error in

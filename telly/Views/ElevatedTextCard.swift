@@ -9,20 +9,20 @@ import SwiftUI
 
 struct ElevatedTextCard: View {
     let text: LocalizedStringKey
-    var color: Color = Color.myReddish
+    var color: Color = .reddish
     var selected: Bool = false
     
     var body: some View {
         ElevatedCard(
             color: color,
-            backgroundColor: selected ? color : Color.myBackground
+            backgroundColor: selected ? color : .background
             ,
             content:  {
                 Text(text)
                     .font(.system(size: 20))
                     .fontWidth(.expanded)
                     .bold()
-                    .foregroundColor(selected ? Color.myBackground : color)
+                    .foregroundColor(selected ? Color.background : color)
                     .frame(width: 50, height: 40)
                     
             }

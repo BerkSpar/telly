@@ -4,7 +4,7 @@ import Speech
 import SwiftUI
 
 class SpeechRecognizerService {
-    private let speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: "en_US"))!
+    private let speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: LocaleService.shared.gameLocale))!
     private var speechRecognitionRequest: SFSpeechAudioBufferRecognitionRequest?
     private var speechRecognitionTask: SFSpeechRecognitionTask?
     private let audioEngine = AVAudioEngine()

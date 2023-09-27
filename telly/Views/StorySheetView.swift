@@ -129,16 +129,16 @@ struct StorySheetView: View {
                     service.stopAudio()
                     isPlaying = false
                 } label: {
-                    ElevatedCard(color: .myReddish, hasStroke: true, content:  {
+                    ElevatedCard(color: .reddish, hasStroke: true, content:  {
                         HStack {
                             Text("Stop Audio")
-                                .foregroundColor(.myReddish)
+                                .foregroundColor(.reddish)
                             
                             Spacer()
                             
                             Image(systemName: "stop.circle.fill")
                                 .font(.system(size: 32))
-                                .foregroundColor(.myReddish)
+                                .foregroundColor(.reddish)
                         }
                         .padding(16)
                     })
@@ -150,16 +150,16 @@ struct StorySheetView: View {
                     service.playAudio(withPath: path)
                     isPlaying = true
                 } label: {
-                    ElevatedCard(color: .myDarkBlue, hasStroke: true, content:  {
+                    ElevatedCard(color: .darkBlue, hasStroke: true, content:  {
                         HStack {
                             Text("Play Audio")
-                                .foregroundColor(.myDarkBlue)
+                                .foregroundColor(.darkBlue)
                             
                             Spacer()
                             
                             Image(systemName: "play.circle.fill")
                                 .font(.system(size: 32))
-                                .foregroundColor(.myDarkBlue)
+                                .foregroundColor(.darkBlue)
                         }
                         .padding(16)
                     })
@@ -174,7 +174,7 @@ struct StorySheetView: View {
                     IconCard(
                         icon: "square.and.arrow.up",
                         iconSize: 20,
-                        color: .myDarkBlue,
+                        color: .darkBlue,
                         type: .enabled
                     )
                 }
@@ -188,7 +188,7 @@ struct StorySheetView: View {
                     IconCard(
                         icon: "trash",
                         iconSize: 20,
-                        color: .myReddish,
+                        color: .reddish,
                         type: .enabled
                     )
                 }

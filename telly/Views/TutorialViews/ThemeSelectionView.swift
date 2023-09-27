@@ -89,16 +89,16 @@ struct ThemeSelectionView: View {
                 
                 .overlay(
                     RoundedRectangle(cornerRadius: 24)
-                        .stroke(Color.myDarkBlue, lineWidth: 4))
+                        .stroke(Color.darkBlue, lineWidth: 4))
                 
                 .background(
                     RoundedRectangle(cornerRadius: 24)
-                        .fill(Color.myBackground)
+                        .fill(Color.background)
                 )
                 
                 ElevatedButton(
-                    backgroundColor: .myDarkBlue,
-                    textColor: .myBackground,
+                    backgroundColor: .darkBlue,
+                    textColor: .background,
                     text: "NEXT",
                     action: {
                         withAnimation(.spring()){

@@ -20,7 +20,7 @@ struct TimerCircleView: View {
         var body: some View {
             Circle()
                 .trim(from: 0, to: CGFloat(timeElapsed / totalTime))
-                .stroke(Color.myBackground, lineWidth: 10)
+                .stroke(Color.background, lineWidth: 10)
                 .frame(width: 150, height: 150)
                 .rotationEffect(.degrees(-90))
                 .onAppear {

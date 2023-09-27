@@ -21,7 +21,7 @@ struct SpeechBallon: View {
                 .frame(width: 75, height: 50)
                 
             
-                .foregroundColor(.myDarkBlue)
+                .foregroundColor(.darkBlue)
             VStack(spacing: 4) {
                 HStack {
                     Text(title)
@@ -46,10 +46,10 @@ struct SpeechBallon: View {
         .padding(.trailing, 12)
         .background(
             RoundedRectangle(cornerRadius: 24)
-                .stroke(Color.myDarkBlue, lineWidth: 4)
+                .stroke(Color.darkBlue, lineWidth: 4)
                 .background(
                     RoundedRectangle(cornerRadius: 24)
-                        .fill(Color.myBackground)
+                        .fill(Color.background)
                 ))
         //        .padding(32)
     }

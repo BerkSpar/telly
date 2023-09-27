@@ -14,7 +14,7 @@ class SynthesisService {
     public func speak(_ text: String) {
         let utterance = AVSpeechUtterance(string: text)
         
-         utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
+        utterance.voice = AVSpeechSynthesisVoice(language: LocaleService.shared.gameLocale)
         
         // Configure the audio session for playback
         let audioSession = AVAudioSession.sharedInstance()

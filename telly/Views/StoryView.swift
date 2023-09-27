@@ -8,9 +8,9 @@
 import SwiftUI
 import Speech
 import AVFAudio
+import GoogleMobileAds
 
 struct StoryView: View {
-    
     @State var workSelection = false
     @State var travellingSelection = false
     @State var shoppingSelection = false
@@ -66,6 +66,33 @@ struct StoryView: View {
         }
         
         completion()
+    }
+    
+    func play() {
+        withAnimation(.spring()) {
+            if (getThemeName() == "") {
+                HapticsService.shared.notify(.warning)
+                RouterService.shared.showPopUp(Popup(title: "You need to select one theme", bodyText: "", numberOfButtons: 1, buttonText: "OK", action: {
+                    print("ok")
+                }))
+                return
+            }
+            
+            if (getNounsCount() == 0) {
+                RouterService.shared.showAlert(Alert(title: Text("You need to select the nouns")))
+                return
+            }
+            
+            verifyAuthentication {
+                RouterService.shared.navigate(.game(
+                    theme: getThemeName(),
+                    nouns: getNounsCount(),
+                    verbs: getVerbsCount(),
+                    characters: getPeopleCount()
+                ))
+                
+            }
+        }
     }
     
     var body: some View {
@@ -129,7 +156,7 @@ struct StoryView: View {
                     HStack(spacing: 12) {
                         Text("NOUNS")
                             .font(.myTitle)
-                            .foregroundColor(.myDarkBlue)
+                            .foregroundColor(.darkBlue)
                         
                         Spacer()
                         
@@ -143,7 +170,7 @@ struct StoryView: View {
                                     HapticsService.shared.play(.medium)
                                 }
                             } label: {
-                                ElevatedTextCard(text: "2", color: .myDarkBlue, selected: noun2Selection)
+                                ElevatedTextCard(text: "2", color: .darkBlue, selected: noun2Selection)
                                 
                             }
                             
@@ -156,7 +183,7 @@ struct StoryView: View {
                                     HapticsService.shared.play(.medium)
                                 }
                             } label: {
-                                ElevatedTextCard(text: "3", color: .myDarkBlue, selected: noun3Selection)
+                                ElevatedTextCard(text: "3", color: .darkBlue, selected: noun3Selection)
                                     
                             }
                             
@@ -169,13 +196,13 @@ struct StoryView: View {
                                     HapticsService.shared.play(.medium)
                                 }
                             } label: {
-                                ElevatedTextCard(text: "4", color: .myDarkBlue, selected: noun4Selection)
+                                ElevatedTextCard(text: "4", color: .darkBlue, selected: noun4Selection)
 //
                             }
                         }
                         .overlay(
                             RoundedRectangle(cornerRadius: 16)
-                                .stroke(Color.myDarkBlue, lineWidth: 2))
+                                .stroke(Color.darkBlue, lineWidth: 2))
                     }
                     
                     
@@ -230,7 +257,7 @@ struct StoryView: View {
                     HStack(spacing: 12) {
                         Text("PEOPLE")
                             .font(.myTitle)
-                            .foregroundColor(.myReddish)
+                            .foregroundColor(.reddish)
                         
                         Spacer()
                         
@@ -242,7 +269,7 @@ struct StoryView: View {
                                 
                                 HapticsService.shared.play(.medium)
                             } label: {
-                                ElevatedTextCard(text: "0", color: .myReddish, selected: people0Selection)
+                                ElevatedTextCard(text: "0", color: .reddish, selected: people0Selection)
                             }
                             
                             Button {
@@ -252,7 +279,7 @@ struct StoryView: View {
                                 
                                 HapticsService.shared.play(.medium)
                             } label: {
-                                ElevatedTextCard(text: "1", color: .myReddish, selected: people1Selection)
+                                ElevatedTextCard(text: "1", color: .reddish, selected: people1Selection)
                             }
                             
                             Button {
@@ -262,47 +289,24 @@ struct StoryView: View {
                                 
                                 HapticsService.shared.play(.medium)
                             } label: {
-                                ElevatedTextCard(text: "2", color: .myReddish, selected: people2Selection)
+                                ElevatedTextCard(text: "2", color: .reddish, selected: people2Selection)
                             }
                         }
                         .overlay(
                             RoundedRectangle(cornerRadius: 16)
-                                .stroke(Color.myReddish, lineWidth: 2))
+                                .stroke(Color.reddish, lineWidth: 2))
                     }
                 } .padding(.horizontal, 24)
             }
 
             ElevatedButton(
-                backgroundColor: .myDarkBlue,
-                textColor: .myBackground,
+                backgroundColor: .darkBlue,
+                textColor: .background,
                 text: "START",
                 action: {
-                    withAnimation(.spring()) {
-                        HapticsService.shared.play(.medium)
-                        
-                        if (getThemeName() == "") {
-                            HapticsService.shared.notify(.warning)
-                            RouterService.shared.showPopUp(Popup(title: "You need to select one theme", bodyText: "", numberOfButtons: 1, buttonText: "OK", action: {
-                                print("ok")
-                            }))
-                            return
-                        }
-                        
-                        if (getNounsCount() == 0) {
-                            RouterService.shared.showAlert(Alert(title: Text("You need to select the nouns")))
-                            return
-                        }
-                        
-                        verifyAuthentication {
-                            RouterService.shared.navigate(.game(
-                                theme: getThemeName(),
-                                nouns: getNounsCount(),
-                                verbs: getVerbsCount(),
-                                characters: getPeopleCount()
-                            ))
-                            
-                        }
-                    }
+                    HapticsService.shared.play(.medium)
+                    
+                    play()
                 }
             )
             .padding(.horizontal, 24)
@@ -310,8 +314,7 @@ struct StoryView: View {
             Spacer()
         }
         .padding(.top, 16)
-        .background(Color.myBackground)
-
+        .background(Color.background)
     }
 }
 

@@ -14,19 +14,19 @@ struct ProgressBar: View {
         GeometryReader { geo in
             ZStack(alignment: .leading) {
                 Rectangle()
-                    .foregroundColor(.myBackground)
+                    .foregroundColor(.background)
                     .frame(maxWidth: geo.size.width)
                     .cornerRadius(16)
                     
                 
                 Rectangle()
-                    .foregroundColor(.myDarkBlue)
+                    .foregroundColor(.darkBlue)
                     .frame(maxWidth: geo.size.width * progress)
                     .cornerRadius(16, corners: [.topLeft, .bottomLeft])
             }
             .overlay(
                 RoundedRectangle(cornerRadius: 16)
-                    .stroke(Color.myDarkBlue, lineWidth: 4)
+                    .stroke(Color.darkBlue, lineWidth: 4)
             )
         }
         .frame(height: 16)

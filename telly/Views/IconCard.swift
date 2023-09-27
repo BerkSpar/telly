@@ -17,7 +17,7 @@ struct IconCard: View {
     var text: String?
     var icon: String?
     var iconSize: CGFloat = 40.0
-    var color: Color = .myReddish
+    var color: Color = .reddish
     var type: IconCardType = .none
     var hasSpeaker: Bool = false
     var onTap: (() -> Void)?
@@ -25,7 +25,7 @@ struct IconCard: View {
     func getColor() -> Color {
         switch(type) {
         case .none: return color
-        case .enabled: return .myBackground
+        case .enabled: return .background
         case .disabled: return .myGrey
         }
     }
@@ -33,7 +33,7 @@ struct IconCard: View {
     func getIconColor() -> Color {
         switch(type) {
         case .none: return color
-        case .enabled: return .myBackground
+        case .enabled: return .background
         case .disabled: return .myGrey
         }
     }
@@ -41,7 +41,7 @@ struct IconCard: View {
     var body: some View {
         ElevatedCard(
             color: getColor(),
-            backgroundColor: type == .enabled ? color : .myBackground,
+            backgroundColor: type == .enabled ? color : .background,
             hasStroke: true
         ) {
             VStack(spacing: 16) {

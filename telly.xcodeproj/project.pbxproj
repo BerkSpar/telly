@@ -28,6 +28,7 @@
 		F715B4B72AA6CFAA0066548A /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F715B4B62AA6CFAA0066548A /* GameController.swift */; };
 		F715E7B32A99132E00452CF2 /* SFSpeechRecognizer+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F715E7B22A99132E00452CF2 /* SFSpeechRecognizer+Ext.swift */; };
 		F715E7B52A99134500452CF2 /* AVAudioSession+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F715E7B42A99134500452CF2 /* AVAudioSession+Ext.swift */; };
+		F73669742ABA86930023C6A2 /* LocaleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73669732ABA86930023C6A2 /* LocaleService.swift */; };
 		F75343D72AA173F10006E2F6 /* ElevatedTextCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75343D62AA173F10006E2F6 /* ElevatedTextCard.swift */; };
 		F75343D92AA178280006E2F6 /* RangeTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75343D82AA178280006E2F6 /* RangeTile.swift */; };
 		F75343DB2AA17C8A0006E2F6 /* IconCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75343DA2AA17C8A0006E2F6 /* IconCard.swift */; };
@@ -78,6 +79,13 @@
 		F7CBC95A2AA1116100073AA3 /* K2D-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F7CBC94A2AA1116100073AA3 /* K2D-SemiBoldItalic.ttf */; };
 		F7CBC95C2AA11BB700073AA3 /* ImageCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CBC95B2AA11BB700073AA3 /* ImageCard.swift */; };
 		F7CBC95E2AA1283700073AA3 /* ElevatedCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CBC95D2AA1283700073AA3 /* ElevatedCard.swift */; };
+		F7D02F9B2ABA7CC700445D1F /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D02F9A2ABA7CC700445D1F /* String+Ext.swift */; };
+		F7DB506D2ABE2A71009B00DC /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = F7DB506C2ABE2A71009B00DC /* GoogleMobileAds */; };
+		F7DB50722ABE932C009B00DC /* FullscreenModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DB50712ABE932C009B00DC /* FullscreenModifier.swift */; };
+		F7DB50742ABE935C009B00DC /* RewardedAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DB50732ABE935C009B00DC /* RewardedAdView.swift */; };
+		F7DB50762ABE961C009B00DC /* IntersticalAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DB50752ABE961C009B00DC /* IntersticalAdView.swift */; };
+		F7DB50782AC1407A009B00DC /* AdService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DB50772AC1407A009B00DC /* AdService.swift */; };
+		F7DB507A2AC1488E009B00DC /* BannerAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DB50792AC1488E009B00DC /* BannerAdView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -102,6 +110,7 @@
 		F715B4B62AA6CFAA0066548A /* GameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameController.swift; path = telly/Views/GameController.swift; sourceTree = SOURCE_ROOT; };
 		F715E7B22A99132E00452CF2 /* SFSpeechRecognizer+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SFSpeechRecognizer+Ext.swift"; sourceTree = "<group>"; };
 		F715E7B42A99134500452CF2 /* AVAudioSession+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVAudioSession+Ext.swift"; sourceTree = "<group>"; };
+		F73669732ABA86930023C6A2 /* LocaleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocaleService.swift; sourceTree = "<group>"; };
 		F75343D62AA173F10006E2F6 /* ElevatedTextCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ElevatedTextCard.swift; path = telly/Views/ElevatedTextCard.swift; sourceTree = SOURCE_ROOT; };
 		F75343D82AA178280006E2F6 /* RangeTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RangeTile.swift; path = telly/Views/RangeTile.swift; sourceTree = SOURCE_ROOT; };
 		F75343DA2AA17C8A0006E2F6 /* IconCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = IconCard.swift; path = telly/Views/IconCard.swift; sourceTree = SOURCE_ROOT; };
@@ -157,6 +166,12 @@
 		F7CBC94A2AA1116100073AA3 /* K2D-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "K2D-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
 		F7CBC95B2AA11BB700073AA3 /* ImageCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageCard.swift; path = telly/Utils/Extensions/ImageCard.swift; sourceTree = SOURCE_ROOT; };
 		F7CBC95D2AA1283700073AA3 /* ElevatedCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ElevatedCard.swift; path = telly/Utils/Extensions/ElevatedCard.swift; sourceTree = SOURCE_ROOT; };
+		F7D02F9A2ABA7CC700445D1F /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
+		F7DB50712ABE932C009B00DC /* FullscreenModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullscreenModifier.swift; sourceTree = "<group>"; };
+		F7DB50732ABE935C009B00DC /* RewardedAdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardedAdView.swift; sourceTree = "<group>"; };
+		F7DB50752ABE961C009B00DC /* IntersticalAdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntersticalAdView.swift; sourceTree = "<group>"; };
+		F7DB50772AC1407A009B00DC /* AdService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdService.swift; sourceTree = "<group>"; };
+		F7DB50792AC1488E009B00DC /* BannerAdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerAdView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +179,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7DB506D2ABE2A71009B00DC /* GoogleMobileAds in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,6 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				F7CBC9372AA10AC300073AA3 /* Info.plist */,
+				F7C7D4762AB2ABDA00EC8256 /* Localizable.strings */,
 				F7CBC9352AA1091D00073AA3 /* Resources */,
 				F7CBC92E2A9FCC8A00073AA3 /* Datasource */,
 				F7895EA82A97CB4400E8B286 /* Utils */,
@@ -239,6 +256,9 @@
 				8CA51D522A9D2C17007061B2 /* DoneView.swift */,
 				8CA51D4E2A9D27DB007061B2 /* WordsView.swift */,
 				F795FB0C2A9E6EBD009C6DEF /* AuthorizationView.swift */,
+				F7DB50732ABE935C009B00DC /* RewardedAdView.swift */,
+				F7DB50752ABE961C009B00DC /* IntersticalAdView.swift */,
+				F7DB50792AC1488E009B00DC /* BannerAdView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -261,6 +281,8 @@
 				F7C4F90F2A9B110500691AC2 /* GameService.swift */,
 				F7C7D46C2AB0069100EC8256 /* AudioService.swift */,
 				F7C7D4792AB2C64600EC8256 /* SynthesisService.swift */,
+				F73669732ABA86930023C6A2 /* LocaleService.swift */,
+				F7DB50772AC1407A009B00DC /* AdService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -292,6 +314,7 @@
 		F7895EA82A97CB4400E8B286 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				F7DB50702ABE931D009B00DC /* Modifiers */,
 				F7895EAB2A97CBBD00E8B286 /* Extensions */,
 				F795FB0A2A9E6932009C6DEF /* Duration.swift */,
 			);
@@ -307,6 +330,7 @@
 				F715E7B22A99132E00452CF2 /* SFSpeechRecognizer+Ext.swift */,
 				F715E7B42A99134500452CF2 /* AVAudioSession+Ext.swift */,
 				F7CBC9392AA10D7C00073AA3 /* Font+Ext.swift */,
+				F7D02F9A2ABA7CC700445D1F /* String+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -341,9 +365,16 @@
 				F7CBC94A2AA1116100073AA3 /* K2D-SemiBoldItalic.ttf */,
 				F7CBC9412AA1116000073AA3 /* K2D-Thin.ttf */,
 				F7CBC93D2AA1116000073AA3 /* K2D-ThinItalic.ttf */,
-				F7C7D4762AB2ABDA00EC8256 /* Localizable.strings */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		F7DB50702ABE931D009B00DC /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				F7DB50712ABE932C009B00DC /* FullscreenModifier.swift */,
+			);
+			path = Modifiers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -363,6 +394,7 @@
 			);
 			name = telly;
 			packageProductDependencies = (
+				F7DB506C2ABE2A71009B00DC /* GoogleMobileAds */,
 			);
 			productName = duck;
 			productReference = F7895E912A97C96800E8B286 /* telly.app */;
@@ -376,7 +408,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					F7895E902A97C96800E8B286 = {
 						CreatedOnToolsVersion = 14.3.1;
@@ -395,6 +427,7 @@
 			);
 			mainGroup = F7895E882A97C96800E8B286;
 			packageReferences = (
+				F7DB506B2ABE2A71009B00DC /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
 			);
 			productRefGroup = F7895E922A97C96800E8B286 /* Products */;
 			projectDirPath = "";
@@ -447,9 +480,11 @@
 				F715E7B32A99132E00452CF2 /* SFSpeechRecognizer+Ext.swift in Sources */,
 				F75343D72AA173F10006E2F6 /* ElevatedTextCard.swift in Sources */,
 				F715B4B72AA6CFAA0066548A /* GameController.swift in Sources */,
+				F7D02F9B2ABA7CC700445D1F /* String+Ext.swift in Sources */,
 				8CA51D4F2A9D27DB007061B2 /* WordsView.swift in Sources */,
 				F7C7D46F2AB1232C00EC8256 /* StorySheetView.swift in Sources */,
 				F7676D072AA90A1B00502627 /* ProgressBar.swift in Sources */,
+				F7DB50782AC1407A009B00DC /* AdService.swift in Sources */,
 				8CA51D512A9D2A20007061B2 /* GameView.swift in Sources */,
 				F7895EB12A97CD4200E8B286 /* RouterService.swift in Sources */,
 				8CA51D5E2AA12FEE007061B2 /* Tab.swift in Sources */,
@@ -458,6 +493,7 @@
 				F7895EAA2A97CB8300E8B286 /* HapticService.swift in Sources */,
 				F7895EA72A97CAF900E8B286 /* OnboardingView.swift in Sources */,
 				F7C7D47A2AB2C64600EC8256 /* SynthesisService.swift in Sources */,
+				F7DB50722ABE932C009B00DC /* FullscreenModifier.swift in Sources */,
 				8CA51D632AA13EE9007061B2 /* StorybookView.swift in Sources */,
 				8C313EAA2AB32C5100EC825B /* WordsSelection.swift in Sources */,
 				F7CBC9342A9FCECD00073AA3 /* ElementModel.swift in Sources */,
@@ -475,17 +511,21 @@
 				F7895E972A97C96800E8B286 /* ContentView.swift in Sources */,
 				F7895EBE2A97D70100E8B286 /* SpeechRegonizerService.swift in Sources */,
 				8CA51D652AA257B2007061B2 /* TabLabel.swift in Sources */,
+				F73669742ABA86930023C6A2 /* LocaleService.swift in Sources */,
 				8CA51D5C2AA12F35007061B2 /* Header.swift in Sources */,
 				8C313EAE2AB36ED700EC825B /* Popup.swift in Sources */,
 				8CA51D532A9D2C17007061B2 /* DoneView.swift in Sources */,
+				F7DB507A2AC1488E009B00DC /* BannerAdView.swift in Sources */,
 				8C313EAC2AB3339500EC825B /* TipsView.swift in Sources */,
 				F7CBC9322A9FCCC300073AA3 /* ElementManager.swift in Sources */,
 				F7C7D46D2AB0069100EC8256 /* AudioService.swift in Sources */,
+				F7DB50742ABE935C009B00DC /* RewardedAdView.swift in Sources */,
 				F715E7B52A99134500452CF2 /* AVAudioSession+Ext.swift in Sources */,
 				F7895E952A97C96800E8B286 /* tellyApp.swift in Sources */,
 				8CA51D602AA13EC6007061B2 /* StoryView.swift in Sources */,
 				F7895EAF2A97CBED00E8B286 /* Color+Ext.swift in Sources */,
 				8C313EA62AB31DFC00EC825B /* SpeechBallon.swift in Sources */,
+				F7DB50762ABE961C009B00DC /* IntersticalAdView.swift in Sources */,
 				F7CBC93A2AA10D7C00073AA3 /* Font+Ext.swift in Sources */,
 				F795FB0B2A9E6932009C6DEF /* Duration.swift in Sources */,
 				F7676D0B2AAF293C00502627 /* StoryModel.swift in Sources */,
@@ -514,6 +554,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -546,6 +588,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -560,7 +603,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -574,6 +617,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -606,6 +651,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -614,7 +660,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -632,7 +678,7 @@
 				CODE_SIGN_ENTITLEMENTS = telly/telly.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 24;
+				CURRENT_PROJECT_VERSION = 29;
 				DEVELOPMENT_ASSET_PATHS = "\"telly/Preview Content\"";
 				DEVELOPMENT_TEAM = R9V648Y475;
 				ENABLE_PREVIEWS = YES;
@@ -651,7 +697,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1.0;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.berkspar.telly;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -669,7 +716,7 @@
 				CODE_SIGN_ENTITLEMENTS = telly/telly.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 24;
+				CURRENT_PROJECT_VERSION = 29;
 				DEVELOPMENT_ASSET_PATHS = "\"telly/Preview Content\"";
 				DEVELOPMENT_TEAM = R9V648Y475;
 				ENABLE_PREVIEWS = YES;
@@ -688,7 +735,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1.0;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.berkspar.telly;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -720,6 +768,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F7DB506B2ABE2A71009B00DC /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.10.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F7DB506C2ABE2A71009B00DC /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F7DB506B2ABE2A71009B00DC /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			productName = GoogleMobileAds;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F7895E892A97C96800E8B286 /* Project object */;
 }

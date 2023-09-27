@@ -13,7 +13,7 @@ class ElementManager: ObservableObject {
     static func getRandomElements(count: Int, theme: String, type: ElementType) -> [ElementModel] {
         var elements: [ElementModel] = []
         
-        for element in Datasource.elements {
+        for element in Datasource.shared.elements {
             if (element.theme.contains(theme) && element.type == type) {
                 elements.append(element)
             }

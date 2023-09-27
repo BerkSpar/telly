@@ -41,7 +41,7 @@ struct Popup: View {
     var body: some View {
         ZStack {
             Rectangle()
-                .foregroundColor(.myDarkBlue)
+                .foregroundColor(.darkBlue)
                 .opacity(0.6)
                 .ignoresSafeArea()
             
@@ -49,7 +49,7 @@ struct Popup: View {
                 VStack(spacing: 4) {
                     HStack {
                         Text(title)
-                            .foregroundColor(.myDarkGrey)
+                            .foregroundColor(.darkGrey)
                             .font(.title2)
                             .bold()
                             .multilineTextAlignment(.center)
@@ -58,13 +58,13 @@ struct Popup: View {
                     }
                     Text(bodyText)
                         .frame(width: 260)
-                        .foregroundColor(.myDarkGrey)
+                        .foregroundColor(.darkGrey)
                         .multilineTextAlignment(.center)
                 }
                 
                 HStack(spacing: 14) {
                     if numberOfButtons == 2 {
-                        ElevatedButton(backgroundColor: .myReddish,textColor: .myBackground, text: secondButtonText, isDisabled: false) {
+                        ElevatedButton(backgroundColor: .reddish,textColor: .background, text: secondButtonText, isDisabled: false) {
                             withAnimation() {
                                 RouterService.shared.hidePopUp()
                                 action()
@@ -72,7 +72,7 @@ struct Popup: View {
                             }
                         }
                         
-                        ElevatedButton(backgroundColor: .myDarkBlue, textColor: .myBackground, text: buttonText, isDisabled: false) {
+                        ElevatedButton(backgroundColor: .darkBlue, textColor: .background, text: buttonText, isDisabled: false) {
                             withAnimation() {
                                 RouterService.shared.hidePopUp()
                                 secondaryAction?()
@@ -82,7 +82,7 @@ struct Popup: View {
                         
                     }
                     if numberOfButtons == 1 {
-                        ElevatedButton(backgroundColor: .myDarkBlue, textColor: .myBackground, text: buttonText, isDisabled: false) {
+                        ElevatedButton(backgroundColor: .darkBlue, textColor: .background, text: buttonText, isDisabled: false) {
                             withAnimation() {
                                 RouterService.shared.hidePopUp()
                                 HapticsService.shared.play(.soft)
@@ -93,7 +93,7 @@ struct Popup: View {
             }
             .padding(.vertical, 24)
             .padding(.horizontal, 32)
-            .background(Color.myBackground)
+            .background(Color.background)
             .cornerRadius(24)
             .padding(32)
             

@@ -13,10 +13,6 @@ class AudioService {
     
     init() { }
     
-    deinit {
-        print("se foi")
-    }
-    
     func playAudio(withPath path: String) {
         guard let url = URL(string: path) else {
             print("Invalid path provided.")

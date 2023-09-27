@@ -33,7 +33,7 @@ struct Tab: View {
     
     func hasBackground(view: Bool) -> Color {
         if !view {
-            return .myBackground
+            return .background
         } else {
             return .clear
         }
@@ -60,7 +60,7 @@ struct Tab: View {
                 .background(hasBackground(view: storybookIsSelected))
             
         }
-        .background(Color.myDarkBlue)
+        .background(Color.darkBlue)
     }
     struct Tab_Previews: PreviewProvider {
         static var previews: some View {

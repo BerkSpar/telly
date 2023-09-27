@@ -12,7 +12,7 @@ struct WelcomeView: View {
     func bodyText(_ text: LocalizedStringKey) -> some View {
         Text(text)
             .frame(width: 280)
-            .foregroundColor(.myDarkGrey)
+            .foregroundColor(.darkGrey)
             .multilineTextAlignment(.center)
             .fixedSize(horizontal: false, vertical: true)
     }
@@ -20,7 +20,7 @@ struct WelcomeView: View {
     func boldText(_ text: LocalizedStringKey) -> some View {
         Text(text)
             .bold()
-            .foregroundColor(.myDarkGrey)
+            .foregroundColor(.darkGrey)
     }
     
     var body: some View {
@@ -32,14 +32,14 @@ struct WelcomeView: View {
                         Spacer()
                         Text("WELCOME TO")
                             .font(.title3)
-                            .foregroundColor(.myDarkGrey)
+                            .foregroundColor(.darkGrey)
                             .fontWidth(.expanded)
                             .bold()
                         Spacer()
                     }
                     
                     Image("logo_telly")
-                        .foregroundColor(.myDarkBlue)
+                        .foregroundColor(.darkBlue)
                 }
                 
                 VStack(spacing: 16) {
@@ -57,7 +57,7 @@ struct WelcomeView: View {
                 }
             }
             
-            ElevatedButton(backgroundColor: .myDarkBlue, textColor: .myBackground, text: "LET'S GO!") {
+            ElevatedButton(backgroundColor: .darkBlue, textColor: .background, text: "LET'S GO!") {
                 
                 withAnimation(.spring()) {
                     HapticsService.shared.play(.medium)

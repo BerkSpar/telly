@@ -32,18 +32,18 @@ struct Story: View {
                 HStack {
                     Text(storyModel.title)
                         .font(.myBodyBold)
-                        .foregroundColor(.myDarkGrey)
+                        .foregroundColor(.darkGrey)
                         .lineLimit(1)
                     
                     Spacer()
                     
                     Image(systemName: "ellipsis.circle.fill")
                         .font(.system(size: 24))
-                        .foregroundColor(.myDarkBlue)
+                        .foregroundColor(.darkBlue)
                 }
                 .padding(.horizontal, 16)
                 .padding(.vertical, 12)
-                .overlay(RoundedRectangle(cornerRadius: 16) .stroke(Color.myDarkBlue))
+                .overlay(RoundedRectangle(cornerRadius: 16) .stroke(Color.darkBlue))
             }
         }
     }

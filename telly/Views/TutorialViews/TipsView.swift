@@ -46,7 +46,7 @@ struct TipsView: View {
                     HStack {
                         Image(systemName: "circle.fill")
                             .font(.system(size: 8))
-                            .foregroundColor(.myDarkBlue)
+                            .foregroundColor(.darkBlue)
                         
                         Text("You can also say words in the plural and conjugate verbs in any tense!")
                             .font(.caption)
@@ -57,7 +57,7 @@ struct TipsView: View {
                     HStack {
                         Image(systemName: "circle.fill")
                             .font(.system(size: 8))
-                            .foregroundColor(.myDarkBlue)
+                            .foregroundColor(.darkBlue)
                         
                         Text("When you have used all the words, the finish button will be enabled.")
                             .font(.caption)
@@ -71,15 +71,15 @@ struct TipsView: View {
                 .padding(.trailing, 16)
                 .background(
                     RoundedRectangle(cornerRadius: 24)
-                        .stroke(Color.myDarkBlue, lineWidth: 4)
+                        .stroke(Color.darkBlue, lineWidth: 4)
                         .background(
                             RoundedRectangle(cornerRadius: 24)
-                                .fill(Color.myBackground)
+                                .fill(Color.background)
                         ))
                 
                 ElevatedButton(
-                    backgroundColor: .myDarkBlue,
-                    textColor: .myBackground,
+                    backgroundColor: .darkBlue,
+                    textColor: .background,
                     text: "NEXT",
                     action: {
                         withAnimation(.spring()) {

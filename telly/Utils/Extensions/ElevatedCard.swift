@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct ElevatedCard<Content: View>: View {
-    var color: Color = Color.myDarkBlue
-    var backgroundColor: Color = Color.myBackground
+    var color: Color = .darkBlue
+    var backgroundColor: Color = .background
     var hasStroke: Bool = false
     var hasShadow: Bool = false
     let content: () -> Content

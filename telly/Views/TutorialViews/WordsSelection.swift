@@ -73,7 +73,7 @@ struct WordsSelection: View {
                         HStack(spacing: 4) {
                             Text("NOUNS")
                                 .font(.myTitle)
-                                .foregroundColor(.myDarkBlue)
+                                .foregroundColor(.darkBlue)
                             
                             Spacer()
                             
@@ -85,7 +85,7 @@ struct WordsSelection: View {
                                     
                                     HapticsService.shared.play(.medium)
                                 } label: {
-                                    ElevatedTextCard(text: "2", color: .myDarkBlue, selected: noun2Selection)
+                                    ElevatedTextCard(text: "2", color: .darkBlue, selected: noun2Selection)
                                 }
                                 
                                 Button {
@@ -95,7 +95,7 @@ struct WordsSelection: View {
                                     
                                     HapticsService.shared.play(.medium)
                                 } label: {
-                                    ElevatedTextCard(text: "3", color: .myDarkBlue, selected: noun3Selection)
+                                    ElevatedTextCard(text: "3", color: .darkBlue, selected: noun3Selection)
                                 }
                                 
                                 Button {
@@ -105,12 +105,12 @@ struct WordsSelection: View {
                                     
                                     HapticsService.shared.play(.medium)
                                 } label: {
-                                    ElevatedTextCard(text: "4", color: .myDarkBlue, selected: noun4Selection)
+                                    ElevatedTextCard(text: "4", color: .darkBlue, selected: noun4Selection)
                                 }
                             }
                             .overlay(
                                 RoundedRectangle(cornerRadius: 16)
-                                    .stroke(Color.myDarkBlue, lineWidth: 2))
+                                    .stroke(Color.darkBlue, lineWidth: 2))
                         }
                         
                         Divider()
@@ -163,7 +163,7 @@ struct WordsSelection: View {
                         HStack(spacing: 4) {
                             Text("PEOPLE")
                                 .font(.myTitle)
-                                .foregroundColor(.myReddish)
+                                .foregroundColor(.reddish)
                             
                             Spacer()
                             
@@ -175,7 +175,7 @@ struct WordsSelection: View {
                                     
                                     HapticsService.shared.play(.medium)
                                 } label: {
-                                    ElevatedTextCard(text: "0", color: .myReddish, selected: people0Selection)
+                                    ElevatedTextCard(text: "0", color: .reddish, selected: people0Selection)
                                 }
                                 
                                 Button {
@@ -185,7 +185,7 @@ struct WordsSelection: View {
                                     
                                     HapticsService.shared.play(.medium)
                                 } label: {
-                                    ElevatedTextCard(text: "1", color: .myReddish, selected: people1Selection)
+                                    ElevatedTextCard(text: "1", color: .reddish, selected: people1Selection)
                                 }
                                 
                                 Button {
@@ -195,12 +195,12 @@ struct WordsSelection: View {
                                     
                                     HapticsService.shared.play(.medium)
                                 } label: {
-                                    ElevatedTextCard(text: "2", color: .myReddish, selected: people2Selection)
+                                    ElevatedTextCard(text: "2", color: .reddish, selected: people2Selection)
                                 }
                             }
                             .overlay(
                                 RoundedRectangle(cornerRadius: 16)
-                                    .stroke(Color.myReddish, lineWidth: 2))
+                                    .stroke(Color.reddish, lineWidth: 2))
                         }
                     } .padding(.horizontal, 24)
                     
@@ -211,15 +211,15 @@ struct WordsSelection: View {
                 
                 .overlay(
                     RoundedRectangle(cornerRadius: 24)
-                        .stroke(Color.myDarkBlue, lineWidth: 4))
+                        .stroke(Color.darkBlue, lineWidth: 4))
                 
                 .background(
                     RoundedRectangle(cornerRadius: 24)
-                        .fill(Color.myBackground)
+                        .fill(Color.background)
                 )
                 ElevatedButton(
-                    backgroundColor: .myDarkBlue,
-                    textColor: .myBackground,
+                    backgroundColor: .darkBlue,
+                    textColor: .background,
                     text: "NEXT",
                     action: {
                         withAnimation(.spring()) {

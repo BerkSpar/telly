@@ -59,7 +59,7 @@ struct GameView: View {
                         Text("Theme: \(NSLocalizedString(controller.theme, comment: "Theme name"))")
                             .font(.system(size: 24))
                             .bold()
-                            .foregroundColor(.myDarkGrey)
+                            .foregroundColor(.darkGrey)
                         
                     }
                     .padding(.bottom, 24)
@@ -70,14 +70,14 @@ struct GameView: View {
                             .bold()
                             .multilineTextAlignment(.center)
                             .frame(maxWidth: .infinity)
-                            .foregroundColor(.myDarkGrey)
+                            .foregroundColor(.darkGrey)
                         
                         Text("Tap the boxes to hear the word's pronunciation, after you will only be able to read them")
                             .font(.system(size: 16))
                             .multilineTextAlignment(.center)
                             .frame(width: 350)
                             .padding(.bottom, 24)
-                            .foregroundColor(.myDarkGrey)
+                            .foregroundColor(.darkGrey)
                             .fixedSize(horizontal: false, vertical: true)
                     }
                 }
@@ -86,13 +86,13 @@ struct GameView: View {
                     if (controller.isSpeaking) {
                         Text("NOUNS")
                             .font(.myHeader)
-                            .foregroundColor(controller.showNouns ? .myDarkBlue : .myGrey)
+                            .foregroundColor(controller.showNouns ? .darkBlue : .myGrey)
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .padding(.bottom, 8)
                     } else {
                         Text("NOUNS")
                             .font(.myHeader)
-                            .foregroundColor(.myDarkBlue)
+                            .foregroundColor(.darkBlue)
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .padding(.bottom, 8)
                     }
@@ -100,22 +100,23 @@ struct GameView: View {
                     LazyVGrid(columns: [GridItem(), GridItem()]) {
                         ForEach(controller.nouns) { element in
                             let isChecked = controller.check(element: element)
+                            let word = element.words[0]
                             
                             if (controller.isSpeaking) {
                                 IconCard(
-                                    text: element.words[0],
+                                    text: word,
                                     icon: element.icon,
-                                    color: .myDarkBlue,
+                                    color: .darkBlue,
                                     type: isChecked ? .disabled : .none
                                 )
                             } else {
                                 Button {
-                                    service.speak(element.words[0])
+                                    service.speak(word)
                                 } label: {
                                     IconCard(
-                                        text: element.words[0],
+                                        text: word,
                                         icon: element.icon,
-                                        color: .myDarkBlue,
+                                        color: .darkBlue,
                                         type: .none,
                                         hasSpeaker: hasSpeakerIcon()
                                     )
@@ -146,19 +147,20 @@ struct GameView: View {
                     LazyVGrid(columns: [GridItem(), GridItem()]) {
                         ForEach(controller.verbs) { element in
                             let isChecked = controller.check(element: element)
+                            let word = element.words[0]
                             
                             if (controller.isSpeaking) {
                                 IconCard(
-                                    text: element.words[0],
+                                    text: word,
                                     color: .myPurple,
                                     type: isChecked ? .disabled : .none
                                 )
                             } else {
                                 Button {
-                                    service.speak(element.words[0])
+                                    service.speak(word)
                                 } label: {
                                     IconCard(
-                                        text: element.words[0],
+                                        text: word,
                                         color: .myPurple,
                                         type: .none,
                                         hasSpeaker: hasSpeakerIcon()
@@ -175,14 +177,14 @@ struct GameView: View {
                     if (controller.isSpeaking) {
                         Text("PEOPLE")
                             .font(.myHeader)
-                            .foregroundColor(controller.showsCharacters ? .myReddish : .myGrey)
+                            .foregroundColor(controller.showsCharacters ? .reddish : .myGrey)
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .padding(.bottom, 8)
                     }
                     else {
                         Text("PEOPLE")
                             .font(.myHeader)
-                            .foregroundColor(.myReddish)
+                            .foregroundColor(.reddish)
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .padding(.bottom, 8)
                     }
@@ -190,20 +192,21 @@ struct GameView: View {
                     LazyVGrid(columns: [GridItem(), GridItem()]) {
                         ForEach(controller.characters) { element in
                             let isChecked = controller.check(element: element)
+                            let word = element.words[0]
                             
                             if (controller.isSpeaking) {
                                 IconCard(
-                                    text: element.words[0],
-                                    color: .myReddish,
+                                    text: word,
+                                    color: .reddish,
                                     type: isChecked ? .disabled : .none
                                 )
                             } else {
                                 Button {
-                                    service.speak(element.words[0])
+                                    service.speak(word)
                                 } label: {
                                     IconCard(
-                                        text: element.words[0],
-                                        color: .myReddish,
+                                        text: word,
+                                        color: .reddish,
                                         type: .none,
                                         hasSpeaker: hasSpeakerIcon()
                                     )
@@ -221,8 +224,8 @@ struct GameView: View {
                 if (!controller.started) {
                     HStack(spacing: 16) {
                         ElevatedButton(
-                            backgroundColor: .myReddish,
-                            textColor: .myBackground,
+                            backgroundColor: .reddish,
+                            textColor: .background,
                             text: "QUIT"
                         ) {
                             withAnimation(.spring()) {
@@ -234,8 +237,8 @@ struct GameView: View {
                         .frame(maxWidth: .infinity)
                         
                         ElevatedButton(
-                            backgroundColor: .myDarkBlue,
-                            textColor: .myBackground,
+                            backgroundColor: .darkBlue,
+                            textColor: .background,
                             text: "START"
                         ) {
                             withAnimation(.spring()) {
@@ -251,8 +254,8 @@ struct GameView: View {
                 } else {
                     HStack(spacing: 16) {
                         ElevatedButton(
-                            backgroundColor: .myReddish,
-                            textColor: .myBackground,
+                            backgroundColor: .reddish,
+                            textColor: .background,
                             text: "STOP",
                             isDisabled: false
                         ) {
@@ -276,8 +279,8 @@ struct GameView: View {
                         .frame(maxWidth: .infinity)
                         
                         ElevatedButton(
-                            backgroundColor: .myDarkBlue,
-                            textColor: .myBackground,
+                            backgroundColor: .darkBlue,
+                            textColor: .background,
                             text: "FINISH",
                             isDisabled: controller.checkAllWords()
                         ) {
@@ -298,7 +301,7 @@ struct GameView: View {
             }
             
             .padding(24)
-            .background(Color.myBackground)
+            .background(Color.background)
             .onAppear {
                 print("iniciou")
                 controller.initialize(
@@ -313,10 +316,10 @@ struct GameView: View {
                 Rectangle()
                     .opacity(0.7)
                     .ignoresSafeArea()
-                    .foregroundColor(.myDarkBlue)
+                    .foregroundColor(.darkBlue)
                 Text("\(countdown)")
                     .font(.myLargeTitle)
-                    .foregroundColor(.myBackground)
+                    .foregroundColor(.background)
                     .transition(.scale)
                 
                 TimerCircleView(timeElapsed: $timeElapsed, totalTime: 1)

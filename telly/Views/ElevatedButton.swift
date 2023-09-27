@@ -19,7 +19,7 @@ struct ElevatedButton: View {
     
     func buttonTextColor() -> Color {
         if isDisabled {
-            return .myBackground
+            return .background
         } else {
             return textColor
         }
@@ -48,7 +48,7 @@ struct ElevatedButton: View {
 struct ElevatedButton_Previews: PreviewProvider {
     static var previews: some View {
         ElevatedButton(
-            backgroundColor: .myDarkBlue,
+            backgroundColor: .darkBlue,
             textColor: .myGreen,
             text: "START!",
             isDisabled: true

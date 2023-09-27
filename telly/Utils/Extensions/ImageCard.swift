@@ -14,17 +14,17 @@ struct ImageCard: View {
     
     func changeColor() -> Color {
         if isSelected {
-            return .myBackground
+            return .background
         } else {
-            return .myDarkGrey
+            return .darkGrey
         }
     }
     
     func changeBackgroundColor() -> Color{
         if isSelected {
-            return .myDarkBlue
+            return .darkBlue
         } else {
-            return .myBackground
+            return .background
         }
     }
     

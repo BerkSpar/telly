@@ -19,6 +19,7 @@ enum Screen {
 
 struct ContentView: View {
     @StateObject var router = RouterService.shared
+    @StateObject var locale = LocaleService.shared
     
     var body: some View {
         ZStack {
@@ -59,6 +60,7 @@ struct ContentView: View {
                     router.popUp
             }
         }
+//        .environment(\.locale, .init(identifier: locale.systemLocale))
        
     }
 }

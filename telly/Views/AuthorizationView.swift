@@ -33,8 +33,8 @@ struct AuthorizationView: View {
             Authorization(titleVoice: title, titleSound: "", icon: icon, bodyText: bodyText)
             
             ElevatedButton(
-                backgroundColor: .myDarkBlue,
-                textColor: .myBackground,
+                backgroundColor: .darkBlue,
+                textColor: .background,
                 text: buttonText, isDisabled: false,
                 action: {
                     HapticsService.shared.play(.heavy)
@@ -78,7 +78,7 @@ struct AuthorizationView: View {
             Spacer()
             
         }
-        .background(Color.myBackground)
+        .background(Color.background)
     }
     
     struct AuthorizationView_Previews: PreviewProvider {

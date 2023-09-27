@@ -17,12 +17,12 @@ struct PageCount: View {
             .font(.system(size: 12))
             .fontWidth(.expanded)
             .fontWeight(.bold)
-            .foregroundColor(.myDarkGrey)
+            .foregroundColor(.darkGrey)
             .padding(.vertical, 12)
             .padding(.horizontal, 24)
 //            .background(
 //                RoundedRectangle(cornerRadius: 24)
-//                    .stroke(Color.myDarkBlue, lineWidth: 5))
+//                    .stroke(Color.darkBlue, lineWidth: 5))
 //            .cornerRadius(24, corners: .allCorners)
     }
 }

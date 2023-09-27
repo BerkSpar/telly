@@ -12,7 +12,7 @@ struct Header: View {
         HStack(spacing: 16) {
             ZStack {
                 Circle()
-                    .stroke(Color.myBackground, lineWidth: 5)
+                    .stroke(Color.background, lineWidth: 5)
                     .background(
                         Circle().fill(Color.myGreen)
                     )
@@ -20,14 +20,14 @@ struct Header: View {
                     .foregroundColor(.myGreen)
                 
                 Image("tellyIcon")
-                    .foregroundColor(.myDarkBlue)
+                    .foregroundColor(.darkBlue)
                     
             }
             
             Text("Welcome, \nStoryteller!")
                 .font(.myTitle)
                 .frame(maxWidth: .infinity, alignment: .leading)
-                .foregroundColor(.myBackground)
+                .foregroundColor(.background)
                 .lineSpacing(-2)
             
             Spacer()
@@ -36,7 +36,7 @@ struct Header: View {
         .padding(.trailing, 12)
         .padding(.top, 40)
         .padding(.bottom, 24)
-        .background(Color.myDarkBlue)
+        .background(Color.darkBlue)
     }
 }
 

@@ -47,7 +47,7 @@ struct HomeView: View {
                     .transition(.move(edge: .trailing))
             }
         }
-        .background(Color.myBackground)
+        .background(Color.background)
         .padding(.top, 40)
         .ignoresSafeArea()
         .gesture(dragGesture)

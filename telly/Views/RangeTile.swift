@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RangeTile: View {
     var range: ClosedRange<Int>
-    var color: Color = Color.myReddish
+    var color: Color = .reddish
     var text: LocalizedStringKey
     
     @Binding var selected: Int?

@@ -15,8 +15,8 @@ struct StorybookView: View {
         ScrollView {
             VStack(spacing: 32) {
                 if (GameService.shared.player.isAuthenticated) {
-                    ElevatedButton(backgroundColor: .myDarkBlue,
-                                   textColor: .myBackground,
+                    ElevatedButton(backgroundColor: .darkBlue,
+                                   textColor: .background,
                                    text: "ACHIEVEMENTS") {
                         HapticsService.shared.play(.medium)
                         GameService.shared.showAchievements()
@@ -28,7 +28,7 @@ struct StorybookView: View {
                         HStack {
                             Text("MY STORIES")
                                 .font(.myTitle)
-                                .foregroundColor(.myDarkBlue)
+                                .foregroundColor(.darkBlue)
                             
                             Spacer()
                         }
@@ -46,7 +46,7 @@ struct StorybookView: View {
             .padding(.vertical, 32)
             .padding(.horizontal, 24)
         }
-        .background(Color.myBackground)
+        .background(Color.background)
     }
 }
 
