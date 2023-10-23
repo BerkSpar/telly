@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <a href="https://github.com/BerkSpar/telly"><img src="https://raw.githubusercontent.com/BerkSpar/telly/main/logo.png?token=GHSAT0AAAAAACJBI3PMZDZOYRZYBCIZVJZOZJV2OLQ" alt="Telly" style="border: 3px solid black;" width="200"></a>
+  <a href="https://github.com/BerkSpar/telly"><img src="/logo.png" alt="Telly" style="border: 3px solid black;" width="200"></a>
   <br>
   Telly
   <br>
@@ -32,7 +32,7 @@
   <a href="#license">License</a>
 </p>
 
-![screenshot](https://raw.githubusercontent.com/BerkSpar/telly/main/banner.png?token=GHSAT0AAAAAACJBI3PNAZ6TVIL26JPWUCVMZJV3GAQ)
+![screenshot](/banner.png)
 
 ## Key Features
 
