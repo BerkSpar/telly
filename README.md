@@ -36,7 +36,12 @@
 
 ## Key Features
 
-* ...
+* Three main themes to learn english
+* Speech synthesis to pronounce the words
+* Save your favorite stories
+* Dark and light mode
+* GameKit achievements
+* Localized in english, french and brazilian portuguse
 
 ## How To Use
 
