@@ -30,7 +30,7 @@
   <a href="#download">Download</a> •
   <a href="#credits">Credits</a> •
   <a href="#license">License</a> •
-  <a href="/changelog.md">Changelog</a>
+  <a href="changelog.md">Changelog</a>
 </p>
 
 ![screenshot](/banner.png)
